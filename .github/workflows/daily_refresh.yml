@@ -17,14 +17,8 @@ jobs:
       FOUNDATION_SQL_PASSWORD: ${{ secrets.FOUNDATION_SQL_PASSWORD }}
 
     steps:
-      # ------------------------------------------------------------
-      # Checkout repository
-      # ------------------------------------------------------------
       - uses: actions/checkout@v4
 
-      # ------------------------------------------------------------
-      # Install Microsoft SQL Server ODBC Driver
-      # ------------------------------------------------------------
       - name: Install Microsoft SQL ODBC Driver
         run: |
           sudo apt-get update
@@ -34,56 +28,23 @@ jobs:
           sudo apt-get update
           sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev
 
-      # ------------------------------------------------------------
-      # Set up Python
-      # ------------------------------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      # ------------------------------------------------------------
-      # Install Python packages
-      # ------------------------------------------------------------
       - name: Install Python packages
         run: |
           pip install --upgrade pip
           pip install pyodbc pandas
 
-      # ------------------------------------------------------------
-      # Sanity check: test Foundation connection
-      # ------------------------------------------------------------
-      - name: Test connection
-        run: python scripts/01_test_connection.py
+      - name: Run full FTG pipeline
+        run: python scripts/run_all.py
 
-      # ------------------------------------------------------------
-      # Export canonical CSVs
-      # ------------------------------------------------------------
-      - name: Export accounts
-        run: python scripts/02_accounts.py
-
-      - name: Export gl_history raw
-        run: python scripts/03_gl_history_raw.py
-
-      - name: Build gl_history derived
-        run: python scripts/04_gl_history_derived.py
-
-      # ------------------------------------------------------------
-      # Build website-facing GL JSON (matches old PowerShell)
-      # ------------------------------------------------------------
-      - name: Build financials_gl.json
-        run: python scripts/json/01_build_financials_gl.py
-
-      # ------------------------------------------------------------
-      # Commit and push data + JSON
-      # ------------------------------------------------------------
-      - name: Commit and push updates
+      - name: Commit and push outputs
         run: |
           git config user.name "FTG Data Bot"
           git config user.email "bot@ftg.local"
-          git add data/accounts.csv
-          git add data/gl_history_raw.csv
-          git add data/gl_history.csv
-          git add public/data/financials_gl.json
-          git commit -m "Automated data refresh (GL CSV + JSON)" || echo "No changes to commit"
+          git add data public/data
+          git commit -m "Automated FTG data refresh" || echo "No changes to commit"
           git push
