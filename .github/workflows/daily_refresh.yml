@@ -61,13 +61,18 @@ jobs:
       - name: Export Accounts
         run: python scripts/02_accounts.py
 
+              - name: Export GL History (RAW)
+        run: python scripts/03_gl_history_raw.py
+
+
       # ------------------------------------------------------------
       # 7) Commit accounts.csv ONLY if it changed
       # ------------------------------------------------------------
-      - name: Commit and push accounts.csv if changed
+       - name: Commit raw validation files
         run: |
           git config user.name "FTG Data Bot"
           git config user.email "bot@ftg.local"
-          git add data/accounts.csv
-          git commit -m "Update accounts.csv" || echo "No changes to commit"
+          git add data/accounts.csv data/gl_history_raw.csv
+          git commit -m "Add raw GL history extract for validation" || echo "No changes to commit"
           git push
+
