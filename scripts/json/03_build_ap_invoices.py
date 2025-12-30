@@ -21,6 +21,9 @@ def main():
 
     df = pd.read_csv(AP_INVOICE_CSV, low_memory=False)
 
+    # 🔑 CRITICAL FIX: convert NaN → None so JSON is valid
+    df = df.where(pd.notnull(df), None)
+
     payload = {
         "invoices": df.to_dict(orient="records"),
         "row_count": len(df),
