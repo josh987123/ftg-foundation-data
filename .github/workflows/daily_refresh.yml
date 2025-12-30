@@ -46,10 +46,13 @@ jobs:
       - name: Export gl_history raw
         run: python scripts/03_gl_history_raw.py
 
+      - name: Build gl_history derived
+        run: python scripts/04_gl_history_derived.py
+
       - name: Commit validation outputs
         run: |
           git config user.name "FTG Data Bot"
           git config user.email "bot@ftg.local"
-          git add data/accounts.csv data/gl_history_raw.csv
-          git commit -m "Update accounts + raw gl_history extract" || echo "No changes to commit"
+          git add data/accounts.csv data/gl_history_raw.csv data/gl_history_derived.csv
+          git commit -m "Update accounts + gl_history (raw + derived)" || echo "No changes to commit"
           git push
