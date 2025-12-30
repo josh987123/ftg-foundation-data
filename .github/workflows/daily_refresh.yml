@@ -16,9 +16,12 @@ name: FTG Foundation Daily Refresh
 # ------------------------------------------------------------
 on:
   schedule:
-    - cron: "0 14,16,18,20,22 * * *"   # 6am–2pm PT
-    - cron: "0 0,2,4 * * *"            # 4pm–8pm PT
+    # Weekdays only (Mon–Fri)
+    # Every 2 hours from 6am–8pm Pacific
+    - cron: "0 14,16,18,20,22 * * 1-5"   # 6am–2pm PT
+    - cron: "0 0,2,4 * * 2-6"            # 4pm–8pm PT (same weekdays, UTC rollover)
   workflow_dispatch:
+
 
 # ------------------------------------------------------------
 # Concurrency
