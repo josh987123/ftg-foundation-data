@@ -22,6 +22,9 @@ STEPS = [
     "scripts/07_job_actuals.py",
     "scripts/08_job_billed_revenue.py",
 
+    # AP CSV
+    "scripts/09_ap_invoice_summary.py",
+
     # JSON builders
     "scripts/json/01_build_financials_gl.py",
     "scripts/json/02_build_financials_jobs.py",
