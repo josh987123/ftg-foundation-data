@@ -1,9 +1,32 @@
 name: FTG Foundation Daily Refresh
 
+# ------------------------------------------------------------
+# Schedule
+# Every 2 hours from 6am–8pm Pacific
+# (cron is UTC)
+#
+# 6am  PT → 14:00 UTC
+# 8am  PT → 16:00 UTC
+# 10am PT → 18:00 UTC
+# 12pm PT → 20:00 UTC
+# 2pm  PT → 22:00 UTC
+# 4pm  PT → 00:00 UTC
+# 6pm  PT → 02:00 UTC
+# 8pm  PT → 04:00 UTC
+# ------------------------------------------------------------
 on:
   schedule:
-    - cron: "0 13 * * *"
+    - cron: "0 14,16,18,20,22 * * *"   # 6am–2pm PT
+    - cron: "0 0,2,4 * * *"            # 4pm–8pm PT
   workflow_dispatch:
+
+# ------------------------------------------------------------
+# Concurrency
+# Prevent overlapping Foundation refreshes
+# ------------------------------------------------------------
+concurrency:
+  group: foundation-refresh
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -17,7 +40,8 @@ jobs:
       FOUNDATION_SQL_PASSWORD: ${{ secrets.FOUNDATION_SQL_PASSWORD }}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Install Microsoft SQL ODBC Driver
         run: |
