@@ -32,7 +32,7 @@ STEPS = [
     # AP payment allocations
     "scripts/12_ap_payment_job_allocation.py",
 
-    # AR receipt allocations
+    # AR receipt allocations (CSV)
     "scripts/13_ar_receipt_job_allocation.py",
 
     # JSON builders
@@ -41,9 +41,7 @@ STEPS = [
     "scripts/json/03_build_ap_invoices.py",
     "scripts/json/04_build_ar_invoices.py",
     "scripts/json/05_build_ap_payment_allocations.py",
-
-    # Future
-    # "scripts/json/06_build_ar_receipt_allocations.py",
+    "scripts/json/06_build_ar_receipt_allocations.py",
 ]
 
 def run_step(path):
