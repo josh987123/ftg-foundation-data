@@ -20,13 +20,15 @@ STEPS = [
     # Jobs CSVs
     "scripts/06_job_budgets.py",
     "scripts/07_job_actuals.py",
+    "scripts/08_job_billed_revenue.py",
 
     # JSON builders
     "scripts/json/01_build_financials_gl.py",
 
     # Future
-    # "scripts/08_job_billed_revenue.py",
     # "scripts/json/02_build_financials_jobs.py",
+    # "scripts/json/03_build_ap_invoices.py",
+    # "scripts/json/04_build_ar_invoices.py",
 ]
 
 def run_step(path):
