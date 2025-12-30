@@ -33,9 +33,9 @@ STEPS = [
     "scripts/json/01_build_financials_gl.py",
     "scripts/json/02_build_financials_jobs.py",
     "scripts/json/03_build_ap_invoices.py",
+    "scripts/json/04_build_ar_invoices.py",
 
     # Future
-    # "scripts/json/04_build_ar_invoices.py",
     # "scripts/json/05_build_ap_payment_allocations.py",
     # "scripts/json/06_build_ar_receipt_allocations.py",
 ]
