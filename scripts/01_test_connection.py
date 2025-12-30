@@ -6,7 +6,7 @@ print("Starting Foundation connection test...")
 conn = pyodbc.connect(
     "DRIVER={ODBC Driver 17 for SQL Server};"
     "SERVER=sql.foundationsoft.com,9000;"
-    "DATABASE=foundation;"
+    "DATABASE=Cas_5587;"
     f"UID={os.environ['FOUNDATION_SQL_USER']};"
     f"PWD={os.environ['FOUNDATION_SQL_PASSWORD']};",
     timeout=5
