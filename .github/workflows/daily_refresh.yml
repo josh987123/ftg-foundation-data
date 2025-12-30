@@ -2,7 +2,7 @@ name: FTG Foundation Daily Refresh
 
 on:
   schedule:
-    - cron: '0 13 * * *'   # 6:00 AM Pacific
+    - cron: "0 13 * * *"   # 6:00 AM Pacific
   workflow_dispatch:
 
 permissions:
@@ -17,15 +17,9 @@ jobs:
       FOUNDATION_SQL_PASSWORD: ${{ secrets.FOUNDATION_SQL_PASSWORD }}
 
     steps:
-      # ------------------------------------------------------------
-      # 1) Check out repository
-      # ------------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ------------------------------------------------------------
-      # 2) Install Microsoft SQL Server ODBC driver (Linux)
-      # ------------------------------------------------------------
       - name: Install Microsoft SQL Server ODBC Driver
         run: |
           sudo apt-get update
@@ -35,44 +29,29 @@ jobs:
           sudo apt-get update
           sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev
 
-      # ------------------------------------------------------------
-      # 3) Set up Python
-      # ------------------------------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      # ------------------------------------------------------------
-      # 4) Install Python dependencies
-      # ------------------------------------------------------------
       - name: Install Python dependencies
-        run: pip install pyodbc pandas
+        run: |
+          pip install --upgrade pip
+          pip install pyodbc pandas
 
-      # ------------------------------------------------------------
-      # 5) Sanity check: test Foundation connection
-      # ------------------------------------------------------------
       - name: Test Foundation connection
         run: python scripts/01_test_connection.py
 
-      # ------------------------------------------------------------
-      # 6) Export Accounts → data/accounts.csv
-      # ------------------------------------------------------------
       - name: Export Accounts
         run: python scripts/02_accounts.py
 
-              - name: Export GL History (RAW)
+      - name: Export GL History (RAW)
         run: python scripts/03_gl_history_raw.py
 
-
-      # ------------------------------------------------------------
-      # 7) Commit accounts.csv ONLY if it changed
-      # ------------------------------------------------------------
-       - name: Commit raw validation files
+      - name: Commit raw validation files
         run: |
           git config user.name "FTG Data Bot"
           git config user.email "bot@ftg.local"
           git add data/accounts.csv data/gl_history_raw.csv
-          git commit -m "Add raw GL history extract for validation" || echo "No changes to commit"
+          git commit -m "Update accounts + raw gl_history extract" || echo "No changes to commit"
           git push
-
