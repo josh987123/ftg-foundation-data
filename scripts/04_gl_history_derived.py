@@ -190,6 +190,24 @@ def main():
     # Sort final output similarly (by Account_Num)
     final = final.sort_values(["Account_Num"], ascending=True).reset_index(drop=True)
 
+    # ------------------------------------------------------------
+# Final rounding to match Power Query CSV output
+# ------------------------------------------------------------
+NUMERIC_COLS = [
+    "CumToLastComplete",
+    "CumToPrior",
+    "CumToSecondPrior",
+    "NetIncomeYTD_Prior",
+    "NetIncomeYTD_LastComplete",
+    "LastCompleteMonthActivity",
+    "PriorMonthActivity",
+]
+
+for col in NUMERIC_COLS:
+    if col in final.columns:
+        final[col] = pd.to_numeric(final[col], errors="coerce").round(2)
+
+
     final.to_csv(OUTFILE, index=False)
     print(f"Wrote {OUTFILE} ({len(final)} rows, {len(final.columns)} columns)")
 
