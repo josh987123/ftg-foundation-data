@@ -30,7 +30,7 @@ def main():
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
 
     with open(OUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False)
+        json.dump(payload, f, ensure_ascii=False, allow_nan=False)
 
     print(f"Wrote {OUT_JSON}")
     print(f"Rows: gl_history={len(gl_history)}, gl_history_all={len(gl_history_all)}")
