@@ -29,8 +29,11 @@ STEPS = [
     # AR summary
     "scripts/11_ar_invoice_summary.py",
 
-    # AP payment allocations (CSV)
+    # AP payment allocations
     "scripts/12_ap_payment_job_allocation.py",
+
+    # AR receipt allocations
+    "scripts/13_ar_receipt_job_allocation.py",
 
     # JSON builders
     "scripts/json/01_build_financials_gl.py",
