@@ -7,7 +7,7 @@ from datetime import datetime
 # Configuration
 # ------------------------------------------------------------
 SERVER = "sql.foundationsoft.com,9000"
-DATABASE = "Cas_5587"   # must match working DB
+DATABASE = "Cas_5587"
 OUTFILE = "data/job_actuals.csv"
 
 def connect():
@@ -51,7 +51,9 @@ def main():
     job_hist["cost_code_no"] = normalize_text(job_hist["cost_code_no"])
     job_hist["cost_class_no"] = pd.to_numeric(job_hist["cost_class_no"], errors="coerce")
     job_hist["cost"] = pd.to_numeric(job_hist["cost"], errors="coerce").fillna(0.0)
-    job_hist["date_posted"] = pd.to_datetime(job_hist["date_posted"], errors="coerce").dt.date
+
+    # Force pandas datetime (critical)
+    job_hist["date_posted"] = pd.to_datetime(job_hist["date_posted"], errors="coerce")
 
     # ------------------------------------------------------------
     # 2. Cost classes
@@ -126,7 +128,7 @@ def main():
     )
 
     # ------------------------------------------------------------
-    # 11. Job cost dates
+    # 11. Job cost dates (FIXED)
     # ------------------------------------------------------------
     job_dates = (
         job_hist.groupby("job_no", as_index=False)
@@ -136,10 +138,12 @@ def main():
         )
     )
 
-    today = datetime.now().date()
+    today = pd.Timestamp(datetime.now().date())
+
     job_dates["Days_Since_First_Cost"] = (
         today - job_dates["Oldest_Cost_Date"]
     ).dt.days
+
     job_dates["Days_Since_Last_Cost"] = (
         today - job_dates["Most_Recent_Cost_Date"]
     ).dt.days
