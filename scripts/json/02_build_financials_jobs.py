@@ -27,6 +27,11 @@ def main():
     job_actuals = load_csv(JOB_ACTUALS)
     job_billed_revenue = load_csv(JOB_BILLED_REV)
 
+    # 🔑 CRITICAL FIX: convert NaN → None so JSON is valid
+    job_budgets = job_budgets.where(pd.notnull(job_budgets), None)
+    job_actuals = job_actuals.where(pd.notnull(job_actuals), None)
+    job_billed_revenue = job_billed_revenue.where(pd.notnull(job_billed_revenue), None)
+
     payload = {
         "job_budgets": job_budgets.to_dict(orient="records"),
         "job_actuals": job_actuals.to_dict(orient="records"),
