@@ -4,7 +4,7 @@ import numpy as np
 
 RAW_FILE = "data/gl_history_raw.csv"
 ACCTS_FILE = "data/accounts.csv"
-OUTFILE = "data/gl_history_derived.csv"
+OUTFILE = "data/gl_history.csv"
 
 def _today_pacific_date():
     # Use Pacific time for month-boundary logic
