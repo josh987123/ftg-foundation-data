@@ -24,7 +24,7 @@ STEPS = [
 
     # AP base + summary
     "scripts/09_payments.py",
-    "scripts/09_ap_invoice_summary.py",
+    "scripts/10_ap_invoice_summary.py",
 
     # JSON builders
     "scripts/json/01_build_financials_gl.py",
