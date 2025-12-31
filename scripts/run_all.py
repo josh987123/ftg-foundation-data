@@ -30,6 +30,8 @@ STEPS = [
     "scripts/07_job_actuals.py",
     "scripts/08_job_billed_revenue.py",
 
+    
+
     # --------------------------------------------------------
     # AP base + summary
     # --------------------------------------------------------
@@ -65,6 +67,10 @@ STEPS = [
     "scripts/json/04_build_ar_invoices.py",
     "scripts/json/05_build_ap_payment_allocations.py",
     "scripts/json/06_build_ar_receipt_allocations.py",
+
+        # Health / observability
+    "scripts/99_write_pipeline_health.py",
+
 ]
 
 def run_step(path):
