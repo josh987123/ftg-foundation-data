@@ -1,31 +1,11 @@
 name: FTG Foundation Daily Refresh
 
-# ------------------------------------------------------------
-# Schedule
-# Every 2 hours from 6am–8pm Pacific, weekdays only
-# (GitHub cron is UTC)
-#
-# 6am  PT → 14:00 UTC
-# 8am  PT → 16:00 UTC
-# 10am PT → 18:00 UTC
-# 12pm PT → 20:00 UTC
-# 2pm  PT → 22:00 UTC
-# 4pm  PT → 00:00 UTC
-# 6pm  PT → 02:00 UTC
-# 8pm  PT → 04:00 UTC
-# ------------------------------------------------------------
 on:
   schedule:
-    # Mon–Fri, 6am–2pm PT
     - cron: "0 14,16,18,20,22 * * 1-5"
-    # Mon–Fri, 4pm–8pm PT (UTC rollover)
     - cron: "0 0,2,4 * * 2-6"
   workflow_dispatch:
 
-# ------------------------------------------------------------
-# Concurrency
-# Prevent overlapping Foundation refreshes
-# ------------------------------------------------------------
 concurrency:
   group: foundation-refresh
   cancel-in-progress: false
@@ -42,15 +22,9 @@ jobs:
       FOUNDATION_SQL_PASSWORD: ${{ secrets.FOUNDATION_SQL_PASSWORD }}
 
     steps:
-      # --------------------------------------------------------
-      # Checkout
-      # --------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # --------------------------------------------------------
-      # Install Microsoft SQL ODBC Driver (SQL Server)
-      # --------------------------------------------------------
       - name: Install Microsoft SQL ODBC Driver
         run: |
           sudo apt-get update
@@ -61,9 +35,6 @@ jobs:
           sudo apt-get update
           sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev
 
-      # --------------------------------------------------------
-      # Python
-      # --------------------------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -74,14 +45,29 @@ jobs:
           pip install --upgrade pip
           pip install pyodbc pandas
 
-      # --------------------------------------------------------
-      # Run full FTG pipeline (includes labor allocation step 14)
-      # --------------------------------------------------------
       - name: Run full FTG pipeline
         run: python scripts/run_all.py
 
       # --------------------------------------------------------
-      # Commit outputs (CSV + JSON)
+      # ✅ NEW: Generate refresh timestamp artifact
+      # --------------------------------------------------------
+      - name: Write refresh timestamp
+        run: |
+          mkdir -p public/data
+          UTC_NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          PT_NOW=$(TZ=America/Los_Angeles date +"%Y-%m-%d %H:%M:%S PT")
+
+          cat <<EOF > public/data/last_refresh.json
+          {
+            "last_refresh_utc": "$UTC_NOW",
+            "last_refresh_pacific": "$PT_NOW",
+            "run_id": "${{ github.run_id }}",
+            "status": "success"
+          }
+          EOF
+
+      # --------------------------------------------------------
+      # Commit outputs (CSV + JSON + timestamp)
       # --------------------------------------------------------
       - name: Commit and push outputs
         run: |
@@ -90,3 +76,12 @@ jobs:
           git add data public/data
           git commit -m "Automated FTG data refresh" || echo "No changes to commit"
           git push
+
+      # --------------------------------------------------------
+      # ✅ NEW: Upload timestamp as workflow artifact
+      # --------------------------------------------------------
+      - name: Upload refresh timestamp artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: last-refresh
+          path: public/data/last_refresh.json
