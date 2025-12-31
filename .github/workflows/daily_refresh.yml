@@ -2,8 +2,8 @@ name: FTG Foundation Daily Refresh
 
 # ------------------------------------------------------------
 # Schedule
-# Every 2 hours from 6am–8pm Pacific
-# (cron is UTC)
+# Every 2 hours from 6am–8pm Pacific, weekdays only
+# (GitHub cron is UTC)
 #
 # 6am  PT → 14:00 UTC
 # 8am  PT → 16:00 UTC
@@ -16,12 +16,11 @@ name: FTG Foundation Daily Refresh
 # ------------------------------------------------------------
 on:
   schedule:
-    # Weekdays only (Mon–Fri)
-    # Every 2 hours from 6am–8pm Pacific
-    - cron: "0 14,16,18,20,22 * * 1-5"   # 6am–2pm PT
-    - cron: "0 0,2,4 * * 2-6"            # 4pm–8pm PT (same weekdays, UTC rollover)
+    # Mon–Fri, 6am–2pm PT
+    - cron: "0 14,16,18,20,22 * * 1-5"
+    # Mon–Fri, 4pm–8pm PT (UTC rollover)
+    - cron: "0 0,2,4 * * 2-6"
   workflow_dispatch:
-
 
 # ------------------------------------------------------------
 # Concurrency
@@ -43,18 +42,28 @@ jobs:
       FOUNDATION_SQL_PASSWORD: ${{ secrets.FOUNDATION_SQL_PASSWORD }}
 
     steps:
+      # --------------------------------------------------------
+      # Checkout
+      # --------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # --------------------------------------------------------
+      # Install Microsoft SQL ODBC Driver (SQL Server)
+      # --------------------------------------------------------
       - name: Install Microsoft SQL ODBC Driver
         run: |
           sudo apt-get update
           sudo apt-get install -y curl gnupg apt-transport-https
           curl https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft.gpg
-          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/22.04/prod jammy main" | sudo tee /etc/apt/sources.list.d/mssql-release.list
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/22.04/prod jammy main" \
+            | sudo tee /etc/apt/sources.list.d/mssql-release.list
           sudo apt-get update
           sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev
 
+      # --------------------------------------------------------
+      # Python
+      # --------------------------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -65,9 +74,15 @@ jobs:
           pip install --upgrade pip
           pip install pyodbc pandas
 
+      # --------------------------------------------------------
+      # Run full FTG pipeline (includes labor allocation step 14)
+      # --------------------------------------------------------
       - name: Run full FTG pipeline
         run: python scripts/run_all.py
 
+      # --------------------------------------------------------
+      # Commit outputs (CSV + JSON)
+      # --------------------------------------------------------
       - name: Commit and push outputs
         run: |
           git config user.name "FTG Data Bot"
