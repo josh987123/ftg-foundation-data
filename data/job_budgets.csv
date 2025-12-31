@@ -4161,7 +4161,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 5159,DH Seismic Upgrades Project,104,Dignity Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 5160,SCU EP25-0503 Permit Fees Fire,111,Santa Clara University,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 5161,ECH MOB Permit Fee 4873 Fire P,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
-5162,LPCH Welch Rd Crosswalk,167,Lucile Packard Childrens' Hosp,A,KATHY,Kathy Roth,0.0,0.0,0.0,0.0,0.0,0.0
+5162,LPCH Welch Rd Crosswalk,167,Lucile Packard Childrens' Hosp,A,KATHY,Kathy Roth,50188.0,0.0,50188.0,41097.0,0.0,41097.0
 5163,ECH MV #744848 Install Glass M,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,1964.0,0.0,1964.0,1272.0,0.0,1272.0
 5164,MFH - First Floor TI,249,Momentum for Health,C,KATHY,Kathy Roth,0.0,0.0,0.0,0.0,0.0,0.0
 5165,DH Administration Office Door,104,Dignity Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
