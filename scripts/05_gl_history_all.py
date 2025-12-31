@@ -33,70 +33,56 @@ def main():
     print("Building gl_history_all.csv (PARITY LOCKED) ...")
 
     # ------------------------------------------------------------
-    # 1. Load RAW GL
+    # 1. Load RAW CSV (already SQL-materialized)
     # ------------------------------------------------------------
     df = pd.read_csv(RAW_GL, low_memory=False)
 
-    # Required columns to guarantee parity
+    # These MUST exist if upstream SQL was correct
     require_columns(
         df,
         [
             "Account",
             "Debit",
             "Credit",
-            "journal_no",
-            "date_booked",
-            "date_posted",
+            "Jrnl",
+            "ActivityDate",
+            "MonthStart",
         ],
         "gl_history_raw.csv"
     )
 
     # ------------------------------------------------------------
-    # 2. HARD FILTER — journal_no <> 'CLS'
+    # 2. HARD FILTER — CLS journals
     # ------------------------------------------------------------
+    df["Jrnl"] = normalize_text(df["Jrnl"])
+
     pre_rows = len(df)
-    df = df[df["journal_no"] != "CLS"].copy()
+    df = df[df["Jrnl"] != "CLS"].copy()
     post_rows = len(df)
 
     print(f"Filtered CLS journals: {pre_rows - post_rows} rows removed")
 
     # ------------------------------------------------------------
-    # 3. Normalize numeric fields
+    # 3. Normalize numeric + date fields
     # ------------------------------------------------------------
     df["Account"] = normalize_text(df["Account"])
     df["Debit"]   = pd.to_numeric(df["Debit"], errors="coerce").fillna(0.0)
     df["Credit"]  = pd.to_numeric(df["Credit"], errors="coerce").fillna(0.0)
 
-    # ------------------------------------------------------------
-    # 4. COALESCE(date_booked, date_posted) → ActivityDate
-    # ------------------------------------------------------------
-    df["ActivityDate"] = (
-        pd.to_datetime(df["date_booked"], errors="coerce")
-        .fillna(pd.to_datetime(df["date_posted"], errors="coerce"))
-        .dt.date
-    )
+    df["ActivityDate"] = pd.to_datetime(df["ActivityDate"], errors="coerce").dt.date
+    df["MonthStart"]   = pd.to_datetime(df["MonthStart"], errors="coerce").dt.date
 
-    if df["ActivityDate"].isna().any():
-        raise ValueError("[FATAL] Null ActivityDate after COALESCE logic")
+    if df["MonthStart"].isna().any():
+        raise ValueError("[FATAL] Null MonthStart values detected")
 
     # ------------------------------------------------------------
-    # 5. MonthStart = first day of ActivityDate month
-    # ------------------------------------------------------------
-    df["MonthStart"] = (
-        pd.to_datetime(df["ActivityDate"])
-        .dt.to_period("M")
-        .dt.to_timestamp()
-        .dt.date
-    )
-
-    # ------------------------------------------------------------
-    # 6. Account_Num + NetAmount
+    # 4. Account_Num + NetAmount
     # ------------------------------------------------------------
     df["Account_Num"] = pd.to_numeric(df["Account"], errors="coerce").astype("Int64")
-    df["NetAmount"] = df["Debit"] - df["Credit"]
+    df["NetAmount"]   = df["Debit"] - df["Credit"]
 
     # ------------------------------------------------------------
-    # 7. Join to Accounts table (Power Query parity)
+    # 5. Join Accounts table (Power Query parity)
     # ------------------------------------------------------------
     ac = pd.read_csv(ACCTS, low_memory=False)
 
@@ -106,7 +92,6 @@ def main():
         ac = ac.drop(columns=["Account_Key"])
 
     ac["account_no"] = normalize_text(ac["account_no"])
-
     ac = ac.rename(
         columns={
             "account_no": "Account",
@@ -117,12 +102,12 @@ def main():
     df = df.merge(ac, how="left", on="Account")
 
     # ------------------------------------------------------------
-    # 8. MonthText (yyyy-MM)
+    # 6. MonthText (yyyy-MM)
     # ------------------------------------------------------------
     df["MonthText"] = pd.to_datetime(df["MonthStart"]).dt.strftime("%Y-%m")
 
     # ------------------------------------------------------------
-    # 9. Group by Account + Month (STRICT)
+    # 7. Group by Account + Month
     # ------------------------------------------------------------
     grouped = (
         df.groupby(
@@ -134,7 +119,7 @@ def main():
     )
 
     # ------------------------------------------------------------
-    # 10. Pivot months to columns
+    # 8. Pivot months to columns
     # ------------------------------------------------------------
     pivot = grouped.pivot_table(
         index=["Account", "Account_Num", "Account_Description"],
@@ -147,12 +132,12 @@ def main():
     pivot.columns.name = None
 
     # ------------------------------------------------------------
-    # 11. Sort final result
+    # 9. Sort final result
     # ------------------------------------------------------------
     pivot = pivot.sort_values("Account_Num").reset_index(drop=True)
 
     # ------------------------------------------------------------
-    # 12. Final rounding (match Power Query CSV behavior)
+    # 10. Final rounding
     # ------------------------------------------------------------
     month_cols = [
         c for c in pivot.columns
@@ -164,7 +149,7 @@ def main():
     )
 
     # ------------------------------------------------------------
-    # 13. Write output
+    # 11. Write output
     # ------------------------------------------------------------
     pivot.to_csv(OUTFILE, index=False)
 
