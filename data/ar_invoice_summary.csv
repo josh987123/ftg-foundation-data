@@ -211,6 +211,7 @@ company_no,invoice_no,customer_no,customer_name,invoice_date,due_date,job_no,job
 1,6294,111,Santa Clara University,2025-10-07,2025-11-06,4348,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,511822.57,511822.57,51182.26,O,460640.31,0.0,51182.26,55,31–60
 1,6418,111,Santa Clara University,2025-12-05,2026-01-04,4348,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,344947.29,344947.29,34494.73,,0.0,0.0,344947.29,-4,0–30
 1,6197,111,Santa Clara University,2025-08-27,2025-09-26,4348,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,183508.59,183508.59,18350.86,O,165157.73,0.0,18350.86,96,90+
+1,6498,104,Dignity Health,2025-12-31,2026-01-20,4414,"DH OB, LD, NICU Cabinets",Rodney Terra,4097.9,4097.9,0.0,,0.0,0.0,4097.9,-20,0–30
 1,6472,115,Sutter Health,2025-12-26,2026-01-25,4415,SMSC Kitchen MUA Replacement,Rodney Terra,5554.68,5554.68,0.0,,0.0,0.0,5554.68,-25,0–30
 1,5442,143,Good Samaritan Hospital,2024-11-14,2024-12-14,4418,GSH MBU Suites Project,Doris Quai Hoi,16743.97,16743.97,837.2,O,15906.77,0.0,837.2,382,90+
 1,5300,143,Good Samaritan Hospital,2024-10-02,2024-11-01,4418,GSH MBU Suites Project,Doris Quai Hoi,98792.4,98792.4,4939.62,O,93852.78,0.0,4939.62,425,90+
