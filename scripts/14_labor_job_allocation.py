@@ -44,17 +44,9 @@ def main():
     WITH employees AS (
         SELECT
             employee_no,
-            last_name,
-            first_name,
-            hourly_or_salary,
-            pay_rate
-        FROM dbo.v_hr_employees
-    ),
-
-    employees_enriched AS (
-        SELECT
-            employee_no,
             last_name + ', ' + first_name AS employee_name,
+            hourly_or_salary,
+            pay_rate,
             CASE
                 WHEN LEFT(hourly_or_salary, 1) = 'H' THEN 'Hourly'
                 ELSE 'Salaried'
@@ -67,7 +59,7 @@ def main():
                 WHEN LEFT(hourly_or_salary, 1) = 'H' THEN pay_rate
                 ELSE pay_rate / 40.0
             END AS base_effective_hourly_rate
-        FROM employees
+        FROM dbo.v_hr_employees
     ),
 
     earn_types AS (
@@ -139,24 +131,22 @@ def main():
     joined AS (
         SELECT
             t.employee_no,
-            t.job_no,
-            t.cost_code_no,
-            t.cost_class_no,
-            t.earn_type_no,
-            t.week_start,
-            t.employee_hours,
-            t.approval_status,
-
             e.employee_name,
             e.pay_type,
             e.labor_rate_type,
             e.base_effective_hourly_rate,
 
-            et.description_lc,
+            t.job_no,
+            t.cost_code_no,
+            t.cost_class_no,
+            t.week_start,
+            t.employee_hours,
+            t.approval_status,
 
+            et.description_lc,
             COALESCE(j.job_labor_cost_posted, 0) AS job_labor_cost_posted
         FROM timecards t
-        LEFT JOIN employees_enriched e
+        LEFT JOIN employees e
             ON e.employee_no = t.employee_no
         LEFT JOIN earn_types et
             ON et.earn_type_no = t.earn_type_no
@@ -181,9 +171,6 @@ def main():
                   OR description_lc LIKE '%truck%'
                   OR description_lc LIKE '%pda%'
                   OR description_lc LIKE '%retention%' THEN 'Allowance'
-                WHEN description_lc LIKE '%salary%'
-                  OR description_lc LIKE '%proration%'
-                  OR description_lc LIKE '%adjustment%' THEN 'Salary'
                 WHEN description_lc LIKE '%double%' THEN 'DoubleTime'
                 WHEN description_lc LIKE '%overtime%' THEN 'Overtime'
                 WHEN description_lc LIKE '%holiday%'
@@ -196,7 +183,7 @@ def main():
         FROM joined
     ),
 
-    with_rates AS (
+    rates AS (
         SELECT *,
             CASE
                 WHEN hour_type_group = 'Overtime' THEN 1.5
@@ -207,91 +194,49 @@ def main():
         FROM classified
     ),
 
-    job_week_hours AS (
+    final_calc AS (
         SELECT
+            employee_no,
+            employee_name,
+            pay_type,
+            labor_rate_type,
+
             job_no,
             cost_code_no,
             cost_class_no,
             week_start,
-            SUM(employee_hours) AS total_job_hours
-        FROM with_rates
-        WHERE hour_type_group NOT IN ('Bonus','Allowance')
+            hour_type_group,
+
+            SUM(employee_hours) AS total_hours,
+
+            SUM(
+                CASE
+                    WHEN rate_multiplier IS NULL THEN 0
+                    ELSE employee_hours * base_effective_hourly_rate * rate_multiplier
+                END
+            ) AS labor_cost_estimated,
+
+            SUM(job_labor_cost_posted) AS job_labor_cost_posted
+        FROM rates
         GROUP BY
+            employee_no,
+            employee_name,
+            pay_type,
+            labor_rate_type,
             job_no,
             cost_code_no,
             cost_class_no,
-            week_start
+            week_start,
+            hour_type_group
     )
 
-    SELECT
-        w.employee_no,
-        w.job_no,
-        w.cost_code_no,
-        w.cost_class_no,
-        w.earn_type_no,
-        w.week_start,
-        w.employee_hours,
-        w.approval_status,
-        w.employee_name,
-        w.pay_type,
-        w.labor_rate_type,
-        w.base_effective_hourly_rate,
-        w.description_lc,
-        w.hour_type_group,
-        w.rate_multiplier,
-        jwh.total_job_hours,
-        w.job_labor_cost_posted,
-
-        CASE
-            WHEN w.rate_multiplier IS NULL THEN NULL
-            ELSE w.base_effective_hourly_rate * w.rate_multiplier
-        END AS estimated_rate_used,
-
-        CASE
-            WHEN w.rate_multiplier IS NULL THEN NULL
-            ELSE w.employee_hours * (w.base_effective_hourly_rate * w.rate_multiplier)
-        END AS labor_cost_estimated,
-
-        CASE
-            WHEN w.hour_type_group IN ('Bonus','Allowance') THEN w.job_labor_cost_posted
-            WHEN w.job_labor_cost_posted = 0
-              OR jwh.total_job_hours IS NULL
-              OR jwh.total_job_hours = 0 THEN NULL
-            ELSE w.job_labor_cost_posted * (w.employee_hours / jwh.total_job_hours)
-        END AS labor_cost_posted_allocated,
-
-        CASE
-            WHEN
-                CASE
-                    WHEN w.hour_type_group IN ('Bonus','Allowance') THEN w.job_labor_cost_posted
-                    WHEN w.job_labor_cost_posted = 0
-                      OR jwh.total_job_hours IS NULL
-                      OR jwh.total_job_hours = 0 THEN NULL
-                    ELSE w.job_labor_cost_posted * (w.employee_hours / jwh.total_job_hours)
-                END IS NOT NULL
-            THEN
-                CASE
-                    WHEN w.hour_type_group IN ('Bonus','Allowance') THEN w.job_labor_cost_posted
-                    ELSE w.job_labor_cost_posted * (w.employee_hours / jwh.total_job_hours)
-                END
-            ELSE
-                CASE
-                    WHEN w.rate_multiplier IS NULL THEN NULL
-                    ELSE w.employee_hours * (w.base_effective_hourly_rate * w.rate_multiplier)
-                END
-        END AS labor_cost_effective
-
-    FROM with_rates w
-    LEFT JOIN job_week_hours jwh
-        ON jwh.job_no = w.job_no
-       AND jwh.cost_code_no = w.cost_code_no
-       AND jwh.cost_class_no = w.cost_class_no
-       AND jwh.week_start = w.week_start
+    SELECT *
+    FROM final_calc
     ORDER BY
-        w.week_start DESC,
-        w.employee_no,
-        w.job_no,
-        w.cost_code_no
+        week_start DESC,
+        employee_no,
+        job_no,
+        cost_code_no
     """
 
     df = pd.read_sql(sql, conn)
@@ -301,14 +246,11 @@ def main():
     # ------------------------------------------------------------
     TEXT_COLS = [
         "employee_no",
-        "job_no",
-        "cost_code_no",
-        "earn_type_no",
-        "approval_status",
         "employee_name",
         "pay_type",
         "labor_rate_type",
-        "description_lc",
+        "job_no",
+        "cost_code_no",
         "hour_type_group",
     ]
 
@@ -317,11 +259,7 @@ def main():
             df[col] = normalize_text(df[col])
 
     MONEY_COLS = [
-        "base_effective_hourly_rate",
-        "estimated_rate_used",
         "labor_cost_estimated",
-        "labor_cost_posted_allocated",
-        "labor_cost_effective",
         "job_labor_cost_posted",
     ]
 
