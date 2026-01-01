@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "last_refresh_utc": "2026-01-01T01:56:22.954406Z",
+  "last_refresh_utc": "2026-01-01T03:52:19.034548Z",
   "csv_row_counts": {
     "data/accounts.csv": 200,
     "data/gl_history_raw.csv": 354138,
