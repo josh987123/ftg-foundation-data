@@ -1,4 +1,8 @@
 company_no,receipt_document_no,receipt_no,receipt_date,receipt_amount,receipt_type,receipt_source,receipt_subtype,customer_no,invoice_no,line_no,applied_amount,job_no,job_description
+1,EFT01025749,3015,2026-01-01,107163.9,I,C,,106,6423,1,62739.9,4873,ECH MOB 700 W Parr Aspire Ste
+1,EFT01025749,3015,2026-01-01,107163.9,I,C,,106,6428,1,23881.0,5132,ECH LG ICU Bathroom Water Dama
+1,EFT01025749,3015,2026-01-01,107163.9,I,C,,106,6435,1,14108.0,5213,ECH LG Misc Work
+1,EFT01025749,3015,2026-01-01,107163.9,I,C,,106,6441,1,6435.0,5207,ECH MOB 2500 Hosp Dr Bldg 11
 1,152391,3013,2025-12-30,199966.58,I,C,,115,6349,1,16181.44,4583,SMSC Propane Tanks
 1,152391,3013,2025-12-30,199966.58,I,C,,115,6415,1,159693.14,5119,SMSC Bldg Heat Boiler #1 Repla
 1,152391,3013,2025-12-30,199966.58,I,C,,115,6421,1,6500.0,4976,SMSC Primex Clocks

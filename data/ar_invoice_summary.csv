@@ -260,7 +260,6 @@ company_no,invoice_no,customer_no,customer_name,invoice_date,due_date,job_no,job
 1,6218,115,Sutter Health,2025-09-08,2025-10-08,4863,SH Fremont CT Replacement,Jennifer Angelo,119157.05,119157.05,11915.71,O,107241.34,0.0,11915.71,86,61–90
 1,6451,115,Sutter Health,2025-12-17,2026-01-16,4870,SH Fremont Palliative Care,Jennifer Angelo,11666.11,11666.11,1166.61,,0.0,0.0,11666.11,-14,0–30
 1,6424,106,El Camino Hospital,2025-12-08,2026-01-07,4873,ECH MOB 700 W Parr Aspire Ste ,Doris Quai Hoi,44134.0,44134.0,0.0,,0.0,0.0,44134.0,-5,0–30
-1,6423,106,El Camino Hospital,2025-12-08,2026-01-07,4873,ECH MOB 700 W Parr Aspire Ste ,Doris Quai Hoi,62739.9,62739.9,0.0,,0.0,0.0,62739.9,-5,0–30
 1,6480,215,Mee Memorial Hospital,2025-12-26,2026-01-25,4880,MMH NPC 4D Retrofit,Rodney Terra,48437.19,48437.19,0.0,,0.0,0.0,48437.19,-23,0–30
 1,6490,119,Indian Health Center,2025-12-29,2026-01-28,4907,IHC 1118 Meridian SkylightSeal,Kathy Roth,3506.0,3506.0,0.0,,0.0,0.0,3506.0,-26,0–30
 1,6009,104,Dignity Health,2025-06-20,2025-07-10,4908,SJMC IT Refresh Fiber to Exter,Daniel Acosta,1000000.0,1000000.0,100000.0,O,900000.0,0.0,100000.0,176,90+
@@ -288,14 +287,11 @@ company_no,invoice_no,customer_no,customer_name,invoice_date,due_date,job_no,job
 1,6456,115,Sutter Health,2025-12-19,2026-01-18,5080,SH 795 LINAC A Rplcmt Scopin,Jennifer Angelo,50000.0,50000.0,0.0,,0.0,0.0,50000.0,-16,0–30
 1,6474,115,Sutter Health,2025-12-26,2026-01-25,5119,SMSC Bldg Heat Boiler #1 Repla,Rodney Terra,19976.75,19976.75,0.0,,0.0,0.0,19976.75,-23,0–30
 1,6473,115,Sutter Health,2025-12-26,2026-01-25,5125,SMSC NPC 4 & 5 Scoping Report,Rodney Terra,9621.88,9621.88,0.0,,0.0,0.0,9621.88,-23,0–30
-1,6428,106,El Camino Hospital,2025-12-09,2026-01-08,5132,ECH LG ICU Bathroom Water Dama,Doris Quai Hoi,23881.0,23881.0,0.0,,0.0,0.0,23881.0,-6,0–30
 1,6494,104,Dignity Health,2025-12-30,2025-12-30,5150,DH Hose Bib Core,Rodney Terra,1908.0,1908.0,0.0,,0.0,0.0,1908.0,3,0–30
 1,6496,106,El Camino Hospital,2025-12-30,2026-01-29,5152,ECH LG Misc Work,Doris Quai Hoi,9904.0,9904.0,0.0,,0.0,0.0,9904.0,-27,0–30
 1,6500,167,Lucile Packard Childrens' Hosp,2025-12-31,2026-01-30,5167,Leak G857 Men's Locker,Kathy Roth,25093.48,25093.48,0.0,,0.0,0.0,25093.48,-28,0–30
 1,6464,115,Sutter Health,2025-12-23,2026-01-22,5193,SMSC Temp Boiler Install,Rodney Terra,35180.0,35180.0,0.0,,0.0,0.0,35180.0,-20,0–30
 1,6495,106,El Camino Hospital,2025-12-30,2026-01-29,5195,ECH LG Misc Work,Doris Quai Hoi,11227.0,11227.0,0.0,,0.0,0.0,11227.0,-27,0–30
-1,6441,106,El Camino Hospital,2025-12-12,2026-01-11,5207,ECH MOB 2500 Hosp Dr Bldg 11,Doris Quai Hoi,6435.0,6435.0,0.0,,0.0,0.0,6435.0,-9,0–30
 1,6458,106,El Camino Hospital,2025-12-22,2026-01-21,5211,ECH MOB Concrete Base Reconstr,Doris Quai Hoi,9735.0,9735.0,0.0,,0.0,0.0,9735.0,-19,0–30
-1,6435,106,El Camino Hospital,2025-12-11,2026-01-10,5213,ECH LG Misc Work,Doris Quai Hoi,14108.0,14108.0,0.0,,0.0,0.0,14108.0,-8,0–30
 1,6487,106,El Camino Hospital,2025-12-29,2026-01-28,5215,ECH MV WO#743363 Park Meeting,Doris Quai Hoi,5157.0,5157.0,0.0,,0.0,0.0,5157.0,-26,0–30
 1,6476,215,Mee Memorial Hospital,2025-12-26,2026-01-25,5216,MMH Rood Guard Rails,Rodney Terra,15987.16,15987.16,0.0,,0.0,0.0,15987.16,-23,0–30
