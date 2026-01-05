@@ -1,4 +1,8 @@
 company_no,receipt_document_no,receipt_no,receipt_date,receipt_amount,receipt_type,receipt_source,receipt_subtype,customer_no,invoice_no,line_no,applied_amount,job_no,job_description
+1,3924902,3016,2026-01-04,121618.15,I,C,,167,6078,1,63232.12,3687,LPCH 725 Welch EV Chargers
+1,3924902,3016,2026-01-04,121618.15,I,C,,167,6276,1,5175.0,4131,LPCH West Lighting Control Sys
+1,3924902,3016,2026-01-04,121618.15,I,C,,167,6280,1,15211.03,4954,LPCH Anchor Cows
+1,3924902,3016,2026-01-04,121618.15,I,C,,167,6407,1,38000.0,4131,LPCH West Lighting Control Sys
 1,EFT01025749,3015,2026-01-01,107163.9,I,C,,106,6423,1,62739.9,4873,ECH MOB 700 W Parr Aspire Ste
 1,EFT01025749,3015,2026-01-01,107163.9,I,C,,106,6428,1,23881.0,5132,ECH LG ICU Bathroom Water Dama
 1,EFT01025749,3015,2026-01-01,107163.9,I,C,,106,6435,1,14108.0,5213,ECH LG Misc Work
