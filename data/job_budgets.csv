@@ -4219,7 +4219,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 5217,IHC 2039 Peds Clinic OSHPD 3,119,Indian Health Center,A,KATHY,Kathy Roth,0.0,0.0,0.0,0.0,0.0,0.0
 5218,LPCH 750 Welch Floor Drains,167,Lucile Packard Childrens' Hosp,A,KATHY,Kathy Roth,0.0,0.0,0.0,0.0,0.0,0.0
 5219,SOB STE 545 Lighting Upgrade,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
-5220,ECH MOB 1533 California Cir Le,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
+5220,ECH MOB 1533 California Cir Le,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,25000.0,0.0,25000.0,19000.0,0.0,19000.0
 5221,ECH MV WO#748619 GCX Channel,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 5222,"ECH MV WO#735306 Main, 3B Inst",106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 5223,ECH MV WO#740816 Willow Ste206,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
