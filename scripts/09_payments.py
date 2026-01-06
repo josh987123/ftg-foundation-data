@@ -33,6 +33,8 @@ def main():
 
     # ------------------------------------------------------------
     # AP INVOICE HEADER
+    # Aging anchor:
+    #   original_inv_date → post_date → invoice_date
     # ------------------------------------------------------------
     ap_h = pd.read_sql(
         """
@@ -40,7 +42,7 @@ def main():
             voucher_no,
             invoice_no,
             vendor_no,
-            invoice_date,
+            COALESCE(original_inv_date, post_date, invoice_date) AS invoice_date,
             invoice_amount,
             retainage_percent,
             retainage_amount,
@@ -101,7 +103,11 @@ def main():
 
     df = df.merge(all_payments, how="left", on="voucher_no")
 
+    # ------------------------------------------------------------
+    # Normalize payment fields
+    # ------------------------------------------------------------
     df["cash_amount"] = pd.to_numeric(df["cash_amount"], errors="coerce").fillna(0.0)
+    df["void_flag"] = pd.to_numeric(df["void_flag"], errors="coerce").fillna(0).astype(int)
 
     # ------------------------------------------------------------
     # VENDORS
@@ -164,7 +170,9 @@ def main():
         ]
     ]
 
+    # ------------------------------------------------------------
     # Type normalization
+    # ------------------------------------------------------------
     final["invoice_no"] = normalize_text(final["invoice_no"])
     final["job_no"] = normalize_text(final["job_no"])
     final["invoice_date"] = pd.to_datetime(final["invoice_date"], errors="coerce")
@@ -173,6 +181,9 @@ def main():
     for col in MONEY_COLS:
         final[col] = pd.to_numeric(final[col], errors="coerce").round(2)
 
+    # ------------------------------------------------------------
+    # Write output
+    # ------------------------------------------------------------
     final.to_csv(OUTFILE, index=False)
     print(f"Wrote {OUTFILE} ({len(final)} rows, {len(final.columns)} columns)")
 
