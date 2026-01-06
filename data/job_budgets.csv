@@ -3414,7 +3414,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 4411,ECH LG Patient Reg Light Replc,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 4412,ECH MOB 285 South Fence,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 4413,DH Duct Detect 17-37 Serv Call,104,Dignity Health,C,RODNEY,Rodney Terra,1380.0,0.0,1380.0,743.0,0.0,743.0
-4414,"DH OB, LD, NICU Cabinets",104,Dignity Health,A,RODNEY,Rodney Terra,40979.0,245048.0,286027.0,34288.0,190000.0,224288.0
+4414,DH NICU Cabinets,104,Dignity Health,A,RODNEY,Rodney Terra,40979.0,245048.0,286027.0,34288.0,190000.0,224288.0
 4415,SMSC Kitchen MUA Replacement,115,Sutter Health,A,RODNEY,Rodney Terra,148735.0,537248.0,685983.0,129770.0,436996.0,566766.0
 4416,SMSC Overflow Drain Clarifier,115,Sutter Health,C,RODNEY,Rodney Terra,5062.0,0.0,5062.0,2874.0,0.0,2874.0
 4417,PAMF 795 Beautification Reface,115,Sutter Health,C,JENNIFER,Jennifer Angelo,0.0,0.0,0.0,0.0,0.0,0.0
