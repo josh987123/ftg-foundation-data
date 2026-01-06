@@ -3946,7 +3946,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 4943,ECH MOB 2495 Hosp Dr #625 Pass,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 4944,LPCH Leak Corridor Unit 350,167,Lucile Packard Childrens' Hosp,C,KATHY,Kathy Roth,36395.0,-13307.6,23087.4,25148.0,-13307.6,11840.4
 4945,LPCH 2591 + 2550 IFC,167,Lucile Packard Childrens' Hosp,C,KATHY,Kathy Roth,4687.0,0.0,4687.0,6171.0,0.0,6171.0
-4946,DH D Oaks Laundry Room Refresh,104,Dignity Health,A,RODNEY,Rodney Terra,145341.0,46922.0,192263.0,107653.0,43599.0,151252.0
+4946,DH D Oaks Laundry Room Refresh,104,Dignity Health,C,RODNEY,Rodney Terra,145341.0,46922.0,192263.0,107653.0,43599.0,151252.0
 4947,ECH MV Omnicell Replacement,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,36986.0,0.0,36986.0,27714.0,0.0,27714.0
 4948,PAMF 795 ECR Infusion Clinic,115,Sutter Health,A,JENNIFER,Jennifer Angelo,0.0,0.0,0.0,0.0,0.0,0.0
 4949,SMSC Blood Bank ValidationStdy,115,Sutter Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
