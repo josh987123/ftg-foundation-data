@@ -110,11 +110,18 @@ def main():
             i.retainage_amount,
             ISNULL(c.cash_applied,0) AS cash_applied,
 
+            /* --------------------------------------------------
+               FOUNDATION FIX:
+               If invoice is fully paid, retainage is cleared
+               -------------------------------------------------- */
             CASE
+                WHEN ISNULL(c.cash_applied,0) >= i.invoice_amount
+                    THEN 0
                 WHEN (i.amount_due - ISNULL(c.cash_applied,0)) <= i.retainage_amount
                     THEN 0
                 ELSE (i.amount_due - ISNULL(c.cash_applied,0) - i.retainage_amount)
             END AS calculated_amount_due
+
         FROM Invoices i
         LEFT JOIN CashApplied c
           ON c.company_no = i.company_no
