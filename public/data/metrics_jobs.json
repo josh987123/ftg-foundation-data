@@ -87196,7 +87196,7 @@
     "job_description": "ECH LG Misc Work",
     "project_manager": "Doris Quai Hoi",
     "customer_name": "El Camino Hospital",
-    "job_status": "A",
+    "job_status": "C",
     "original_contract": 13720.0,
     "contract": 13720.0,
     "budget_cost": 4232.0,
@@ -87205,12 +87205,12 @@
     "has_budget": true,
     "percent_complete": 100,
     "earned_revenue": 13720.58,
-    "backlog": -0.58,
-    "profit": 9488.0,
+    "backlog": 0,
+    "profit": 9487.82,
     "margin": 69.15,
     "valid_for_profit": true,
-    "profit_basis": "projected",
-    "over_under_billing": -0.58
+    "profit_basis": "actual",
+    "over_under_billing": 0
   },
   {
     "job_no": "5153",
@@ -88351,7 +88351,7 @@
     "job_description": "ECH MOB 2500 Hosp Dr Bldg 11",
     "project_manager": "Doris Quai Hoi",
     "customer_name": "El Camino Hospital",
-    "job_status": "A",
+    "job_status": "C",
     "original_contract": 6435.0,
     "contract": 6435.0,
     "budget_cost": 3232.0,
@@ -88360,12 +88360,12 @@
     "has_budget": true,
     "percent_complete": 100,
     "earned_revenue": 6793.29,
-    "backlog": -358.29,
-    "profit": 3203.0,
-    "margin": 49.77,
+    "backlog": 0,
+    "profit": 3023.05,
+    "margin": 46.98,
     "valid_for_profit": true,
-    "profit_basis": "projected",
-    "over_under_billing": -358.29
+    "profit_basis": "actual",
+    "over_under_billing": 0
   },
   {
     "job_no": "5208",
