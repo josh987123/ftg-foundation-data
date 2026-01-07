@@ -42,7 +42,8 @@ def load_json_file(filename: str) -> dict:
     Load a JSON file from GitHub (canonical source of truth).
     This MUST succeed for the pipeline to be valid.
     """
-    url = f"{GITHUB_DATA_BASE}/{filename}"
+    from time import time
+    url = f"{GITHUB_DATA_BASE}/{filename}?v={int(time())}"
     resp = requests.get(url, timeout=60)
     resp.raise_for_status()
     return resp.json()
