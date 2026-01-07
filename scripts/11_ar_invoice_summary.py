@@ -20,11 +20,11 @@ def connect():
     )
 
 def main():
-    print("Exporting ar_invoice_summary.csv (Foundation-faithful) ...")
+    print("Exporting ar_invoice_summary.csv (Foundation-faithful, job-gated) ...")
     conn = connect()
 
     # ------------------------------------------------------------
-    # FOUNDATION-FAITHFUL AR AGING SQL
+    # FOUNDATION-FAITHFUL AR AGING SQL (JOB-GATED)
     # ------------------------------------------------------------
     sql = """
     DECLARE @AsOfDate date = GETDATE();
@@ -32,17 +32,22 @@ def main():
     WITH InvoiceBase AS (
         SELECT
             i.company_no,
-            RTRIM(LTRIM(i.invoice_no))   AS invoice_no,
-            RTRIM(LTRIM(i.customer_no))  AS customer_no,
-            c.name                       AS customer_name,
+            RTRIM(LTRIM(i.invoice_no))  AS invoice_no,
+            RTRIM(LTRIM(i.customer_no)) AS customer_no,
+            c.name                      AS customer_name,
             i.job_no,
-            j.description                AS job_description,
-            pm.description               AS project_manager_name,
+            j.description               AS job_description,
+            pm.description              AS project_manager_name,
             i.invoice_date,
             i.invoice_amount,
             i.amount_due,
             ISNULL(i.retainage_percent, 0) AS retainage_percent
         FROM ar_invoice i
+
+        -- 🔑 JOB-BASED AR ELIGIBILITY GATE
+        INNER JOIN ar_invoice_jc jc
+            ON jc.invoice_id = i.invoice_id
+
         LEFT JOIN customers c
             ON c.customer_no = i.customer_no
         LEFT JOIN jobs j
@@ -80,7 +85,7 @@ def main():
         project_manager_name,
         invoice_date,
         invoice_amount,
-        amount_due + retainage_capped AS remaining_balance,
+        amount_due AS remaining_balance,          -- 🔑 Foundation definition
         retainage_capped AS retainage_amount,
         amount_due AS calculated_amount_due,
         DATEDIFF(day, invoice_date, @AsOfDate) AS days_outstanding,
