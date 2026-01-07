@@ -15,13 +15,12 @@ AS_OF_DATE = date(2026, 1, 7)
 
 def connect():
     return pyodbc.connect(
-        "DRIVER={ODBC Driver 18 for SQL Server};"
-        f"SERVER={SERVER};"
-        f"DATABASE={DATABASE};"
+        "DSN=Cas_5587;"
         f"UID={os.environ['FOUNDATION_SQL_USER']};"
         f"PWD={os.environ['FOUNDATION_SQL_PASSWORD']};",
         timeout=30
     )
+
 
 def main():
     print("Exporting Foundation-aligned AR Invoice Aging…")
