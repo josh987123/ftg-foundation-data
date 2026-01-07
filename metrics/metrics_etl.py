@@ -224,7 +224,9 @@ def run_jobs_etl() -> List[dict]:
 
 
 def run_ar_etl() -> List[dict]:
-    data = load_json_file('ar_invoices.json')
+    with open("public/data/ar_invoices.json", "r") as f:
+    data = json.load(f)
+
     results = []
     for inv in data.get('invoices', []):
         m = calculate_ar_invoice_metrics(inv)
