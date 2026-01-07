@@ -40,6 +40,7 @@ def main():
             pm.description               AS project_manager_name,
             i.invoice_date,
             i.invoice_amount,
+            i.amount_due,
             ISNULL(i.retainage_percent, 0) AS retainage_percent
         FROM ar_invoice i
         LEFT JOIN customers c
@@ -52,33 +53,7 @@ def main():
             i.company_no = 1
             AND i.posted_flag = 'Y'
             AND i.closed_flag = 'N'
-            AND i.invoice_source = 'O'
-            AND ISNULL(i.invoice_amount,0) > 0
-    ),
-    CashApplied AS (
-        SELECT
-            RTRIM(LTRIM(ci.invoice_no)) AS invoice_no,
-            SUM(ci.cash_amount)        AS cash_applied
-        FROM ar_cash c
-        JOIN ar_cash_invoice ci
-          ON ci.company_no      = c.company_no
-         AND ci.cash_receipt_no = c.cash_receipt_no
-        WHERE
-            c.reversal <> 'Y'
-        GROUP BY
-            RTRIM(LTRIM(ci.invoice_no))
-    ),
-    Balances AS (
-        SELECT
-            i.*,
-            ISNULL(c.cash_applied, 0) AS cash_applied,
-            CASE
-                WHEN i.invoice_amount - ISNULL(c.cash_applied,0) < 0 THEN 0
-                ELSE i.invoice_amount - ISNULL(c.cash_applied,0)
-            END AS remaining_balance
-        FROM InvoiceBase i
-        LEFT JOIN CashApplied c
-            ON c.invoice_no = i.invoice_no
+            AND ISNULL(i.amount_due, 0) > 0
     ),
     RetainageCalc AS (
         SELECT
@@ -88,22 +63,12 @@ def main():
                 ELSE ROUND(invoice_amount * retainage_percent / 100.0, 2)
             END AS retainage_amount,
             CASE
-                WHEN
-                    CASE
-                        WHEN invoice_amount - cash_applied < 0 THEN 0
-                        ELSE invoice_amount - cash_applied
-                    END
-                    <
-                    ROUND(invoice_amount * retainage_percent / 100.0, 2)
-                THEN
-                    CASE
-                        WHEN invoice_amount - cash_applied < 0 THEN 0
-                        ELSE invoice_amount - cash_applied
-                    END
-                ELSE
-                    ROUND(invoice_amount * retainage_percent / 100.0, 2)
+                WHEN amount_due <
+                     ROUND(invoice_amount * retainage_percent / 100.0, 2)
+                THEN amount_due
+                ELSE ROUND(invoice_amount * retainage_percent / 100.0, 2)
             END AS retainage_capped
-        FROM Balances
+        FROM InvoiceBase
     )
     SELECT
         company_no,
@@ -115,13 +80,9 @@ def main():
         project_manager_name,
         invoice_date,
         invoice_amount,
-        cash_applied,
-        remaining_balance,
+        amount_due + retainage_capped AS remaining_balance,
         retainage_capped AS retainage_amount,
-        CASE
-            WHEN remaining_balance - retainage_capped < 0 THEN 0
-            ELSE remaining_balance - retainage_capped
-        END AS calculated_amount_due,
+        amount_due AS calculated_amount_due,
         DATEDIFF(day, invoice_date, @AsOfDate) AS days_outstanding,
         CASE
             WHEN DATEDIFF(day, invoice_date, @AsOfDate) <= 30 THEN '0–30'
@@ -140,7 +101,6 @@ def main():
     # ------------------------------------------------------------
     MONEY_COLS = [
         "invoice_amount",
-        "cash_applied",
         "remaining_balance",
         "retainage_amount",
         "calculated_amount_due",
