@@ -13,15 +13,22 @@ OUTFILE = "data/ar_invoice_summary.csv"
 # Match Foundation report date exactly
 AS_OF_DATE = date(2026, 1, 7)
 
+# ==========================================================
+# DB CONNECTION (MATCHES WORKING SCRIPTS)
+# ==========================================================
 def connect():
     return pyodbc.connect(
-        "DSN=Cas_5587;"
+        "DRIVER={ODBC Driver 17 for SQL Server};"
+        f"SERVER={SERVER};"
+        f"DATABASE={DATABASE};"
         f"UID={os.environ['FOUNDATION_SQL_USER']};"
         f"PWD={os.environ['FOUNDATION_SQL_PASSWORD']};",
         timeout=30
     )
 
-
+# ==========================================================
+# MAIN
+# ==========================================================
 def main():
     print("Exporting Foundation-aligned AR Invoice Aging…")
     conn = connect()
@@ -61,7 +68,7 @@ def main():
             AND i.closed_flag = 'N'
             AND i.invoice_source = 'O'
             AND ISNULL(i.invoice_amount,0) > 0
-            AND ISNULL(i.amount_due,0) > 0
+            AND ISNULL(i.amount_due,0) >= 0
 
             -- Exclude reposted invoices
             AND NOT EXISTS (
@@ -138,15 +145,11 @@ def main():
             ELSE '91+'
         END AS aging_bucket
 
-FROM NetAR
-ORDER BY customer_name, job_no, invoice_no;
-
+    FROM NetAR
+    ORDER BY customer_name, job_no, invoice_no;
     """
 
     df = pd.read_sql(sql, conn)
-    print("AR INVOICE SUMMARY ROW COUNT:", len(df))
-    print(df.head(5))
-
 
     # ==========================================================
     # FINAL FORMATTING
@@ -162,10 +165,13 @@ ORDER BY customer_name, job_no, invoice_no;
     for col in money_cols:
         df[col] = pd.to_numeric(df[col], errors="coerce").round(2)
 
-    df["invoice_date"] = pd.to_datetime(df["invoice_date"])
+    df["invoice_date"] = pd.to_datetime(df["invoice_date"], errors="coerce")
 
     df.to_csv(OUTFILE, index=False)
     print(f"Wrote {OUTFILE} ({len(df)} rows)")
 
+# ==========================================================
+# ENTRY POINT
+# ==========================================================
 if __name__ == "__main__":
     main()
