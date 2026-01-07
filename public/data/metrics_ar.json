@@ -868,6 +868,20 @@
     "aging_bucket": "0-30"
   },
   {
+    "invoice_no": 6504,
+    "customer_name": "El Camino Hospital",
+    "project_manager": "Doris Quai Hoi",
+    "job_no": 5226,
+    "job_description": "ECH MV WO#709805 Sobrato, 2Hks",
+    "invoice_date": "2026-01-07",
+    "invoice_amount": 680.0,
+    "collectible": 680.0,
+    "retainage": 0.0,
+    "total_due": 680.0,
+    "days_outstanding": 0,
+    "aging_bucket": "0-30"
+  },
+  {
     "invoice_no": 6503,
     "customer_name": "El Camino Hospital",
     "project_manager": "Doris Quai Hoi",
