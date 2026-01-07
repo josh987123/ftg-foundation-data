@@ -139,9 +139,9 @@ def main():
             ELSE '91+'
         END AS aging_bucket
 
-    FROM NetAR
-    WHERE calculated_amount_due > 0
-    ORDER BY customer_name, job_no, invoice_no;
+FROM NetAR
+ORDER BY customer_name, job_no, invoice_no;
+
     """
 
     df = pd.read_sql(sql, conn)
