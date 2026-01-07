@@ -60,7 +60,6 @@ def main():
             AND i.posted_flag = 'Y'
             AND i.closed_flag = 'N'
             AND i.invoice_source = 'O'
-            AND LEN(RTRIM(LTRIM(i.invoice_no))) >= 4
             AND ISNULL(i.invoice_amount,0) > 0
             AND ISNULL(i.amount_due,0) > 0
 
