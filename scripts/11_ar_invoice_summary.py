@@ -145,6 +145,9 @@ ORDER BY customer_name, job_no, invoice_no;
     """
 
     df = pd.read_sql(sql, conn)
+    print("AR INVOICE SUMMARY ROW COUNT:", len(df))
+    print(df.head(5))
+
 
     # ==========================================================
     # FINAL FORMATTING
