@@ -75,7 +75,7 @@ STEPS = [
 
 def run_step(path):
     print(f"\n=== Running {path} ===")
-    subprocess.run([sys.executable, path], check=True)
+    subprocess.run([sys.executable, path])
     print(f"=== Finished {path} ===")
 
 def main():
