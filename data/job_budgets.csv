@@ -4151,7 +4151,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 5149,PAMF 15400 LG Imaging Wtr Dama,115,Sutter Health,C,JENNIFER,Jennifer Angelo,0.0,0.0,0.0,0.0,0.0,0.0
 5150,DH Hose Bib Core,104,Dignity Health,C,RODNEY,Rodney Terra,1908.0,0.0,1908.0,146.0,0.0,146.0
 5151,PAMF 795 Clark Derm Countertop,115,Sutter Health,A,JENNIFER,Jennifer Angelo,0.0,0.0,0.0,0.0,0.0,0.0
-5152,ECH LG Misc Work,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,13720.0,0.0,13720.0,4232.0,0.0,4232.0
+5152,ECH LG Misc Work,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,13720.0,0.0,13720.0,4232.0,0.0,4232.0
 5153,SRDH Siena OR Corridor Walls,104,Dignity Health,A,PEDRO,Pedro Becerra,0.0,0.0,0.0,0.0,0.0,0.0
 5154,SRDH Siena Zone Valve Demo,104,Dignity Health,A,PEDRO,Pedro Becerra,0.0,0.0,0.0,0.0,0.0,0.0
 5155,SRDH Siena New Storage Room,104,Dignity Health,A,PEDRO,Pedro Becerra,0.0,0.0,0.0,0.0,0.0,0.0
@@ -4206,7 +4206,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 5204,SH 15400 LG Eyeclick Projector,115,Sutter Health,A,JENNIFER,Jennifer Angelo,9974.0,0.0,9974.0,7183.0,0.0,7183.0
 5205,SH 701 MV Admin Space Conversi,115,Sutter Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 5206,ECH MOB Melchor Ste109 Front,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
-5207,ECH MOB 2500 Hosp Dr Bldg 11,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,6435.0,0.0,6435.0,3232.0,0.0,3232.0
+5207,ECH MOB 2500 Hosp Dr Bldg 11,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,6435.0,0.0,6435.0,3232.0,0.0,3232.0
 5208,DH Katz Passthrough Door Openi,104,Dignity Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 5209,DH Registration Door Opening,104,Dignity Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 5210,ECH LG Ortho 1014 Access Panel,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
