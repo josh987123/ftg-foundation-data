@@ -75,7 +75,6 @@ def excel_to_date(serial):
 # ==========================================================
 
 def calculate_job_metrics(job: dict, actual_cost: float, billed: float) -> dict:
-    # --- YOUR EXISTING LOGIC, UNCHANGED ---
     job_no = str(job.get('job_no', ''))
     budget_cost = float(job.get('revised_cost') or 0)
     contract = float(job.get('revised_contract') or 0)
@@ -138,18 +137,27 @@ def calculate_job_metrics(job: dict, actual_cost: float, billed: float) -> dict:
     }
 
 # ==========================================================
-# AR METRICS (UNCHANGED LOGIC)
+# AR METRICS (FOUNDATION FIX APPLIED)
 # ==========================================================
 
 def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
     calc_due = float(invoice.get('calculated_amount_due', 0) or 0)
     retainage = float(invoice.get('retainage_amount', 0) or 0)
 
+    invoice_amount = float(invoice.get('invoice_amount', 0) or 0)
+    cash_applied = float(invoice.get('cash_applied', 0) or 0)
+
+    # --------------------------------------------------
+    # FOUNDATION FIX: implicit retainage clearance
+    # --------------------------------------------------
+    if cash_applied >= invoice_amount:
+        retainage = 0.0
+
     if calc_due <= 0 and retainage <= 0:
         return None
 
-    total_due = calc_due if calc_due > 0 else retainage
-    collectible = max(0, calc_due - retainage)
+    total_due = calc_due + retainage
+    collectible = calc_due
 
     invoice_date = excel_to_date(invoice.get('invoice_date', ''))
     if invoice_date:
@@ -175,8 +183,8 @@ def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
         'invoice_date': invoice.get('invoice_date', ''),
         'invoice_amount': float(invoice.get('invoice_amount', 0) or 0),
         'collectible': round(collectible, 2),
-        'retainage': retainage,
-        'total_due': round(collectible + retainage, 2),
+        'retainage': round(retainage, 2),
+        'total_due': round(total_due, 2),
         'days_outstanding': days_outstanding,
         'aging_bucket': aging_bucket
     }
