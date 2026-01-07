@@ -4157,7 +4157,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 5155,SRDH Siena New Storage Room,104,Dignity Health,A,PEDRO,Pedro Becerra,0.0,0.0,0.0,0.0,0.0,0.0
 5156,SVMH X-Ray Rm 1&2 Equip Replcm,133,Salinas Valley Memorial Hosp,A,PEDRO,Pedro Becerra,0.0,0.0,0.0,0.0,0.0,0.0
 5157,LPCH Arctic Chill Chiller,167,Lucile Packard Childrens' Hosp,C,KATHY,Kathy Roth,0.0,0.0,0.0,0.0,0.0,0.0
-5158,LPCH NPC5 DW Con. Main to West,167,Lucile Packard Childrens' Hosp,A,KATHY,Kathy Roth,0.0,0.0,0.0,0.0,0.0,0.0
+5158,LPCH NPC5 DW Con. Main to West,167,Lucile Packard Childrens' Hosp,A,KATHY,Kathy Roth,10000.0,0.0,10000.0,8500.0,0.0,8500.0
 5159,DH Seismic Upgrades Project,104,Dignity Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 5160,SCU EP25-0503 Permit Fees Fire,111,Santa Clara University,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 5161,ECH MOB Permit Fee 4873 Fire P,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
