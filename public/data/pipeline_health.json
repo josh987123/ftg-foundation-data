@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "last_refresh_utc": "2026-01-07T19:09:09.384336Z",
+  "last_refresh_utc": "2026-01-07T19:15:34.230180Z",
   "csv_row_counts": {
     "data/accounts.csv": 200,
     "data/gl_history_raw.csv": 354705,
@@ -14,7 +14,7 @@
     "public/data/financials_gl.json": 357,
     "public/data/financials_jobs.json": 44379,
     "public/data/ap_invoices.json": 56673,
-    "public/data/ar_invoices.json": 0
+    "public/data/ar_invoices.json": 1609
   },
   "files_present": {
     "csv": [
