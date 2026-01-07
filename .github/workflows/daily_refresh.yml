@@ -49,6 +49,13 @@ jobs:
         run: python scripts/run_all.py
 
       # --------------------------------------------------------
+      # Generate canonical metrics (derived layer)
+      # --------------------------------------------------------
+      - name: Run canonical metrics ETL
+        run: python metrics/metrics_etl.py
+
+
+      # --------------------------------------------------------
       # ✅ NEW: Generate refresh timestamp artifact
       # --------------------------------------------------------
       - name: Write refresh timestamp
