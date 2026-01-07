@@ -43,7 +43,8 @@ jobs:
       - name: Install Python packages
         run: |
           pip install --upgrade pip
-          pip install pyodbc pandas
+          pip install pyodbc pandas requests
+
 
       - name: Run full FTG pipeline
         run: python scripts/run_all.py
