@@ -14,7 +14,7 @@ OUTFILE = "data/ar_invoice_summary.csv"
 AS_OF_DATE = date(2026, 1, 7)
 
 # ==========================================================
-# DB CONNECTION (MATCHES WORKING SCRIPTS)
+# DB CONNECTION
 # ==========================================================
 def connect():
     return pyodbc.connect(
@@ -36,31 +36,26 @@ def main():
     sql = f"""
     DECLARE @AsOfDate date = '{AS_OF_DATE}';
 
+    /* ------------------------------------------------------
+       Base invoice set
+       ------------------------------------------------------ */
     WITH Invoices AS (
         SELECT
             i.company_no,
             RTRIM(LTRIM(i.invoice_no)) AS invoice_no,
-
             RTRIM(LTRIM(i.customer_no)) AS customer_no,
             c.name AS customer_name,
-
             RTRIM(LTRIM(i.job_no)) AS job_no,
             j.description AS job_description,
             pm.description AS project_manager_name,
-
             i.invoice_date,
             i.invoice_amount,
             i.amount_due,
             ISNULL(i.retainage_amount,0) AS retainage_amount
-
         FROM ar_invoice i
-        LEFT JOIN customers c
-            ON c.customer_no = i.customer_no
-        LEFT JOIN jobs j
-            ON j.job_no = i.job_no
-        LEFT JOIN project_managers pm
-            ON pm.project_manager_no = j.project_manager_no
-
+        LEFT JOIN customers c ON c.customer_no = i.customer_no
+        LEFT JOIN jobs j ON j.job_no = i.job_no
+        LEFT JOIN project_managers pm ON pm.project_manager_no = j.project_manager_no
         WHERE
             i.record_status = 'A'
             AND i.company_no = 1
@@ -69,8 +64,6 @@ def main():
             AND i.invoice_source = 'O'
             AND ISNULL(i.invoice_amount,0) > 0
             AND ISNULL(i.amount_due,0) >= 0
-
-            -- Exclude reposted invoices
             AND NOT EXISTS (
                 SELECT 1
                 FROM ar_invoice x
@@ -82,78 +75,72 @@ def main():
             )
     ),
 
-    CashApplied AS (
-        SELECT
-            ci.company_no,
-            RTRIM(LTRIM(ci.invoice_no)) AS invoice_no,
-            SUM(ISNULL(ci.ar_amount,0)) AS cash_applied
-        FROM ar_cash_invoice ci
+    /* ------------------------------------------------------
+       Audit-cleared retainage invoices (Option 2 rule)
+       ------------------------------------------------------ */
+    AuditCleared AS (
+        SELECT DISTINCT
+            RTRIM(LTRIM(COALESCE(h.adjust_invoice_no, h.invoice_no))) AS invoice_no
+        FROM ar_history h
         WHERE
-            ci.record_status = 'A'
-        GROUP BY
-            ci.company_no,
-            RTRIM(LTRIM(ci.invoice_no))
-    ),
-
-    NetAR AS (
-        SELECT
-            i.company_no,
-            i.invoice_no,
-            i.customer_no,
-            i.customer_name,
-            i.job_no,
-            i.job_description,
-            i.project_manager_name,
-            i.invoice_date,
-            i.invoice_amount,
-            i.amount_due,
-            i.retainage_amount,
-            ISNULL(c.cash_applied,0) AS cash_applied,
-
-            /* --------------------------------------------------
-               FOUNDATION FIX:
-               If invoice is fully paid, retainage is cleared
-               -------------------------------------------------- */
-            CASE
-                WHEN ISNULL(c.cash_applied,0) >= i.invoice_amount
-                    THEN 0
-                WHEN (i.amount_due - ISNULL(c.cash_applied,0)) <= i.retainage_amount
-                    THEN 0
-                ELSE (i.amount_due - ISNULL(c.cash_applied,0) - i.retainage_amount)
-            END AS calculated_amount_due
-
-        FROM Invoices i
-        LEFT JOIN CashApplied c
-          ON c.company_no = i.company_no
-         AND c.invoice_no = i.invoice_no
+            h.record_status = 'A'
+            AND ISNULL(h.cash_amount,0) <> 0
     )
 
+    /* ------------------------------------------------------
+       Final AR Aging output
+       ------------------------------------------------------ */
     SELECT
-        company_no,
-        invoice_no,
-        customer_no,
-        customer_name,
-        job_no,
-        job_description,
-        project_manager_name,
-        invoice_date,
-        invoice_amount,
-        amount_due,
-        retainage_amount,
-        cash_applied,
-        calculated_amount_due,
+        i.company_no,
+        i.invoice_no,
+        i.customer_no,
+        i.customer_name,
+        i.job_no,
+        i.job_description,
+        i.project_manager_name,
+        i.invoice_date,
+        i.invoice_amount,
+        i.amount_due,
+        i.retainage_amount,
 
-        DATEDIFF(day, invoice_date, @AsOfDate) AS days_outstanding,
+        /* 
+           Audit-faithful amount due:
+           - If audit-cleared retainage invoice, treat as zero
+           - Else use header amount_due
+        */
+        CASE
+            WHEN a.invoice_no IS NOT NULL
+                 AND i.retainage_amount > 0
+                 AND i.amount_due = i.invoice_amount
+                THEN 0
+            ELSE i.amount_due
+        END AS calculated_amount_due,
+
+        DATEDIFF(day, i.invoice_date, @AsOfDate) AS days_outstanding,
 
         CASE
-            WHEN DATEDIFF(day, invoice_date, @AsOfDate) <= 30 THEN '0–30'
-            WHEN DATEDIFF(day, invoice_date, @AsOfDate) <= 60 THEN '31–60'
-            WHEN DATEDIFF(day, invoice_date, @AsOfDate) <= 90 THEN '61–90'
+            WHEN DATEDIFF(day, i.invoice_date, @AsOfDate) <= 30 THEN '0-30'
+            WHEN DATEDIFF(day, i.invoice_date, @AsOfDate) <= 60 THEN '31-60'
+            WHEN DATEDIFF(day, i.invoice_date, @AsOfDate) <= 90 THEN '61-90'
             ELSE '91+'
         END AS aging_bucket
 
-    FROM NetAR
-    ORDER BY customer_name, job_no, invoice_no;
+    FROM Invoices i
+    LEFT JOIN AuditCleared a
+        ON a.invoice_no = i.invoice_no
+
+    WHERE
+        /* keep real AR only */
+        NOT (
+            a.invoice_no IS NOT NULL
+            AND i.retainage_amount > 0
+            AND i.amount_due = i.invoice_amount
+        )
+
+    ORDER BY
+        customer_name,
+        job_no,
+        invoice_no;
     """
 
     df = pd.read_sql(sql, conn)
@@ -165,7 +152,6 @@ def main():
         "invoice_amount",
         "amount_due",
         "retainage_amount",
-        "cash_applied",
         "calculated_amount_due",
     ]
 
