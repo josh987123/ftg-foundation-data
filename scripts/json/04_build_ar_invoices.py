@@ -32,6 +32,10 @@ def main():
 
     payload = sanitize_for_json(payload)
 
+    # ✅ FORCE fresh AR JSON every run
+    if OUT_JSON.exists():
+        OUT_JSON.unlink()
+
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, allow_nan=False)
