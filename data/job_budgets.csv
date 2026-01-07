@@ -2109,7 +2109,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 3106,ECHMV I.C Nutrition Services F,106,El Camino Hospital,C,PEDRO,Pedro Becerra,4278.0,0.0,4278.0,2981.0,0.0,2981.0
 3107,ECHMV I.C Park Pavilion Floori,106,El Camino Hospital,C,PEDRO,Pedro Becerra,4438.0,0.0,4438.0,3174.0,0.0,3174.0
 3108,DH OR Electrical Upgrade Panel,104,Dignity Health,C,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
-3109,RMC Hill-Rom Nurse Call Instal,176,Regional Medical Center,A,PEDRO,Pedro Becerra,83850.0,1896587.0,1980437.0,68657.0,1501804.0,1570461.0
+3109,RMC Hill-Rom Nurse Call Instal,176,Regional Medical Center,C,PEDRO,Pedro Becerra,83850.0,1896587.0,1980437.0,68657.0,1501804.0,1570461.0
 3110,PAMF 701 MVC OR 3 Surgical Lig,115,Sutter Health,C,JOSH,Josh Angelo,48252.0,0.0,48252.0,35533.0,0.0,35533.0
 3111,Rubrik #21-05 Interior T.I,174,"Rubrik, Inc.",C,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 3112,PAMF 2980 El Rancho Dr - Scott,115,Sutter Health,C,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
