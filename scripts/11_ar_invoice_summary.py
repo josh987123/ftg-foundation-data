@@ -30,7 +30,7 @@ def connect():
 # MAIN
 # ==========================================================
 def main():
-    print("Exporting Foundation-aligned AR Invoice Aging…")
+    print("Exporting Foundation-aligned AR Invoice Aging (Audit-faithful)…")
     conn = connect()
 
     sql = f"""
@@ -76,22 +76,7 @@ def main():
     ),
 
     /* ------------------------------------------------------
-       Cash applied up to AsOfDate
-       ------------------------------------------------------ */
-    CashApplied AS (
-        SELECT
-            RTRIM(LTRIM(h.invoice_no)) AS invoice_no,
-            SUM(ISNULL(h.cash_amount,0)) AS cash_applied
-        FROM ar_history h
-        WHERE
-            h.record_status = 'A'
-            AND h.tran_date <= @AsOfDate
-        GROUP BY
-            RTRIM(LTRIM(h.invoice_no))
-    ),
-
-    /* ------------------------------------------------------
-       Audit-cleared retainage invoices
+       Identify audit-cleared retainage invoices
        ------------------------------------------------------ */
     AuditCleared AS (
         SELECT DISTINCT
@@ -103,7 +88,7 @@ def main():
     )
 
     /* ------------------------------------------------------
-       Final AR output (Foundation-aligned)
+       Final AR invoice output (ROW-LEVEL EXCLUSION)
        ------------------------------------------------------ */
     SELECT
         i.company_no,
@@ -118,13 +103,12 @@ def main():
         i.amount_due,
         i.retainage_amount,
 
-        /* Net collectible per Foundation audit logic */
-        ROUND(
-            i.invoice_amount
-            - ISNULL(ca.cash_applied,0)
-            - i.retainage_amount,
-            2
-        ) AS calculated_amount_due,
+        /* Collectible AR only */
+        CASE
+            WHEN i.amount_due > 0 AND i.amount_due < i.invoice_amount
+                THEN i.amount_due
+            ELSE 0
+        END AS calculated_amount_due,
 
         DATEDIFF(day, i.invoice_date, @AsOfDate) AS days_outstanding,
 
@@ -136,39 +120,18 @@ def main():
         END AS aging_bucket
 
     FROM Invoices i
-    LEFT JOIN CashApplied ca
-        ON ca.invoice_no = i.invoice_no
     LEFT JOIN AuditCleared a
         ON a.invoice_no = i.invoice_no
 
     /* ------------------------------------------------------
-       Canonical exclusion rules (FINAL)
+       🔑 OPTION B RULE (FINAL)
+       Remove audit-cleared retainage invoices entirely
        ------------------------------------------------------ */
     WHERE
-        /* Must have positive collectible */
-        ROUND(
-            i.invoice_amount
-            - ISNULL(ca.cash_applied,0)
-            - i.retainage_amount,
-            2
-        ) > 0
-
-        /* Exclude audit-cleared retainage-only invoices */
-        AND NOT (
+        NOT (
             a.invoice_no IS NOT NULL
             AND i.retainage_amount > 0
             AND i.amount_due = i.invoice_amount
-        )
-
-        /* Exclude legacy audit-cleared invoices with non-cash adjustments */
-        AND NOT EXISTS (
-            SELECT 1
-            FROM ar_history h2
-            WHERE
-                h2.record_status = 'A'
-                AND RTRIM(LTRIM(h2.invoice_no)) = i.invoice_no
-                AND ISNULL(h2.cash_amount,0) = 0
-                AND ISNULL(h2.adjust_invoice_amount,0) <> 0
         )
 
     ORDER BY
