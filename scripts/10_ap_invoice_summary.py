@@ -31,13 +31,29 @@ def main():
             df[col] = normalize_text(df[col])
 
     # ------------------------------------------------------------
-    # Normalize numeric fields
+    # Normalize numeric & date fields
     # ------------------------------------------------------------
     df["invoice_date"] = pd.to_datetime(df["invoice_date"], errors="coerce")
     df["invoice_amount"] = pd.to_numeric(df["invoice_amount"], errors="coerce").fillna(0.0)
     df["retainage_amount"] = pd.to_numeric(df["retainage_amount"], errors="coerce").fillna(0.0)
     df["cash_amount"] = pd.to_numeric(df["cash_amount"], errors="coerce").fillna(0.0)
     df["void_flag"] = pd.to_numeric(df["void_flag"], errors="coerce").fillna(0)
+
+    # ------------------------------------------------------------
+    # On-hold detection (PDF-faithful)
+    # ------------------------------------------------------------
+    HOLD_COL_CANDIDATES = [
+        "hold_flag",
+        "invoice_hold_flag",
+        "on_hold",
+        "hold",
+    ]
+
+    df["on_hold_flag"] = False
+    for col in HOLD_COL_CANDIDATES:
+        if col in df.columns:
+            df["on_hold_flag"] = df[col].astype(str).str.upper().isin(["Y", "1", "TRUE"])
+            break
 
     # ------------------------------------------------------------
     # Effective cash logic (ignore voided payments)
@@ -61,6 +77,7 @@ def main():
                 "job_no",
                 "job_description",
                 "project_manager_name",
+                "on_hold_flag",
             ],
             as_index=False
         )
@@ -68,28 +85,37 @@ def main():
     )
 
     # ------------------------------------------------------------
-    # Remaining balance calculations
+    # Remaining balance
     # ------------------------------------------------------------
     grouped["gross_remaining"] = (
         grouped["invoice_amount"] - grouped["amount_paid_to_date"]
-    ).clip(lower=0)
+    )
 
     # ------------------------------------------------------------
-    # ✅ PDF-FAITHFUL LOGIC:
-    # Do NOT subtract retainage before aging
-    # Retainage is tracked separately and displayed separately
+    # Credit detection
     # ------------------------------------------------------------
-    grouped["open_for_aging"] = grouped["gross_remaining"]
+    grouped["is_credit"] = grouped["invoice_amount"] < 0
 
     # ------------------------------------------------------------
-    # Aging calculation (dynamic as-of date)
+    # PDF-faithful aging amount
+    # ------------------------------------------------------------
+    grouped["open_for_aging"] = grouped.apply(
+        lambda r: 0.0 if r["is_credit"] else max(r["gross_remaining"], 0),
+        axis=1
+    )
+
+    # ------------------------------------------------------------
+    # Aging calculation (dynamic)
     # ------------------------------------------------------------
     today = pd.Timestamp(datetime.now().date())
     grouped["days_outstanding"] = grouped["invoice_date"].apply(
         lambda d: None if pd.isna(d) else (today - d).days
     )
 
-    def aging_bucket(days):
+    def aging_bucket(row):
+        if row["is_credit"]:
+            return "CREDIT"
+        days = row["days_outstanding"]
         if days is None:
             return None
         if days <= 30:
@@ -100,18 +126,21 @@ def main():
             return "61-90"
         return "90+"
 
-    grouped["aging_bucket"] = grouped["days_outstanding"].apply(aging_bucket)
+    grouped["aging_bucket"] = grouped.apply(aging_bucket, axis=1)
 
     # ------------------------------------------------------------
     # Payment status
     # ------------------------------------------------------------
     def payment_status(row):
+        if row["is_credit"]:
+            return "Credit"
         if row["gross_remaining"] == 0:
             return "Paid"
-        elif row["amount_paid_to_date"] == 0:
+        if row["on_hold_flag"]:
+            return "On Hold"
+        if row["amount_paid_to_date"] == 0:
             return "Open"
-        else:
-            return "Partially Paid"
+        return "Partially Paid"
 
     grouped["payment_status"] = grouped.apply(payment_status, axis=1)
 
