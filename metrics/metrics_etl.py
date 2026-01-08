@@ -1,6 +1,5 @@
 import json
 import os
-import requests
 from datetime import datetime, timezone
 from typing import List, Optional
 
@@ -9,11 +8,6 @@ from typing import List, Optional
 # ==========================================================
 
 OUTPUT_DIR = "public/data"
-
-GITHUB_DATA_BASE = os.getenv(
-    "FTG_DATA_BASE_URL",
-    "https://raw.githubusercontent.com/josh987123/ftg-foundation-data/main/public/data"
-)
 
 EXCLUDED_PM = "josh angelo"
 
@@ -30,48 +24,29 @@ EXCLUDED_AP_VENDORS = [
     "Gas/other vehicle expense",
 ]
 
-# Foundation AR Aging date
+# Fixed aging date – must match Foundation AR Aging
 AR_AGING_DATE = datetime(2026, 1, 7)
-
-# ==========================================================
-# DATA LOADING
-# ==========================================================
-
-def load_json_file(filename: str) -> dict:
-    url = f"{GITHUB_DATA_BASE}/{filename}"
-    resp = requests.get(url, timeout=60)
-    resp.raise_for_status()
-    return resp.json()
 
 # ==========================================================
 # UTILITIES
 # ==========================================================
 
-def safe_float(v) -> float:
-    try:
-        if v is None or v == "":
-            return 0.0
-        return float(v)
-    except Exception:
-        return 0.0
-
-
-def excel_to_date(value):
+def excel_to_date(serial):
     from datetime import timedelta
 
-    if not value:
+    if not serial:
         return None
 
-    if isinstance(value, str) and "-" in value:
+    if isinstance(serial, str) and "-" in serial:
         try:
-            return datetime.strptime(value.strip(), "%Y-%m-%d")
+            return datetime.strptime(serial.strip(), "%Y-%m-%d")
         except ValueError:
-            return None
+            pass
 
+    excel_epoch = datetime(1899, 12, 30)
     try:
-        excel_epoch = datetime(1899, 12, 30)
-        return excel_epoch + timedelta(days=int(float(value)))
-    except Exception:
+        return excel_epoch + timedelta(days=int(float(serial)))
+    except (ValueError, TypeError):
         return None
 
 # ==========================================================
@@ -80,43 +55,18 @@ def excel_to_date(value):
 
 def calculate_job_metrics(job: dict, actual_cost: float, billed: float) -> dict:
     job_no = str(job.get("job_no", ""))
-
-    budget_cost = safe_float(job.get("revised_cost"))
-    contract = safe_float(job.get("revised_contract"))
-    original_contract = safe_float(job.get("original_contract"))
-    original_cost = safe_float(job.get("original_cost"))
-
+    budget_cost = float(job.get("revised_cost") or 0)
+    contract = float(job.get("revised_contract") or 0)
     job_status = job.get("job_status", "")
+
     is_closed = job_status == "C"
-    has_budget = budget_cost > 0
 
-    percent_complete = (
-        min((actual_cost / budget_cost) * 100, 100) if has_budget else 0
-    )
+    percent_complete = min((actual_cost / budget_cost) * 100, 100) if budget_cost else 0
+    earned_revenue = (actual_cost / budget_cost) * contract if budget_cost else 0
 
-    earned_revenue = (
-        (actual_cost / budget_cost) * contract if has_budget else 0
-    )
-
-    backlog = 0 if is_closed else contract - earned_revenue
-    over_under_billing = 0 if is_closed else billed - earned_revenue
-
-    if is_closed:
-        profit = billed - actual_cost
-        margin = (profit / billed * 100) if billed > 0 else 0
-        profit_basis = "actual"
-        valid_for_profit = billed > 0 and actual_cost > 0
-    else:
-        if earned_revenue == 0 and billed > 0:
-            profit = billed - actual_cost
-            margin = (profit / billed * 100) if billed > 0 else 0
-            profit_basis = "actual_fallback"
-            valid_for_profit = billed > 0 and actual_cost > 0
-        else:
-            profit = contract - budget_cost
-            margin = (profit / contract * 100) if contract > 0 else 0
-            profit_basis = "projected"
-            valid_for_profit = contract > 0 and budget_cost > 0
+    backlog = 0 if is_closed else (contract - earned_revenue)
+    profit = billed - actual_cost
+    margin = (profit / billed * 100) if billed else 0
 
     return {
         "job_no": job_no,
@@ -124,42 +74,41 @@ def calculate_job_metrics(job: dict, actual_cost: float, billed: float) -> dict:
         "project_manager": job.get("project_manager_name", ""),
         "customer_name": job.get("customer_name", ""),
         "job_status": job_status,
-        "original_contract": original_contract,
         "contract": contract,
         "budget_cost": budget_cost,
         "actual_cost": actual_cost,
         "billed": billed,
-        "has_budget": has_budget,
         "percent_complete": round(percent_complete, 2),
         "earned_revenue": round(earned_revenue, 2),
         "backlog": round(backlog, 2),
         "profit": round(profit, 2),
         "margin": round(margin, 2),
-        "valid_for_profit": valid_for_profit,
-        "profit_basis": profit_basis,
-        "over_under_billing": round(over_under_billing, 2),
     }
 
 # ==========================================================
-# AR METRICS (FOUNDATION-ALIGNED)
+# AR METRICS (FOUNDATION-TIED, ENFORCED)
 # ==========================================================
 
 def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
-    amount_due = safe_float(invoice.get("amount_due"))
-    retainage_raw = safe_float(invoice.get("retainage_amount"))
-    retainage_remaining = min(retainage_raw, amount_due)
-    collectible_remaining = max(0.0, amount_due - retainage_remaining)
+    """
+    ENFORCED FOUNDATION RULE:
+    If collectible <= 0 → invoice does not exist in AR Aging.
+    No collections math. No retainage re-logic.
+    """
 
-    # 🚨 FOUNDATION RULE:
-    # Retainage-only invoices do NOT appear in aging buckets
-    if collectible_remaining <= 0:
+    calc_due = float(invoice.get("calculated_amount_due", 0) or 0)
+
+    # 🔑 HARD STOP — zero collectible never appears in AR Aging
+    if calc_due <= 0:
         return None
 
+    retainage = float(invoice.get("retainage_amount", 0) or 0)
+
     invoice_date = excel_to_date(invoice.get("invoice_date"))
-    if invoice_date:
-        days_outstanding = max(0, (AR_AGING_DATE - invoice_date).days)
-    else:
-        days_outstanding = int(safe_float(invoice.get("days_outstanding")))
+    if not invoice_date:
+        return None
+
+    days_outstanding = max(0, (AR_AGING_DATE - invoice_date).days)
 
     if days_outstanding <= 30:
         aging_bucket = "0-30"
@@ -168,19 +117,19 @@ def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
     elif days_outstanding <= 90:
         aging_bucket = "61-90"
     else:
-        aging_bucket = "91+"
+        aging_bucket = "90+"
 
     return {
-        "invoice_no": invoice.get("invoice_no", ""),
+        "invoice_no": invoice.get("invoice_no"),
         "customer_name": invoice.get("customer_name", "").strip(),
         "project_manager": invoice.get("project_manager_name", "").strip(),
-        "job_no": invoice.get("job_no", ""),
+        "job_no": invoice.get("job_no"),
         "job_description": invoice.get("job_description", ""),
-        "invoice_date": invoice.get("invoice_date", ""),
-        "invoice_amount": safe_float(invoice.get("invoice_amount")),
-        "collectible": round(collectible_remaining, 2),
-        "retainage": round(retainage_remaining, 2),
-        "total_due": round(amount_due, 2),
+        "invoice_date": invoice.get("invoice_date"),
+        "invoice_amount": float(invoice.get("invoice_amount", 0) or 0),
+        "collectible": round(calc_due, 2),        # ← Net Receivable
+        "retainage": round(retainage, 2),         # ← Display only
+        "total_due": round(calc_due + retainage, 2),
         "days_outstanding": days_outstanding,
         "aging_bucket": aging_bucket,
     }
@@ -190,7 +139,8 @@ def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
 # ==========================================================
 
 def run_jobs_etl() -> List[dict]:
-    data = load_json_file("financials_jobs.json")
+    with open("public/data/financials_jobs.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
 
     budgets = data.get("job_budgets", [])
     actuals = data.get("job_actuals", [])
@@ -198,13 +148,14 @@ def run_jobs_etl() -> List[dict]:
 
     actual_by_job = {}
     for a in actuals:
-        job_no = str(int(a["Job_No"])) if isinstance(a["Job_No"], float) else str(a["Job_No"])
-        actual_by_job[job_no] = actual_by_job.get(job_no, 0) + safe_float(a["Actual_Cost"])
+        actual_by_job[str(a["Job_No"])] = (
+            actual_by_job.get(str(a["Job_No"]), 0)
+            + float(a["Actual_Cost"])
+        )
 
-    billed_by_job = {}
-    for b in billed:
-        job_no = str(int(b["Job_No"])) if isinstance(b["Job_No"], float) else str(b["Job_No"])
-        billed_by_job[job_no] = safe_float(b["Billed_Revenue"])
+    billed_by_job = {
+        str(b["Job_No"]): float(b["Billed_Revenue"]) for b in billed
+    }
 
     return [
         calculate_job_metrics(
@@ -215,47 +166,29 @@ def run_jobs_etl() -> List[dict]:
         for job in budgets
     ]
 
-
 def run_ar_etl() -> List[dict]:
-    data = load_json_file("ar_invoices.json")
-    invoices = data.get("invoices", [])
+    with open("public/data/ar_invoices.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
 
     results = []
-    retainage_total = 0.0
-
-    for inv in invoices:
-        amount_due = safe_float(inv.get("amount_due"))
-        retainage_amt = safe_float(inv.get("retainage_amount"))
-        retainage_total += min(retainage_amt, amount_due)
-
-        m = calculate_ar_invoice_metrics(inv)
-        if m:
-            results.append(m)
-
-    if not results:
-        raise RuntimeError("AR metrics empty — check upstream AR export")
-
-    # Write retainage summary (optional but useful)
-    with open(f"{OUTPUT_DIR}/metrics_ar_retainage_total.json", "w") as f:
-        json.dump(
-            {"retainage_total": round(retainage_total, 2)},
-            f,
-            indent=2,
-        )
+    for inv in data.get("invoices", []):
+        row = calculate_ar_invoice_metrics(inv)
+        if row:
+            results.append(row)
 
     return results
 
-
 def run_ap_etl() -> List[dict]:
-    data = load_json_file("ap_invoices.json")
-    results = []
+    with open("public/data/ap_invoices.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
 
+    results = []
     for inv in data.get("invoices", []):
-        remaining = safe_float(inv.get("remaining_balance"))
+        remaining = float(inv.get("remaining_balance", 0) or 0)
+        vendor = inv.get("vendor_name", "").strip()
+
         if remaining <= 0:
             continue
-
-        vendor = inv.get("vendor_name", "").strip()
         if vendor in EXCLUDED_AP_VENDORS:
             continue
 
@@ -274,23 +207,23 @@ def write_metrics_outputs():
     ar = run_ar_etl()
     ap = run_ap_etl()
 
-    with open(f"{OUTPUT_DIR}/metrics_jobs.json", "w") as f:
+    with open(f"{OUTPUT_DIR}/metrics_jobs.json", "w", encoding="utf-8") as f:
         json.dump(jobs, f, indent=2)
 
-    with open(f"{OUTPUT_DIR}/metrics_ar.json", "w") as f:
+    with open(f"{OUTPUT_DIR}/metrics_ar.json", "w", encoding="utf-8") as f:
         json.dump(ar, f, indent=2)
 
-    with open(f"{OUTPUT_DIR}/metrics_ap.json", "w") as f:
+    with open(f"{OUTPUT_DIR}/metrics_ap.json", "w", encoding="utf-8") as f:
         json.dump(ap, f, indent=2)
 
-    with open(f"{OUTPUT_DIR}/metrics_generated_at.json", "w") as f:
+    with open(f"{OUTPUT_DIR}/metrics_generated_at.json", "w", encoding="utf-8") as f:
         json.dump(
             {"generated_at": datetime.now(timezone.utc).isoformat()},
             f,
             indent=2,
         )
 
-    print("[MetricsETL] Metrics successfully written")
+    print("[MetricsETL] Wrote metrics to public/data")
 
 # ==========================================================
 # ENTRY POINT
