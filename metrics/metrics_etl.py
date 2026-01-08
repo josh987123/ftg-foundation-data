@@ -1,6 +1,7 @@
 import json
 import os
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from typing import List, Optional
 
 # ==========================================================
@@ -24,8 +25,8 @@ EXCLUDED_AP_VENDORS = [
     "Gas/other vehicle expense",
 ]
 
-# Fixed aging date – must match Foundation AR Aging
-AR_AGING_DATE = datetime(2026, 1, 7)
+# 🔑 Dynamic AR aging date (Pacific Time, Foundation-aligned)
+AR_AGING_DATE = datetime.now(ZoneInfo("America/Los_Angeles")).date()
 
 # ==========================================================
 # UTILITIES
@@ -108,7 +109,7 @@ def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
     if not invoice_date:
         return None
 
-    days_outstanding = max(0, (AR_AGING_DATE - invoice_date).days)
+    days_outstanding = max(0, (AR_AGING_DATE - invoice_date.date()).days)
 
     if days_outstanding <= 30:
         aging_bucket = "0-30"
@@ -223,7 +224,7 @@ def write_metrics_outputs():
             indent=2,
         )
 
-    print("[MetricsETL] Wrote metrics to public/data")
+    print(f"[MetricsETL] Wrote metrics using AR aging date {AR_AGING_DATE}")
 
 # ==========================================================
 # ENTRY POINT
