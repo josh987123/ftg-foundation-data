@@ -2681,9 +2681,9 @@
     "job_description": "SCU Adobe (Kitchen) Remodel",
     "invoice_date": "2025-12-05",
     "invoice_amount": 344947.29,
-    "collectible": 310452.56,
+    "collectible": 0.0,
     "retainage": 34494.73,
-    "total_due": 344947.29,
+    "total_due": 34494.73,
     "days_outstanding": 33,
     "aging_bucket": "31-60"
   },
