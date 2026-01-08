@@ -9,6 +9,7 @@ SERVER = "sql.foundationsoft.com,9000"
 DATABASE = "Cas_5587"
 OUTFILE = "data/payments.csv"
 
+
 def connect():
     return pyodbc.connect(
         "DRIVER={ODBC Driver 17 for SQL Server};"
@@ -16,16 +17,18 @@ def connect():
         f"DATABASE={DATABASE};"
         f"UID={os.environ['FOUNDATION_SQL_USER']};"
         f"PWD={os.environ['FOUNDATION_SQL_PASSWORD']};",
-        timeout=30
+        timeout=30,
     )
+
 
 def normalize_text(series):
     return (
         series.astype(str)
-              .str.replace(r"\.0$", "", regex=True)
-              .str.strip()
-              .replace({"nan": "", "None": ""})
+        .str.replace(r"\.0$", "", regex=True)
+        .str.strip()
+        .replace({"nan": "", "None": ""})
     )
+
 
 def main():
     print("Exporting payments.csv ...")
@@ -33,8 +36,9 @@ def main():
 
     # ------------------------------------------------------------
     # AP INVOICE HEADER
-    # Aging anchor:
-    #   original_inv_date → post_date → invoice_date
+    # IMPORTANT:
+    #   - invoice_date = literal invoice date
+    #   - transaction_date = Foundation AP aging anchor
     # ------------------------------------------------------------
     ap_h = pd.read_sql(
         """
@@ -42,7 +46,10 @@ def main():
             voucher_no,
             invoice_no,
             vendor_no,
-            COALESCE(original_inv_date, post_date, invoice_date) AS invoice_date,
+
+            invoice_date,
+            transaction_date,
+
             invoice_amount,
             retainage_percent,
             retainage_amount,
@@ -50,7 +57,7 @@ def main():
         FROM dbo.ap_invoice_h
         WHERE invoice_amount IS NOT NULL
         """,
-        conn
+        conn,
     )
 
     # ------------------------------------------------------------
@@ -65,7 +72,7 @@ def main():
             account_no
         FROM dbo.ap_invoice_d
         """,
-        conn
+        conn,
     )
 
     df = ap_h.merge(ap_d, how="left", on="voucher_no")
@@ -75,30 +82,30 @@ def main():
     # ------------------------------------------------------------
     check_pmt = pd.read_sql(
         "SELECT voucher_no, cash_amount, void_flag FROM dbo.ap_check_vch",
-        conn
+        conn,
     )
 
     pmt = pd.read_sql(
         "SELECT voucher_no, cash_amount FROM dbo.ap_pmt_vch",
-        conn
+        conn,
     )
     pmt["void_flag"] = 0
 
     prepmt = pd.read_sql(
         "SELECT voucher_no, cash_amount FROM dbo.ap_pre_pmt_vch",
-        conn
+        conn,
     )
     prepmt["void_flag"] = 0
 
     precheck = pd.read_sql(
         "SELECT voucher_no, cash_amount FROM dbo.ap_pre_check_vch",
-        conn
+        conn,
     )
     precheck["void_flag"] = 0
 
     all_payments = pd.concat(
         [check_pmt, pmt, prepmt, precheck],
-        ignore_index=True
+        ignore_index=True,
     )
 
     df = df.merge(all_payments, how="left", on="voucher_no")
@@ -106,15 +113,22 @@ def main():
     # ------------------------------------------------------------
     # Normalize payment fields
     # ------------------------------------------------------------
-    df["cash_amount"] = pd.to_numeric(df["cash_amount"], errors="coerce").fillna(0.0)
-    df["void_flag"] = pd.to_numeric(df["void_flag"], errors="coerce").fillna(0).astype(int)
+    df["cash_amount"] = (
+        pd.to_numeric(df["cash_amount"], errors="coerce")
+        .fillna(0.0)
+    )
+    df["void_flag"] = (
+        pd.to_numeric(df["void_flag"], errors="coerce")
+        .fillna(0)
+        .astype(int)
+    )
 
     # ------------------------------------------------------------
     # VENDORS
     # ------------------------------------------------------------
     vendors = pd.read_sql(
         "SELECT vendor_no, name FROM dbo.vendors",
-        conn
+        conn,
     )
     vendors["vendor_no"] = normalize_text(vendors["vendor_no"])
     vendors["vendor_name"] = normalize_text(vendors["name"])
@@ -128,7 +142,7 @@ def main():
     # ------------------------------------------------------------
     jobs = pd.read_sql(
         "SELECT job_no, description, project_manager_no FROM dbo.jobs",
-        conn
+        conn,
     )
     jobs["job_no"] = normalize_text(jobs["job_no"])
     jobs["job_description"] = normalize_text(jobs["description"])
@@ -143,7 +157,7 @@ def main():
     # ------------------------------------------------------------
     pms = pd.read_sql(
         "SELECT project_manager_no, description FROM dbo.project_managers",
-        conn
+        conn,
     )
     pms["project_manager_no"] = normalize_text(pms["project_manager_no"])
     pms["project_manager_name"] = normalize_text(pms["description"])
@@ -158,6 +172,7 @@ def main():
         [
             "invoice_no",
             "invoice_date",
+            "transaction_date",  # <-- AP AGING DATE
             "invoice_amount",
             "vendor_name",
             "retainage_percent",
@@ -175,17 +190,30 @@ def main():
     # ------------------------------------------------------------
     final["invoice_no"] = normalize_text(final["invoice_no"])
     final["job_no"] = normalize_text(final["job_no"])
-    final["invoice_date"] = pd.to_datetime(final["invoice_date"], errors="coerce")
+
+    final["invoice_date"] = pd.to_datetime(
+        final["invoice_date"], errors="coerce"
+    )
+    final["transaction_date"] = pd.to_datetime(
+        final["transaction_date"], errors="coerce"
+    )
 
     MONEY_COLS = ["invoice_amount", "retainage_amount", "cash_amount"]
     for col in MONEY_COLS:
-        final[col] = pd.to_numeric(final[col], errors="coerce").round(2)
+        final[col] = (
+            pd.to_numeric(final[col], errors="coerce")
+            .round(2)
+        )
 
     # ------------------------------------------------------------
     # Write output
     # ------------------------------------------------------------
     final.to_csv(OUTFILE, index=False)
-    print(f"Wrote {OUTFILE} ({len(final)} rows, {len(final.columns)} columns)")
+    print(
+        f"Wrote {OUTFILE} "
+        f"({len(final)} rows, {len(final.columns)} columns)"
+    )
+
 
 if __name__ == "__main__":
     main()
