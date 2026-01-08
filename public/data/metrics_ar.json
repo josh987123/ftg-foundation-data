@@ -1,61 +1,5 @@
 [
   {
-    "invoice_no": 301,
-    "customer_name": "Dignity Health",
-    "project_manager": "Rodney Terra",
-    "job_no": 1084,
-    "job_description": "Med Gas Manifold Replacement",
-    "invoice_date": "2016-02-29",
-    "invoice_amount": 11984.41,
-    "collectible": 0.0,
-    "retainage": 0.01,
-    "total_due": 0.01,
-    "days_outstanding": 3600,
-    "aging_bucket": "90+"
-  },
-  {
-    "invoice_no": 772,
-    "customer_name": "Dignity Health",
-    "project_manager": "Rodney Terra",
-    "job_no": 1326,
-    "job_description": "IDF Upgrade Dominican Hospital",
-    "invoice_date": "2017-05-31",
-    "invoice_amount": 98013.22,
-    "collectible": 0.0,
-    "retainage": 0.03,
-    "total_due": 0.03,
-    "days_outstanding": 3143,
-    "aging_bucket": "90+"
-  },
-  {
-    "invoice_no": 1461,
-    "customer_name": "Dignity Health",
-    "project_manager": "Rodney Terra",
-    "job_no": 1496,
-    "job_description": "DH Lab Draw",
-    "invoice_date": "2018-10-29",
-    "invoice_amount": 19829.11,
-    "collectible": 0.0,
-    "retainage": 121.14,
-    "total_due": 121.14,
-    "days_outstanding": 2627,
-    "aging_bucket": "90+"
-  },
-  {
-    "invoice_no": 4413,
-    "customer_name": "Dignity Health",
-    "project_manager": "Rodney Terra",
-    "job_no": 1517,
-    "job_description": "DH Radiology Remodel - CT1&2",
-    "invoice_date": "2023-09-21",
-    "invoice_amount": 239614.54,
-    "collectible": 0.0,
-    "retainage": 1.11,
-    "total_due": 1.11,
-    "days_outstanding": 839,
-    "aging_bucket": "90+"
-  },
-  {
     "invoice_no": 4842,
     "customer_name": "Dignity Health",
     "project_manager": "Daniel Acosta",
@@ -63,10 +7,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2024-04-15",
     "invoice_amount": 86461.4,
-    "collectible": 0.0,
+    "collectible": 77815.26,
     "retainage": 8646.14,
-    "total_due": 8646.14,
-    "days_outstanding": 632,
+    "total_due": 86461.4,
+    "days_outstanding": 633,
     "aging_bucket": "90+"
   },
   {
@@ -77,10 +21,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2024-06-28",
     "invoice_amount": 1866982.91,
-    "collectible": 0.0,
+    "collectible": 1680284.62,
     "retainage": 186698.29,
-    "total_due": 186698.29,
-    "days_outstanding": 558,
+    "total_due": 1866982.91,
+    "days_outstanding": 559,
     "aging_bucket": "90+"
   },
   {
@@ -91,10 +35,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2024-08-20",
     "invoice_amount": 327063.16,
-    "collectible": 0.0,
+    "collectible": 294356.84,
     "retainage": 32706.32,
-    "total_due": 32706.32,
-    "days_outstanding": 505,
+    "total_due": 327063.16,
+    "days_outstanding": 506,
     "aging_bucket": "90+"
   },
   {
@@ -105,10 +49,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2024-09-19",
     "invoice_amount": 179736.22,
-    "collectible": 0.0,
+    "collectible": 161762.6,
     "retainage": 17973.62,
-    "total_due": 17973.62,
-    "days_outstanding": 475,
+    "total_due": 179736.22,
+    "days_outstanding": 476,
     "aging_bucket": "90+"
   },
   {
@@ -119,10 +63,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2024-10-14",
     "invoice_amount": 223907.78,
-    "collectible": 0.0,
+    "collectible": 201517.0,
     "retainage": 22390.78,
-    "total_due": 22390.78,
-    "days_outstanding": 450,
+    "total_due": 223907.78,
+    "days_outstanding": 451,
     "aging_bucket": "90+"
   },
   {
@@ -133,10 +77,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2024-11-15",
     "invoice_amount": 413971.9,
-    "collectible": 0.0,
+    "collectible": 372574.71,
     "retainage": 41397.19,
-    "total_due": 41397.19,
-    "days_outstanding": 418,
+    "total_due": 413971.9,
+    "days_outstanding": 419,
     "aging_bucket": "90+"
   },
   {
@@ -147,10 +91,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2024-12-17",
     "invoice_amount": 559206.69,
-    "collectible": 0.0,
+    "collectible": 503286.02,
     "retainage": 55920.67,
-    "total_due": 55920.67,
-    "days_outstanding": 386,
+    "total_due": 559206.69,
+    "days_outstanding": 387,
     "aging_bucket": "90+"
   },
   {
@@ -161,10 +105,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2025-01-13",
     "invoice_amount": 328450.86,
-    "collectible": 0.0,
+    "collectible": 295605.77,
     "retainage": 32845.09,
-    "total_due": 32845.09,
-    "days_outstanding": 359,
+    "total_due": 328450.86,
+    "days_outstanding": 360,
     "aging_bucket": "90+"
   },
   {
@@ -175,10 +119,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2025-02-12",
     "invoice_amount": 841555.33,
-    "collectible": 0.0,
+    "collectible": 757399.8,
     "retainage": 84155.53,
-    "total_due": 84155.53,
-    "days_outstanding": 329,
+    "total_due": 841555.33,
+    "days_outstanding": 330,
     "aging_bucket": "90+"
   },
   {
@@ -189,10 +133,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2025-03-12",
     "invoice_amount": 482534.27,
-    "collectible": 0.0,
+    "collectible": 434280.84,
     "retainage": 48253.43,
-    "total_due": 48253.43,
-    "days_outstanding": 301,
+    "total_due": 482534.27,
+    "days_outstanding": 302,
     "aging_bucket": "90+"
   },
   {
@@ -203,10 +147,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2025-03-31",
     "invoice_amount": 580718.61,
-    "collectible": 0.0,
+    "collectible": 522646.75,
     "retainage": 58071.86,
-    "total_due": 58071.86,
-    "days_outstanding": 282,
+    "total_due": 580718.61,
+    "days_outstanding": 283,
     "aging_bucket": "90+"
   },
   {
@@ -217,10 +161,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2025-04-24",
     "invoice_amount": 835457.0,
-    "collectible": 0.0,
+    "collectible": 751911.3,
     "retainage": 83545.7,
-    "total_due": 83545.7,
-    "days_outstanding": 258,
+    "total_due": 835457.0,
+    "days_outstanding": 259,
     "aging_bucket": "90+"
   },
   {
@@ -231,10 +175,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2025-05-27",
     "invoice_amount": 844937.44,
-    "collectible": 0.0,
+    "collectible": 760443.7,
     "retainage": 84493.74,
-    "total_due": 84493.74,
-    "days_outstanding": 225,
+    "total_due": 844937.44,
+    "days_outstanding": 226,
     "aging_bucket": "90+"
   },
   {
@@ -245,10 +189,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2025-06-20",
     "invoice_amount": 592101.58,
-    "collectible": 0.0,
+    "collectible": 532891.42,
     "retainage": 59210.16,
-    "total_due": 59210.16,
-    "days_outstanding": 201,
+    "total_due": 592101.58,
+    "days_outstanding": 202,
     "aging_bucket": "90+"
   },
   {
@@ -259,10 +203,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2025-07-25",
     "invoice_amount": 940432.92,
-    "collectible": 0.0,
+    "collectible": 846389.63,
     "retainage": 94043.29,
-    "total_due": 94043.29,
-    "days_outstanding": 166,
+    "total_due": 940432.92,
+    "days_outstanding": 167,
     "aging_bucket": "90+"
   },
   {
@@ -273,10 +217,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2025-08-28",
     "invoice_amount": 360711.17,
-    "collectible": 0.0,
+    "collectible": 324640.05,
     "retainage": 36071.12,
-    "total_due": 36071.12,
-    "days_outstanding": 132,
+    "total_due": 360711.17,
+    "days_outstanding": 133,
     "aging_bucket": "90+"
   },
   {
@@ -287,10 +231,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2025-09-28",
     "invoice_amount": 416693.56,
-    "collectible": 0.0,
+    "collectible": 375024.2,
     "retainage": 41669.36,
-    "total_due": 41669.36,
-    "days_outstanding": 101,
+    "total_due": 416693.56,
+    "days_outstanding": 102,
     "aging_bucket": "90+"
   },
   {
@@ -301,10 +245,10 @@
     "job_description": "SJMC IT Infrastructure Refresh",
     "invoice_date": "2025-10-24",
     "invoice_amount": 416923.06,
-    "collectible": 0.0,
+    "collectible": 375230.75,
     "retainage": 41692.31,
-    "total_due": 41692.31,
-    "days_outstanding": 75,
+    "total_due": 416923.06,
+    "days_outstanding": 76,
     "aging_bucket": "61-90"
   },
   {
@@ -318,7 +262,7 @@
     "collectible": 380320.7,
     "retainage": 42257.86,
     "total_due": 422578.56,
-    "days_outstanding": 43,
+    "days_outstanding": 44,
     "aging_bucket": "31-60"
   },
   {
@@ -332,7 +276,7 @@
     "collectible": 384320.4,
     "retainage": 42702.27,
     "total_due": 427022.67,
-    "days_outstanding": 15,
+    "days_outstanding": 16,
     "aging_bucket": "0-30"
   },
   {
@@ -346,7 +290,7 @@
     "collectible": 93607.2,
     "retainage": 0.0,
     "total_due": 93607.2,
-    "days_outstanding": 63,
+    "days_outstanding": 64,
     "aging_bucket": "61-90"
   },
   {
@@ -360,7 +304,7 @@
     "collectible": 74382.46,
     "retainage": 0.0,
     "total_due": 74382.46,
-    "days_outstanding": 63,
+    "days_outstanding": 64,
     "aging_bucket": "61-90"
   },
   {
@@ -374,7 +318,7 @@
     "collectible": 4097.9,
     "retainage": 0.0,
     "total_due": 4097.9,
-    "days_outstanding": 7,
+    "days_outstanding": 8,
     "aging_bucket": "0-30"
   },
   {
@@ -385,10 +329,10 @@
     "job_description": "Dignity CRMC IT Refresh",
     "invoice_date": "2024-07-18",
     "invoice_amount": 343851.3,
-    "collectible": 0.02,
+    "collectible": 343851.3,
     "retainage": 0.0,
-    "total_due": 0.02,
-    "days_outstanding": 538,
+    "total_due": 343851.3,
+    "days_outstanding": 539,
     "aging_bucket": "90+"
   },
   {
@@ -399,10 +343,10 @@
     "job_description": "DH PBX Relocation & New Comp",
     "invoice_date": "2025-06-11",
     "invoice_amount": 376851.44,
-    "collectible": 0.0,
+    "collectible": 339166.3,
     "retainage": 37685.14,
-    "total_due": 37685.14,
-    "days_outstanding": 210,
+    "total_due": 376851.44,
+    "days_outstanding": 211,
     "aging_bucket": "90+"
   },
   {
@@ -416,7 +360,7 @@
     "collectible": 267339.6,
     "retainage": 0.0,
     "total_due": 267339.6,
-    "days_outstanding": 224,
+    "days_outstanding": 225,
     "aging_bucket": "90+"
   },
   {
@@ -427,10 +371,10 @@
     "job_description": "Dignity Woodland Memorial Hosp",
     "invoice_date": "2025-05-28",
     "invoice_amount": 190053.6,
-    "collectible": 0.0,
+    "collectible": 171048.24,
     "retainage": 19005.36,
-    "total_due": 19005.36,
-    "days_outstanding": 224,
+    "total_due": 190053.6,
+    "days_outstanding": 225,
     "aging_bucket": "90+"
   },
   {
@@ -441,10 +385,10 @@
     "job_description": "Dignity Woodland Memorial Hosp",
     "invoice_date": "2025-06-20",
     "invoice_amount": 126702.4,
-    "collectible": 0.0,
+    "collectible": 114032.16,
     "retainage": 12670.24,
-    "total_due": 12670.24,
-    "days_outstanding": 201,
+    "total_due": 126702.4,
+    "days_outstanding": 202,
     "aging_bucket": "90+"
   },
   {
@@ -455,10 +399,10 @@
     "job_description": "Dignity Woodland Memorial Hosp",
     "invoice_date": "2025-07-25",
     "invoice_amount": 21158.0,
-    "collectible": 0.0,
+    "collectible": 19042.2,
     "retainage": 2115.8,
-    "total_due": 2115.8,
-    "days_outstanding": 166,
+    "total_due": 21158.0,
+    "days_outstanding": 167,
     "aging_bucket": "90+"
   },
   {
@@ -469,10 +413,10 @@
     "job_description": "Dignity Woodland Memorial Hosp",
     "invoice_date": "2025-09-30",
     "invoice_amount": 20000.0,
-    "collectible": 0.0,
+    "collectible": 18000.0,
     "retainage": 2000.0,
-    "total_due": 2000.0,
-    "days_outstanding": 99,
+    "total_due": 20000.0,
+    "days_outstanding": 100,
     "aging_bucket": "90+"
   },
   {
@@ -483,10 +427,10 @@
     "job_description": "Dignity Woodland Memorial Hosp",
     "invoice_date": "2025-10-24",
     "invoice_amount": 20000.0,
-    "collectible": 0.0,
+    "collectible": 18000.0,
     "retainage": 2000.0,
-    "total_due": 2000.0,
-    "days_outstanding": 75,
+    "total_due": 20000.0,
+    "days_outstanding": 76,
     "aging_bucket": "61-90"
   },
   {
@@ -497,10 +441,10 @@
     "job_description": "Dignity Woodland Memorial Hosp",
     "invoice_date": "2025-11-21",
     "invoice_amount": 20000.0,
-    "collectible": 0.0,
+    "collectible": 18000.0,
     "retainage": 2000.0,
-    "total_due": 2000.0,
-    "days_outstanding": 47,
+    "total_due": 20000.0,
+    "days_outstanding": 48,
     "aging_bucket": "31-60"
   },
   {
@@ -514,7 +458,7 @@
     "collectible": 18000.0,
     "retainage": 2000.0,
     "total_due": 20000.0,
-    "days_outstanding": 15,
+    "days_outstanding": 16,
     "aging_bucket": "0-30"
   },
   {
@@ -525,10 +469,10 @@
     "job_description": "DH FA Area Detection Part B",
     "invoice_date": "2025-06-11",
     "invoice_amount": 297900.32,
-    "collectible": 0.0,
+    "collectible": 268110.29,
     "retainage": 29790.03,
-    "total_due": 29790.03,
-    "days_outstanding": 210,
+    "total_due": 297900.32,
+    "days_outstanding": 211,
     "aging_bucket": "90+"
   },
   {
@@ -539,10 +483,10 @@
     "job_description": "DH FA Area Detection Part B",
     "invoice_date": "2025-08-29",
     "invoice_amount": 702025.57,
-    "collectible": 0.0,
+    "collectible": 631823.01,
     "retainage": 70202.56,
-    "total_due": 70202.56,
-    "days_outstanding": 131,
+    "total_due": 702025.57,
+    "days_outstanding": 132,
     "aging_bucket": "90+"
   },
   {
@@ -553,10 +497,10 @@
     "job_description": "DH FA Area Detection Part B",
     "invoice_date": "2025-11-04",
     "invoice_amount": 231495.15,
-    "collectible": 0.0,
+    "collectible": 208345.63,
     "retainage": 23149.52,
-    "total_due": 23149.52,
-    "days_outstanding": 64,
+    "total_due": 231495.15,
+    "days_outstanding": 65,
     "aging_bucket": "61-90"
   },
   {
@@ -570,7 +514,7 @@
     "collectible": 125213.99,
     "retainage": 13912.67,
     "total_due": 139126.66,
-    "days_outstanding": 12,
+    "days_outstanding": 13,
     "aging_bucket": "0-30"
   },
   {
@@ -581,10 +525,10 @@
     "job_description": "DH Gen 3 Replacement",
     "invoice_date": "2025-12-11",
     "invoice_amount": 72771.2,
-    "collectible": 0.0,
+    "collectible": 65494.08,
     "retainage": 7277.12,
-    "total_due": 7277.12,
-    "days_outstanding": 27,
+    "total_due": 72771.2,
+    "days_outstanding": 28,
     "aging_bucket": "0-30"
   },
   {
@@ -598,7 +542,7 @@
     "collectible": 60907.95,
     "retainage": 6767.55,
     "total_due": 67675.5,
-    "days_outstanding": 27,
+    "days_outstanding": 28,
     "aging_bucket": "0-30"
   },
   {
@@ -612,7 +556,7 @@
     "collectible": 26583.06,
     "retainage": 2953.67,
     "total_due": 29536.73,
-    "days_outstanding": 7,
+    "days_outstanding": 8,
     "aging_bucket": "0-30"
   },
   {
@@ -623,10 +567,10 @@
     "job_description": "SJMC IT Refresh Fiber to Exter",
     "invoice_date": "2025-06-20",
     "invoice_amount": 1000000.0,
-    "collectible": 0.0,
+    "collectible": 900000.0,
     "retainage": 100000.0,
-    "total_due": 100000.0,
-    "days_outstanding": 201,
+    "total_due": 1000000.0,
+    "days_outstanding": 202,
     "aging_bucket": "90+"
   },
   {
@@ -637,10 +581,10 @@
     "job_description": "SJMC IT Refresh Fiber to Exter",
     "invoice_date": "2025-07-25",
     "invoice_amount": 750000.0,
-    "collectible": 0.01,
+    "collectible": 675000.0,
     "retainage": 75000.0,
-    "total_due": 75000.01,
-    "days_outstanding": 166,
+    "total_due": 750000.0,
+    "days_outstanding": 167,
     "aging_bucket": "90+"
   },
   {
@@ -651,10 +595,10 @@
     "job_description": "SJMC O.B. Power + Wireless",
     "invoice_date": "2025-04-28",
     "invoice_amount": 104011.54,
-    "collectible": 0.0,
+    "collectible": 93610.39,
     "retainage": 10401.15,
-    "total_due": 10401.15,
-    "days_outstanding": 254,
+    "total_due": 104011.54,
+    "days_outstanding": 255,
     "aging_bucket": "90+"
   },
   {
@@ -665,10 +609,10 @@
     "job_description": "SJMC O.B. Power + Wireless",
     "invoice_date": "2025-05-28",
     "invoice_amount": 128675.57,
-    "collectible": 0.0,
+    "collectible": 115808.01,
     "retainage": 12867.56,
-    "total_due": 12867.56,
-    "days_outstanding": 224,
+    "total_due": 128675.57,
+    "days_outstanding": 225,
     "aging_bucket": "90+"
   },
   {
@@ -679,10 +623,10 @@
     "job_description": "SJMC O.B. Power + Wireless",
     "invoice_date": "2025-06-20",
     "invoice_amount": 121702.89,
-    "collectible": 0.0,
+    "collectible": 109532.6,
     "retainage": 12170.29,
-    "total_due": 12170.29,
-    "days_outstanding": 201,
+    "total_due": 121702.89,
+    "days_outstanding": 202,
     "aging_bucket": "90+"
   },
   {
@@ -693,10 +637,10 @@
     "job_description": "SJMC O.B. Power + Wireless",
     "invoice_date": "2025-07-25",
     "invoice_amount": 103715.0,
-    "collectible": 0.0,
+    "collectible": 93343.5,
     "retainage": 10371.5,
-    "total_due": 10371.5,
-    "days_outstanding": 166,
+    "total_due": 103715.0,
+    "days_outstanding": 167,
     "aging_bucket": "90+"
   },
   {
@@ -710,36 +654,8 @@
     "collectible": 1908.0,
     "retainage": 0.0,
     "total_due": 1908.0,
-    "days_outstanding": 8,
+    "days_outstanding": 9,
     "aging_bucket": "0-30"
-  },
-  {
-    "invoice_no": 946,
-    "customer_name": "El Camino Hospital",
-    "project_manager": "Pedro Becerra",
-    "job_no": 1372,
-    "job_description": "ECH New Main Lab Upgrades",
-    "invoice_date": "2017-10-01",
-    "invoice_amount": 145149.8,
-    "collectible": 0.0,
-    "retainage": 38.42,
-    "total_due": 38.42,
-    "days_outstanding": 3020,
-    "aging_bucket": "90+"
-  },
-  {
-    "invoice_no": 3981,
-    "customer_name": "El Camino Hospital",
-    "project_manager": "Doris Quai Hoi",
-    "job_no": 3000,
-    "job_description": "ECHLG OR SPD",
-    "invoice_date": "2023-03-09",
-    "invoice_amount": 26642.58,
-    "collectible": 0.0,
-    "retainage": 1540.0,
-    "total_due": 1540.0,
-    "days_outstanding": 1035,
-    "aging_bucket": "90+"
   },
   {
     "invoice_no": 3890,
@@ -749,10 +665,10 @@
     "job_description": "ECHLG OR Lockers",
     "invoice_date": "2023-01-05",
     "invoice_amount": 6977.0,
-    "collectible": 0.0,
+    "collectible": 6279.3,
     "retainage": 697.7,
-    "total_due": 697.7,
-    "days_outstanding": 1098,
+    "total_due": 6977.0,
+    "days_outstanding": 1099,
     "aging_bucket": "90+"
   },
   {
@@ -766,7 +682,7 @@
     "collectible": 7216.0,
     "retainage": 0.0,
     "total_due": 7216.0,
-    "days_outstanding": 12,
+    "days_outstanding": 13,
     "aging_bucket": "0-30"
   },
   {
@@ -780,8 +696,8 @@
     "collectible": 44134.0,
     "retainage": 0.0,
     "total_due": 44134.0,
-    "days_outstanding": 30,
-    "aging_bucket": "0-30"
+    "days_outstanding": 31,
+    "aging_bucket": "31-60"
   },
   {
     "invoice_no": 6488,
@@ -794,7 +710,7 @@
     "collectible": 16770.0,
     "retainage": 0.0,
     "total_due": 16770.0,
-    "days_outstanding": 9,
+    "days_outstanding": 10,
     "aging_bucket": "0-30"
   },
   {
@@ -808,7 +724,7 @@
     "collectible": 9904.0,
     "retainage": 0.0,
     "total_due": 9904.0,
-    "days_outstanding": 8,
+    "days_outstanding": 9,
     "aging_bucket": "0-30"
   },
   {
@@ -822,7 +738,7 @@
     "collectible": 680.0,
     "retainage": 0.0,
     "total_due": 680.0,
-    "days_outstanding": 0,
+    "days_outstanding": 1,
     "aging_bucket": "0-30"
   },
   {
@@ -836,7 +752,7 @@
     "collectible": 11227.0,
     "retainage": 0.0,
     "total_due": 11227.0,
-    "days_outstanding": 8,
+    "days_outstanding": 9,
     "aging_bucket": "0-30"
   },
   {
@@ -850,7 +766,7 @@
     "collectible": 9735.0,
     "retainage": 0.0,
     "total_due": 9735.0,
-    "days_outstanding": 16,
+    "days_outstanding": 17,
     "aging_bucket": "0-30"
   },
   {
@@ -864,7 +780,7 @@
     "collectible": 5157.0,
     "retainage": 0.0,
     "total_due": 5157.0,
-    "days_outstanding": 9,
+    "days_outstanding": 10,
     "aging_bucket": "0-30"
   },
   {
@@ -878,7 +794,7 @@
     "collectible": 680.0,
     "retainage": 0.0,
     "total_due": 680.0,
-    "days_outstanding": 0,
+    "days_outstanding": 1,
     "aging_bucket": "0-30"
   },
   {
@@ -892,7 +808,7 @@
     "collectible": 515.0,
     "retainage": 0.0,
     "total_due": 515.0,
-    "days_outstanding": 0,
+    "days_outstanding": 1,
     "aging_bucket": "0-30"
   },
   {
@@ -903,10 +819,10 @@
     "job_description": "GSH MBU Suites Project",
     "invoice_date": "2024-10-02",
     "invoice_amount": 98792.4,
-    "collectible": 0.0,
+    "collectible": 93852.78,
     "retainage": 4939.62,
-    "total_due": 4939.62,
-    "days_outstanding": 462,
+    "total_due": 98792.4,
+    "days_outstanding": 463,
     "aging_bucket": "90+"
   },
   {
@@ -917,10 +833,10 @@
     "job_description": "GSH MBU Suites Project",
     "invoice_date": "2024-11-14",
     "invoice_amount": 16743.97,
-    "collectible": 0.0,
+    "collectible": 15906.77,
     "retainage": 837.2,
-    "total_due": 837.2,
-    "days_outstanding": 419,
+    "total_due": 16743.97,
+    "days_outstanding": 420,
     "aging_bucket": "90+"
   },
   {
@@ -934,22 +850,8 @@
     "collectible": 3506.0,
     "retainage": 0.0,
     "total_due": 3506.0,
-    "days_outstanding": 9,
+    "days_outstanding": 10,
     "aging_bucket": "0-30"
-  },
-  {
-    "invoice_no": 3487,
-    "customer_name": "Lucile Packard Childrens' Hosp",
-    "project_manager": "Kathy Roth",
-    "job_no": 3314,
-    "job_description": "LPCH 1307 EVS Lockers D/B",
-    "invoice_date": "2022-06-24",
-    "invoice_amount": 5212.0,
-    "collectible": 0.0,
-    "retainage": 1.0,
-    "total_due": 1.0,
-    "days_outstanding": 1293,
-    "aging_bucket": "90+"
   },
   {
     "invoice_no": 4803,
@@ -959,10 +861,10 @@
     "job_description": "LPCH West Fire Pump Replacemen",
     "invoice_date": "2024-03-28",
     "invoice_amount": 7264.85,
-    "collectible": 0.0,
+    "collectible": 6538.36,
     "retainage": 726.49,
-    "total_due": 726.49,
-    "days_outstanding": 650,
+    "total_due": 7264.85,
+    "days_outstanding": 651,
     "aging_bucket": "90+"
   },
   {
@@ -973,10 +875,10 @@
     "job_description": "LPCH West Fire Pump Replacemen",
     "invoice_date": "2024-04-23",
     "invoice_amount": 8070.59,
-    "collectible": 0.0,
+    "collectible": 7263.53,
     "retainage": 807.06,
-    "total_due": 807.06,
-    "days_outstanding": 624,
+    "total_due": 8070.59,
+    "days_outstanding": 625,
     "aging_bucket": "90+"
   },
   {
@@ -987,10 +889,10 @@
     "job_description": "LPCH West Fire Pump Replacemen",
     "invoice_date": "2024-07-29",
     "invoice_amount": 31368.66,
-    "collectible": 0.0,
+    "collectible": 28231.79,
     "retainage": 3136.87,
-    "total_due": 3136.87,
-    "days_outstanding": 527,
+    "total_due": 31368.66,
+    "days_outstanding": 528,
     "aging_bucket": "90+"
   },
   {
@@ -1001,10 +903,10 @@
     "job_description": "LPCH West Fire Pump Replacemen",
     "invoice_date": "2024-10-28",
     "invoice_amount": 10066.8,
-    "collectible": 0.0,
+    "collectible": 9060.12,
     "retainage": 1006.68,
-    "total_due": 1006.68,
-    "days_outstanding": 436,
+    "total_due": 10066.8,
+    "days_outstanding": 437,
     "aging_bucket": "90+"
   },
   {
@@ -1015,10 +917,10 @@
     "job_description": "LPCH West Fire Pump Replacemen",
     "invoice_date": "2024-12-27",
     "invoice_amount": 32063.85,
-    "collectible": 0.0,
+    "collectible": 28857.46,
     "retainage": 3206.39,
-    "total_due": 3206.39,
-    "days_outstanding": 376,
+    "total_due": 32063.85,
+    "days_outstanding": 377,
     "aging_bucket": "90+"
   },
   {
@@ -1029,10 +931,10 @@
     "job_description": "LPCH West Fire Pump Replacemen",
     "invoice_date": "2025-01-29",
     "invoice_amount": 124976.5,
-    "collectible": 0.0,
+    "collectible": 112478.85,
     "retainage": 12497.65,
-    "total_due": 12497.65,
-    "days_outstanding": 343,
+    "total_due": 124976.5,
+    "days_outstanding": 344,
     "aging_bucket": "90+"
   },
   {
@@ -1043,10 +945,10 @@
     "job_description": "LPCH West Fire Pump Replacemen",
     "invoice_date": "2025-02-26",
     "invoice_amount": 16047.3,
-    "collectible": 0.0,
+    "collectible": 14442.57,
     "retainage": 1604.73,
-    "total_due": 1604.73,
-    "days_outstanding": 315,
+    "total_due": 16047.3,
+    "days_outstanding": 316,
     "aging_bucket": "90+"
   },
   {
@@ -1057,10 +959,10 @@
     "job_description": "LPCH West Fire Pump Replacemen",
     "invoice_date": "2025-03-25",
     "invoice_amount": 11179.3,
-    "collectible": 0.0,
+    "collectible": 10061.37,
     "retainage": 1117.93,
-    "total_due": 1117.93,
-    "days_outstanding": 288,
+    "total_due": 11179.3,
+    "days_outstanding": 289,
     "aging_bucket": "90+"
   },
   {
@@ -1071,10 +973,10 @@
     "job_description": "LPCH West Fire Pump Replacemen",
     "invoice_date": "2025-04-28",
     "invoice_amount": 4856.0,
-    "collectible": 0.0,
+    "collectible": 4370.4,
     "retainage": 485.6,
-    "total_due": 485.6,
-    "days_outstanding": 254,
+    "total_due": 4856.0,
+    "days_outstanding": 255,
     "aging_bucket": "90+"
   },
   {
@@ -1085,10 +987,10 @@
     "job_description": "LPCH West Fire Pump Replacemen",
     "invoice_date": "2025-06-25",
     "invoice_amount": 202167.5,
-    "collectible": 0.0,
+    "collectible": 181950.75,
     "retainage": 20216.75,
-    "total_due": 20216.75,
-    "days_outstanding": 196,
+    "total_due": 202167.5,
+    "days_outstanding": 197,
     "aging_bucket": "90+"
   },
   {
@@ -1099,10 +1001,10 @@
     "job_description": "LPCH West Fire Pump Replacemen",
     "invoice_date": "2025-07-11",
     "invoice_amount": 71258.45,
-    "collectible": 0.0,
+    "collectible": 64132.6,
     "retainage": 7125.85,
-    "total_due": 7125.85,
-    "days_outstanding": 180,
+    "total_due": 71258.45,
+    "days_outstanding": 181,
     "aging_bucket": "90+"
   },
   {
@@ -1113,10 +1015,10 @@
     "job_description": "LPCH West Fire Pump Replacemen",
     "invoice_date": "2025-09-30",
     "invoice_amount": 17175.55,
-    "collectible": 0.0,
+    "collectible": 15457.99,
     "retainage": 1717.56,
-    "total_due": 1717.56,
-    "days_outstanding": 99,
+    "total_due": 17175.55,
+    "days_outstanding": 100,
     "aging_bucket": "90+"
   },
   {
@@ -1130,7 +1032,7 @@
     "collectible": 20432.62,
     "retainage": 2270.29,
     "total_due": 22702.91,
-    "days_outstanding": 9,
+    "days_outstanding": 10,
     "aging_bucket": "0-30"
   },
   {
@@ -1144,7 +1046,7 @@
     "collectible": 11549.98,
     "retainage": 0.0,
     "total_due": 11549.98,
-    "days_outstanding": 180,
+    "days_outstanding": 181,
     "aging_bucket": "90+"
   },
   {
@@ -1158,7 +1060,7 @@
     "collectible": 43136.68,
     "retainage": 0.0,
     "total_due": 43136.68,
-    "days_outstanding": 9,
+    "days_outstanding": 10,
     "aging_bucket": "0-30"
   },
   {
@@ -1172,7 +1074,7 @@
     "collectible": 7223.0,
     "retainage": 0.0,
     "total_due": 7223.0,
-    "days_outstanding": 9,
+    "days_outstanding": 10,
     "aging_bucket": "0-30"
   },
   {
@@ -1186,7 +1088,7 @@
     "collectible": 9980.06,
     "retainage": 1108.9,
     "total_due": 11088.96,
-    "days_outstanding": 9,
+    "days_outstanding": 10,
     "aging_bucket": "0-30"
   },
   {
@@ -1200,7 +1102,7 @@
     "collectible": 31902.22,
     "retainage": 0.0,
     "total_due": 31902.22,
-    "days_outstanding": 44,
+    "days_outstanding": 45,
     "aging_bucket": "31-60"
   },
   {
@@ -1214,7 +1116,7 @@
     "collectible": 10758.37,
     "retainage": 0.0,
     "total_due": 10758.37,
-    "days_outstanding": 9,
+    "days_outstanding": 10,
     "aging_bucket": "0-30"
   },
   {
@@ -1228,7 +1130,7 @@
     "collectible": 35630.7,
     "retainage": 0.0,
     "total_due": 35630.7,
-    "days_outstanding": 44,
+    "days_outstanding": 45,
     "aging_bucket": "31-60"
   },
   {
@@ -1242,7 +1144,7 @@
     "collectible": 14467.06,
     "retainage": 0.0,
     "total_due": 14467.06,
-    "days_outstanding": 8,
+    "days_outstanding": 9,
     "aging_bucket": "0-30"
   },
   {
@@ -1256,7 +1158,7 @@
     "collectible": 37976.8,
     "retainage": 4219.64,
     "total_due": 42196.44,
-    "days_outstanding": 8,
+    "days_outstanding": 9,
     "aging_bucket": "0-30"
   },
   {
@@ -1270,7 +1172,7 @@
     "collectible": 10000.0,
     "retainage": 0.0,
     "total_due": 10000.0,
-    "days_outstanding": 0,
+    "days_outstanding": 1,
     "aging_bucket": "0-30"
   },
   {
@@ -1284,7 +1186,7 @@
     "collectible": 25093.48,
     "retainage": 0.0,
     "total_due": 25093.48,
-    "days_outstanding": 7,
+    "days_outstanding": 8,
     "aging_bucket": "0-30"
   },
   {
@@ -1295,10 +1197,10 @@
     "job_description": "MMH ED & Radiology Remodel",
     "invoice_date": "2023-09-20",
     "invoice_amount": 426775.0,
-    "collectible": 0.0,
+    "collectible": 384097.5,
     "retainage": 42677.5,
-    "total_due": 42677.5,
-    "days_outstanding": 840,
+    "total_due": 426775.0,
+    "days_outstanding": 841,
     "aging_bucket": "90+"
   },
   {
@@ -1309,10 +1211,10 @@
     "job_description": "MMH ED & Radiology Remodel",
     "invoice_date": "2024-02-13",
     "invoice_amount": 513030.0,
-    "collectible": 0.0,
+    "collectible": 461727.0,
     "retainage": 51303.0,
-    "total_due": 51303.0,
-    "days_outstanding": 694,
+    "total_due": 513030.0,
+    "days_outstanding": 695,
     "aging_bucket": "90+"
   },
   {
@@ -1323,10 +1225,10 @@
     "job_description": "MMH ED & Radiology Remodel",
     "invoice_date": "2024-06-07",
     "invoice_amount": 570164.0,
-    "collectible": 0.0,
+    "collectible": 513147.6,
     "retainage": 57016.4,
-    "total_due": 57016.4,
-    "days_outstanding": 579,
+    "total_due": 570164.0,
+    "days_outstanding": 580,
     "aging_bucket": "90+"
   },
   {
@@ -1337,10 +1239,10 @@
     "job_description": "MMH ED & Radiology Remodel",
     "invoice_date": "2024-08-09",
     "invoice_amount": 553871.0,
-    "collectible": 0.0,
+    "collectible": 498483.9,
     "retainage": 55387.1,
-    "total_due": 55387.1,
-    "days_outstanding": 516,
+    "total_due": 553871.0,
+    "days_outstanding": 517,
     "aging_bucket": "90+"
   },
   {
@@ -1351,10 +1253,10 @@
     "job_description": "MMH ED & Radiology Remodel",
     "invoice_date": "2025-04-07",
     "invoice_amount": 433484.0,
-    "collectible": 0.0,
+    "collectible": 390135.6,
     "retainage": 43348.4,
-    "total_due": 43348.4,
-    "days_outstanding": 275,
+    "total_due": 433484.0,
+    "days_outstanding": 276,
     "aging_bucket": "90+"
   },
   {
@@ -1368,7 +1270,7 @@
     "collectible": 437499.9,
     "retainage": 48611.1,
     "total_due": 486111.0,
-    "days_outstanding": 12,
+    "days_outstanding": 13,
     "aging_bucket": "0-30"
   },
   {
@@ -1382,7 +1284,7 @@
     "collectible": 48437.19,
     "retainage": 0.0,
     "total_due": 48437.19,
-    "days_outstanding": 12,
+    "days_outstanding": 13,
     "aging_bucket": "0-30"
   },
   {
@@ -1396,7 +1298,7 @@
     "collectible": 112571.67,
     "retainage": 0.0,
     "total_due": 112571.67,
-    "days_outstanding": 12,
+    "days_outstanding": 13,
     "aging_bucket": "0-30"
   },
   {
@@ -1410,7 +1312,7 @@
     "collectible": 128135.75,
     "retainage": 0.0,
     "total_due": 128135.75,
-    "days_outstanding": 12,
+    "days_outstanding": 13,
     "aging_bucket": "0-30"
   },
   {
@@ -1424,7 +1326,7 @@
     "collectible": 196512.06,
     "retainage": 0.0,
     "total_due": 196512.06,
-    "days_outstanding": 12,
+    "days_outstanding": 13,
     "aging_bucket": "0-30"
   },
   {
@@ -1438,7 +1340,7 @@
     "collectible": 15987.16,
     "retainage": 0.0,
     "total_due": 15987.16,
-    "days_outstanding": 12,
+    "days_outstanding": 13,
     "aging_bucket": "0-30"
   },
   {
@@ -1449,10 +1351,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2022-06-28",
     "invoice_amount": 2649.7,
-    "collectible": 0.0,
+    "collectible": 2517.21,
     "retainage": 132.49,
-    "total_due": 132.49,
-    "days_outstanding": 1289,
+    "total_due": 2649.7,
+    "days_outstanding": 1290,
     "aging_bucket": "90+"
   },
   {
@@ -1463,10 +1365,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2022-08-08",
     "invoice_amount": 3129.18,
-    "collectible": 0.0,
+    "collectible": 2972.72,
     "retainage": 156.46,
-    "total_due": 156.46,
-    "days_outstanding": 1248,
+    "total_due": 3129.18,
+    "days_outstanding": 1249,
     "aging_bucket": "90+"
   },
   {
@@ -1477,10 +1379,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2022-08-26",
     "invoice_amount": 50245.99,
-    "collectible": 0.0,
+    "collectible": 47733.69,
     "retainage": 2512.3,
-    "total_due": 2512.3,
-    "days_outstanding": 1230,
+    "total_due": 50245.99,
+    "days_outstanding": 1231,
     "aging_bucket": "90+"
   },
   {
@@ -1491,10 +1393,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2022-10-04",
     "invoice_amount": 18861.54,
-    "collectible": 0.0,
+    "collectible": 17918.46,
     "retainage": 943.08,
-    "total_due": 943.08,
-    "days_outstanding": 1191,
+    "total_due": 18861.54,
+    "days_outstanding": 1192,
     "aging_bucket": "90+"
   },
   {
@@ -1505,10 +1407,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2022-10-26",
     "invoice_amount": 7413.87,
-    "collectible": 0.0,
+    "collectible": 7043.18,
     "retainage": 370.69,
-    "total_due": 370.69,
-    "days_outstanding": 1169,
+    "total_due": 7413.87,
+    "days_outstanding": 1170,
     "aging_bucket": "90+"
   },
   {
@@ -1519,10 +1421,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2022-12-01",
     "invoice_amount": 2412.8,
-    "collectible": 0.0,
+    "collectible": 2292.16,
     "retainage": 120.64,
-    "total_due": 120.64,
-    "days_outstanding": 1133,
+    "total_due": 2412.8,
+    "days_outstanding": 1134,
     "aging_bucket": "90+"
   },
   {
@@ -1533,10 +1435,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2022-12-28",
     "invoice_amount": 15468.4,
-    "collectible": 0.0,
+    "collectible": 14694.98,
     "retainage": 773.42,
-    "total_due": 773.42,
-    "days_outstanding": 1106,
+    "total_due": 15468.4,
+    "days_outstanding": 1107,
     "aging_bucket": "90+"
   },
   {
@@ -1547,10 +1449,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2023-03-02",
     "invoice_amount": 8717.0,
-    "collectible": 0.0,
+    "collectible": 8281.15,
     "retainage": 435.85,
-    "total_due": 435.85,
-    "days_outstanding": 1042,
+    "total_due": 8717.0,
+    "days_outstanding": 1043,
     "aging_bucket": "90+"
   },
   {
@@ -1561,10 +1463,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2023-05-17",
     "invoice_amount": 44270.97,
-    "collectible": 0.0,
+    "collectible": 42057.42,
     "retainage": 2213.55,
-    "total_due": 2213.55,
-    "days_outstanding": 966,
+    "total_due": 44270.97,
+    "days_outstanding": 967,
     "aging_bucket": "90+"
   },
   {
@@ -1575,10 +1477,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2023-11-14",
     "invoice_amount": 5149.41,
-    "collectible": 0.0,
+    "collectible": 4891.94,
     "retainage": 257.47,
-    "total_due": 257.47,
-    "days_outstanding": 785,
+    "total_due": 5149.41,
+    "days_outstanding": 786,
     "aging_bucket": "90+"
   },
   {
@@ -1589,10 +1491,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2023-12-17",
     "invoice_amount": 2968.5,
-    "collectible": 0.0,
+    "collectible": 2820.07,
     "retainage": 148.43,
-    "total_due": 148.43,
-    "days_outstanding": 752,
+    "total_due": 2968.5,
+    "days_outstanding": 753,
     "aging_bucket": "90+"
   },
   {
@@ -1603,10 +1505,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2024-03-05",
     "invoice_amount": 29140.85,
-    "collectible": 0.0,
+    "collectible": 27683.81,
     "retainage": 1457.04,
-    "total_due": 1457.04,
-    "days_outstanding": 673,
+    "total_due": 29140.85,
+    "days_outstanding": 674,
     "aging_bucket": "90+"
   },
   {
@@ -1617,10 +1519,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2024-04-15",
     "invoice_amount": 18861.55,
-    "collectible": 0.0,
+    "collectible": 17918.47,
     "retainage": 943.08,
-    "total_due": 943.08,
-    "days_outstanding": 632,
+    "total_due": 18861.55,
+    "days_outstanding": 633,
     "aging_bucket": "90+"
   },
   {
@@ -1631,10 +1533,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2024-05-20",
     "invoice_amount": 52114.0,
-    "collectible": 0.0,
+    "collectible": 49508.3,
     "retainage": 2605.7,
-    "total_due": 2605.7,
-    "days_outstanding": 597,
+    "total_due": 52114.0,
+    "days_outstanding": 598,
     "aging_bucket": "90+"
   },
   {
@@ -1645,10 +1547,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2024-06-13",
     "invoice_amount": 71306.3,
-    "collectible": 0.0,
+    "collectible": 67740.98,
     "retainage": 3565.32,
-    "total_due": 3565.32,
-    "days_outstanding": 573,
+    "total_due": 71306.3,
+    "days_outstanding": 574,
     "aging_bucket": "90+"
   },
   {
@@ -1659,10 +1561,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2025-02-04",
     "invoice_amount": 136614.15,
-    "collectible": 0.0,
+    "collectible": 129783.44,
     "retainage": 6830.71,
-    "total_due": 6830.71,
-    "days_outstanding": 337,
+    "total_due": 136614.15,
+    "days_outstanding": 338,
     "aging_bucket": "90+"
   },
   {
@@ -1673,10 +1575,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2025-02-27",
     "invoice_amount": 19290.95,
-    "collectible": 0.0,
+    "collectible": 18326.4,
     "retainage": 964.55,
-    "total_due": 964.55,
-    "days_outstanding": 314,
+    "total_due": 19290.95,
+    "days_outstanding": 315,
     "aging_bucket": "90+"
   },
   {
@@ -1687,10 +1589,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2025-04-29",
     "invoice_amount": 88300.3,
-    "collectible": 0.0,
+    "collectible": 83885.28,
     "retainage": 4415.02,
-    "total_due": 4415.02,
-    "days_outstanding": 253,
+    "total_due": 88300.3,
+    "days_outstanding": 254,
     "aging_bucket": "90+"
   },
   {
@@ -1701,10 +1603,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2025-06-03",
     "invoice_amount": 14811.35,
-    "collectible": 0.0,
+    "collectible": 14070.78,
     "retainage": 740.57,
-    "total_due": 740.57,
-    "days_outstanding": 218,
+    "total_due": 14811.35,
+    "days_outstanding": 219,
     "aging_bucket": "90+"
   },
   {
@@ -1715,10 +1617,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2025-07-01",
     "invoice_amount": 22676.89,
-    "collectible": 0.0,
+    "collectible": 21543.05,
     "retainage": 1133.84,
-    "total_due": 1133.84,
-    "days_outstanding": 190,
+    "total_due": 22676.89,
+    "days_outstanding": 191,
     "aging_bucket": "90+"
   },
   {
@@ -1729,10 +1631,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2025-08-08",
     "invoice_amount": 67773.0,
-    "collectible": 0.0,
+    "collectible": 64384.35,
     "retainage": 3388.65,
-    "total_due": 3388.65,
-    "days_outstanding": 152,
+    "total_due": 67773.0,
+    "days_outstanding": 153,
     "aging_bucket": "90+"
   },
   {
@@ -1743,10 +1645,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2025-09-03",
     "invoice_amount": 28131.5,
-    "collectible": 0.0,
+    "collectible": 26724.92,
     "retainage": 1406.58,
-    "total_due": 1406.58,
-    "days_outstanding": 126,
+    "total_due": 28131.5,
+    "days_outstanding": 127,
     "aging_bucket": "90+"
   },
   {
@@ -1757,10 +1659,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2025-10-08",
     "invoice_amount": 26700.5,
-    "collectible": 0.0,
+    "collectible": 25365.47,
     "retainage": 1335.03,
-    "total_due": 1335.03,
-    "days_outstanding": 91,
+    "total_due": 26700.5,
+    "days_outstanding": 92,
     "aging_bucket": "90+"
   },
   {
@@ -1771,10 +1673,10 @@
     "job_description": "SLRH CT Scan Replacement",
     "invoice_date": "2025-12-01",
     "invoice_amount": 10959.0,
-    "collectible": 0.0,
+    "collectible": 10411.05,
     "retainage": 547.95,
-    "total_due": 547.95,
-    "days_outstanding": 37,
+    "total_due": 10959.0,
+    "days_outstanding": 38,
     "aging_bucket": "31-60"
   },
   {
@@ -1785,10 +1687,10 @@
     "job_description": "SLRH Joint Commission T.I.",
     "invoice_date": "2022-06-28",
     "invoice_amount": 8242.68,
-    "collectible": 0.0,
+    "collectible": 7830.55,
     "retainage": 412.13,
-    "total_due": 412.13,
-    "days_outstanding": 1289,
+    "total_due": 8242.68,
+    "days_outstanding": 1290,
     "aging_bucket": "90+"
   },
   {
@@ -1799,10 +1701,10 @@
     "job_description": "SLRH Joint Commission T.I.",
     "invoice_date": "2022-08-26",
     "invoice_amount": 6241.89,
-    "collectible": 0.0,
+    "collectible": 5929.8,
     "retainage": 312.09,
-    "total_due": 312.09,
-    "days_outstanding": 1230,
+    "total_due": 6241.89,
+    "days_outstanding": 1231,
     "aging_bucket": "90+"
   },
   {
@@ -1813,10 +1715,10 @@
     "job_description": "SLRH Joint Commission T.I.",
     "invoice_date": "2022-10-04",
     "invoice_amount": 17260.82,
-    "collectible": 0.0,
+    "collectible": 16397.78,
     "retainage": 863.04,
-    "total_due": 863.04,
-    "days_outstanding": 1191,
+    "total_due": 17260.82,
+    "days_outstanding": 1192,
     "aging_bucket": "90+"
   },
   {
@@ -1827,10 +1729,10 @@
     "job_description": "SLRH Joint Commission T.I.",
     "invoice_date": "2022-10-26",
     "invoice_amount": 2026.48,
-    "collectible": 0.0,
+    "collectible": 1925.16,
     "retainage": 101.32,
-    "total_due": 101.32,
-    "days_outstanding": 1169,
+    "total_due": 2026.48,
+    "days_outstanding": 1170,
     "aging_bucket": "90+"
   },
   {
@@ -1841,10 +1743,10 @@
     "job_description": "SLRH Joint Commission T.I.",
     "invoice_date": "2022-12-01",
     "invoice_amount": 1000.0,
-    "collectible": 0.0,
+    "collectible": 950.0,
     "retainage": 50.0,
-    "total_due": 50.0,
-    "days_outstanding": 1133,
+    "total_due": 1000.0,
+    "days_outstanding": 1134,
     "aging_bucket": "90+"
   },
   {
@@ -1855,10 +1757,10 @@
     "job_description": "SLRH Joint Commission T.I.",
     "invoice_date": "2023-11-14",
     "invoice_amount": 14902.4,
-    "collectible": 0.0,
+    "collectible": 14157.28,
     "retainage": 745.12,
-    "total_due": 745.12,
-    "days_outstanding": 785,
+    "total_due": 14902.4,
+    "days_outstanding": 786,
     "aging_bucket": "90+"
   },
   {
@@ -1869,10 +1771,10 @@
     "job_description": "SLRH Joint Commission T.I.",
     "invoice_date": "2023-12-17",
     "invoice_amount": 3725.6,
-    "collectible": 0.0,
+    "collectible": 3539.32,
     "retainage": 186.28,
-    "total_due": 186.28,
-    "days_outstanding": 752,
+    "total_due": 3725.6,
+    "days_outstanding": 753,
     "aging_bucket": "90+"
   },
   {
@@ -1883,10 +1785,10 @@
     "job_description": "SLRH Joint Commission T.I.",
     "invoice_date": "2025-02-04",
     "invoice_amount": 210514.64,
-    "collectible": 0.0,
+    "collectible": 199988.91,
     "retainage": 10525.73,
-    "total_due": 10525.73,
-    "days_outstanding": 337,
+    "total_due": 210514.64,
+    "days_outstanding": 338,
     "aging_bucket": "90+"
   },
   {
@@ -1897,10 +1799,10 @@
     "job_description": "SLRH Joint Commission T.I.",
     "invoice_date": "2025-02-27",
     "invoice_amount": 8296.14,
-    "collectible": 0.0,
+    "collectible": 7881.33,
     "retainage": 414.81,
-    "total_due": 414.81,
-    "days_outstanding": 314,
+    "total_due": 8296.14,
+    "days_outstanding": 315,
     "aging_bucket": "90+"
   },
   {
@@ -1911,10 +1813,10 @@
     "job_description": "SLRH Joint Commission T.I.",
     "invoice_date": "2025-04-29",
     "invoice_amount": 5025.0,
-    "collectible": 0.0,
+    "collectible": 4773.75,
     "retainage": 251.25,
-    "total_due": 251.25,
-    "days_outstanding": 253,
+    "total_due": 5025.0,
+    "days_outstanding": 254,
     "aging_bucket": "90+"
   },
   {
@@ -1925,10 +1827,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2022-06-28",
     "invoice_amount": 1000.0,
-    "collectible": 0.0,
+    "collectible": 950.0,
     "retainage": 50.0,
-    "total_due": 50.0,
-    "days_outstanding": 1289,
+    "total_due": 1000.0,
+    "days_outstanding": 1290,
     "aging_bucket": "90+"
   },
   {
@@ -1939,10 +1841,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2022-08-08",
     "invoice_amount": 8450.15,
-    "collectible": 0.0,
+    "collectible": 8027.64,
     "retainage": 422.51,
-    "total_due": 422.51,
-    "days_outstanding": 1248,
+    "total_due": 8450.15,
+    "days_outstanding": 1249,
     "aging_bucket": "90+"
   },
   {
@@ -1953,10 +1855,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2022-08-26",
     "invoice_amount": 9441.28,
-    "collectible": 0.0,
+    "collectible": 8969.22,
     "retainage": 472.06,
-    "total_due": 472.06,
-    "days_outstanding": 1230,
+    "total_due": 9441.28,
+    "days_outstanding": 1231,
     "aging_bucket": "90+"
   },
   {
@@ -1967,10 +1869,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2022-10-04",
     "invoice_amount": 11800.72,
-    "collectible": 0.0,
+    "collectible": 11210.68,
     "retainage": 590.04,
-    "total_due": 590.04,
-    "days_outstanding": 1191,
+    "total_due": 11800.72,
+    "days_outstanding": 1192,
     "aging_bucket": "90+"
   },
   {
@@ -1981,10 +1883,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2022-10-26",
     "invoice_amount": 1164.38,
-    "collectible": 0.0,
+    "collectible": 1106.16,
     "retainage": 58.22,
-    "total_due": 58.22,
-    "days_outstanding": 1169,
+    "total_due": 1164.38,
+    "days_outstanding": 1170,
     "aging_bucket": "90+"
   },
   {
@@ -1995,10 +1897,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2022-12-01",
     "invoice_amount": 5720.64,
-    "collectible": 0.0,
+    "collectible": 5434.61,
     "retainage": 286.03,
-    "total_due": 286.03,
-    "days_outstanding": 1133,
+    "total_due": 5720.64,
+    "days_outstanding": 1134,
     "aging_bucket": "90+"
   },
   {
@@ -2009,10 +1911,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2023-03-02",
     "invoice_amount": 41465.13,
-    "collectible": 0.0,
+    "collectible": 39391.87,
     "retainage": 2073.26,
-    "total_due": 2073.26,
-    "days_outstanding": 1042,
+    "total_due": 41465.13,
+    "days_outstanding": 1043,
     "aging_bucket": "90+"
   },
   {
@@ -2023,10 +1925,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2023-05-17",
     "invoice_amount": 2706.35,
-    "collectible": 0.0,
+    "collectible": 2571.03,
     "retainage": 135.32,
-    "total_due": 135.32,
-    "days_outstanding": 966,
+    "total_due": 2706.35,
+    "days_outstanding": 967,
     "aging_bucket": "90+"
   },
   {
@@ -2037,10 +1939,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2023-11-14",
     "invoice_amount": 6845.19,
-    "collectible": 0.0,
+    "collectible": 6502.93,
     "retainage": 342.26,
-    "total_due": 342.26,
-    "days_outstanding": 785,
+    "total_due": 6845.19,
+    "days_outstanding": 786,
     "aging_bucket": "90+"
   },
   {
@@ -2051,10 +1953,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2023-12-17",
     "invoice_amount": 26463.8,
-    "collectible": 0.0,
+    "collectible": 25140.61,
     "retainage": 1323.19,
-    "total_due": 1323.19,
-    "days_outstanding": 752,
+    "total_due": 26463.8,
+    "days_outstanding": 753,
     "aging_bucket": "90+"
   },
   {
@@ -2065,10 +1967,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2024-03-05",
     "invoice_amount": 4206.36,
-    "collectible": 0.0,
+    "collectible": 3996.04,
     "retainage": 210.32,
-    "total_due": 210.32,
-    "days_outstanding": 673,
+    "total_due": 4206.36,
+    "days_outstanding": 674,
     "aging_bucket": "90+"
   },
   {
@@ -2079,10 +1981,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2024-04-15",
     "invoice_amount": 9016.64,
-    "collectible": 0.0,
+    "collectible": 8565.81,
     "retainage": 450.83,
-    "total_due": 450.83,
-    "days_outstanding": 632,
+    "total_due": 9016.64,
+    "days_outstanding": 633,
     "aging_bucket": "90+"
   },
   {
@@ -2093,10 +1995,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2024-05-20",
     "invoice_amount": 5000.0,
-    "collectible": 0.0,
+    "collectible": 4750.0,
     "retainage": 250.0,
-    "total_due": 250.0,
-    "days_outstanding": 597,
+    "total_due": 5000.0,
+    "days_outstanding": 598,
     "aging_bucket": "90+"
   },
   {
@@ -2107,10 +2009,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2025-04-29",
     "invoice_amount": 37269.55,
-    "collectible": 0.0,
+    "collectible": 35406.07,
     "retainage": 1863.48,
-    "total_due": 1863.48,
-    "days_outstanding": 253,
+    "total_due": 37269.55,
+    "days_outstanding": 254,
     "aging_bucket": "90+"
   },
   {
@@ -2121,10 +2023,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2025-06-03",
     "invoice_amount": 1525.0,
-    "collectible": 0.0,
+    "collectible": 1448.75,
     "retainage": 76.25,
-    "total_due": 76.25,
-    "days_outstanding": 218,
+    "total_due": 1525.0,
+    "days_outstanding": 219,
     "aging_bucket": "90+"
   },
   {
@@ -2135,10 +2037,10 @@
     "job_description": "SLRH Joint Comm. 7 Auto Doors",
     "invoice_date": "2025-07-01",
     "invoice_amount": 2024.59,
-    "collectible": 0.0,
+    "collectible": 1923.36,
     "retainage": 101.23,
-    "total_due": 101.23,
-    "days_outstanding": 190,
+    "total_due": 2024.59,
+    "days_outstanding": 191,
     "aging_bucket": "90+"
   },
   {
@@ -2149,10 +2051,10 @@
     "job_description": "SLRH Sterilizer Replacement",
     "invoice_date": "2022-06-28",
     "invoice_amount": 500.0,
-    "collectible": 0.0,
+    "collectible": 475.0,
     "retainage": 25.0,
-    "total_due": 25.0,
-    "days_outstanding": 1289,
+    "total_due": 500.0,
+    "days_outstanding": 1290,
     "aging_bucket": "90+"
   },
   {
@@ -2163,10 +2065,10 @@
     "job_description": "SLRH Sterilizer Replacement",
     "invoice_date": "2022-08-26",
     "invoice_amount": 1466.37,
-    "collectible": 0.0,
+    "collectible": 1393.05,
     "retainage": 73.32,
-    "total_due": 73.32,
-    "days_outstanding": 1230,
+    "total_due": 1466.37,
+    "days_outstanding": 1231,
     "aging_bucket": "90+"
   },
   {
@@ -2177,10 +2079,10 @@
     "job_description": "SLRH Sterilizer Replacement",
     "invoice_date": "2022-12-01",
     "invoice_amount": 500.0,
-    "collectible": 0.0,
+    "collectible": 475.0,
     "retainage": 25.0,
-    "total_due": 25.0,
-    "days_outstanding": 1133,
+    "total_due": 500.0,
+    "days_outstanding": 1134,
     "aging_bucket": "90+"
   },
   {
@@ -2191,10 +2093,10 @@
     "job_description": "SLRH Sterilizer Replacement",
     "invoice_date": "2023-05-17",
     "invoice_amount": 34469.29,
-    "collectible": 0.0,
+    "collectible": 32745.83,
     "retainage": 1723.46,
-    "total_due": 1723.46,
-    "days_outstanding": 966,
+    "total_due": 34469.29,
+    "days_outstanding": 967,
     "aging_bucket": "90+"
   },
   {
@@ -2205,10 +2107,10 @@
     "job_description": "SLRH Sterilizer Replacement",
     "invoice_date": "2023-11-14",
     "invoice_amount": 500.0,
-    "collectible": 0.0,
+    "collectible": 475.0,
     "retainage": 25.0,
-    "total_due": 25.0,
-    "days_outstanding": 785,
+    "total_due": 500.0,
+    "days_outstanding": 786,
     "aging_bucket": "90+"
   },
   {
@@ -2219,10 +2121,10 @@
     "job_description": "SLRH Sterilizer Replacement",
     "invoice_date": "2023-12-17",
     "invoice_amount": 500.0,
-    "collectible": 0.0,
+    "collectible": 475.0,
     "retainage": 25.0,
-    "total_due": 25.0,
-    "days_outstanding": 752,
+    "total_due": 500.0,
+    "days_outstanding": 753,
     "aging_bucket": "90+"
   },
   {
@@ -2233,10 +2135,10 @@
     "job_description": "SLRH Sterilizer Replacement",
     "invoice_date": "2024-03-05",
     "invoice_amount": 4031.0,
-    "collectible": 0.0,
+    "collectible": 3829.45,
     "retainage": 201.55,
-    "total_due": 201.55,
-    "days_outstanding": 673,
+    "total_due": 4031.0,
+    "days_outstanding": 674,
     "aging_bucket": "90+"
   },
   {
@@ -2247,10 +2149,10 @@
     "job_description": "SLRH Sterilizer Replacement",
     "invoice_date": "2024-06-13",
     "invoice_amount": 765.0,
-    "collectible": 0.0,
+    "collectible": 726.75,
     "retainage": 38.25,
-    "total_due": 38.25,
-    "days_outstanding": 573,
+    "total_due": 765.0,
+    "days_outstanding": 574,
     "aging_bucket": "90+"
   },
   {
@@ -2261,10 +2163,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2022-06-28",
     "invoice_amount": 57053.5,
-    "collectible": 0.0,
+    "collectible": 54200.82,
     "retainage": 2852.68,
-    "total_due": 2852.68,
-    "days_outstanding": 1289,
+    "total_due": 57053.5,
+    "days_outstanding": 1290,
     "aging_bucket": "90+"
   },
   {
@@ -2275,10 +2177,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2022-08-08",
     "invoice_amount": 186874.58,
-    "collectible": 0.0,
+    "collectible": 177530.85,
     "retainage": 9343.73,
-    "total_due": 9343.73,
-    "days_outstanding": 1248,
+    "total_due": 186874.58,
+    "days_outstanding": 1249,
     "aging_bucket": "90+"
   },
   {
@@ -2289,10 +2191,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2022-08-26",
     "invoice_amount": 155547.45,
-    "collectible": 0.0,
+    "collectible": 147770.08,
     "retainage": 7777.37,
-    "total_due": 7777.37,
-    "days_outstanding": 1230,
+    "total_due": 155547.45,
+    "days_outstanding": 1231,
     "aging_bucket": "90+"
   },
   {
@@ -2303,10 +2205,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2022-10-04",
     "invoice_amount": 132558.08,
-    "collectible": 0.0,
+    "collectible": 125930.18,
     "retainage": 6627.9,
-    "total_due": 6627.9,
-    "days_outstanding": 1191,
+    "total_due": 132558.08,
+    "days_outstanding": 1192,
     "aging_bucket": "90+"
   },
   {
@@ -2317,10 +2219,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2022-10-26",
     "invoice_amount": 30227.47,
-    "collectible": 0.0,
+    "collectible": 28716.1,
     "retainage": 1511.37,
-    "total_due": 1511.37,
-    "days_outstanding": 1169,
+    "total_due": 30227.47,
+    "days_outstanding": 1170,
     "aging_bucket": "90+"
   },
   {
@@ -2331,10 +2233,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2022-12-01",
     "invoice_amount": 89549.14,
-    "collectible": 0.0,
+    "collectible": 85071.68,
     "retainage": 4477.46,
-    "total_due": 4477.46,
-    "days_outstanding": 1133,
+    "total_due": 89549.14,
+    "days_outstanding": 1134,
     "aging_bucket": "90+"
   },
   {
@@ -2345,10 +2247,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2023-12-17",
     "invoice_amount": 16930.14,
-    "collectible": 0.0,
+    "collectible": 16083.63,
     "retainage": 846.51,
-    "total_due": 846.51,
-    "days_outstanding": 752,
+    "total_due": 16930.14,
+    "days_outstanding": 753,
     "aging_bucket": "90+"
   },
   {
@@ -2359,10 +2261,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2024-03-05",
     "invoice_amount": 103760.07,
-    "collectible": 0.0,
+    "collectible": 98572.07,
     "retainage": 5188.0,
-    "total_due": 5188.0,
-    "days_outstanding": 673,
+    "total_due": 103760.07,
+    "days_outstanding": 674,
     "aging_bucket": "90+"
   },
   {
@@ -2373,10 +2275,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2024-04-15",
     "invoice_amount": 38957.08,
-    "collectible": 0.0,
+    "collectible": 37009.23,
     "retainage": 1947.85,
-    "total_due": 1947.85,
-    "days_outstanding": 632,
+    "total_due": 38957.08,
+    "days_outstanding": 633,
     "aging_bucket": "90+"
   },
   {
@@ -2387,10 +2289,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2024-05-20",
     "invoice_amount": 98753.83,
-    "collectible": 0.0,
+    "collectible": 93816.14,
     "retainage": 4937.69,
-    "total_due": 4937.69,
-    "days_outstanding": 597,
+    "total_due": 98753.83,
+    "days_outstanding": 598,
     "aging_bucket": "90+"
   },
   {
@@ -2401,10 +2303,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2024-06-13",
     "invoice_amount": 54614.91,
-    "collectible": 0.0,
+    "collectible": 51884.16,
     "retainage": 2730.75,
-    "total_due": 2730.75,
-    "days_outstanding": 573,
+    "total_due": 54614.91,
+    "days_outstanding": 574,
     "aging_bucket": "90+"
   },
   {
@@ -2415,10 +2317,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2025-02-04",
     "invoice_amount": 62897.13,
-    "collectible": 0.0,
+    "collectible": 59752.27,
     "retainage": 3144.86,
-    "total_due": 3144.86,
-    "days_outstanding": 337,
+    "total_due": 62897.13,
+    "days_outstanding": 338,
     "aging_bucket": "90+"
   },
   {
@@ -2429,10 +2331,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2025-02-27",
     "invoice_amount": 165784.4,
-    "collectible": 0.0,
+    "collectible": 157495.18,
     "retainage": 8289.22,
-    "total_due": 8289.22,
-    "days_outstanding": 314,
+    "total_due": 165784.4,
+    "days_outstanding": 315,
     "aging_bucket": "90+"
   },
   {
@@ -2443,10 +2345,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2025-04-29",
     "invoice_amount": 31417.91,
-    "collectible": 0.0,
+    "collectible": 29847.01,
     "retainage": 1570.9,
-    "total_due": 1570.9,
-    "days_outstanding": 253,
+    "total_due": 31417.91,
+    "days_outstanding": 254,
     "aging_bucket": "90+"
   },
   {
@@ -2457,10 +2359,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2025-06-03",
     "invoice_amount": 42377.17,
-    "collectible": 0.0,
+    "collectible": 40258.31,
     "retainage": 2118.86,
-    "total_due": 2118.86,
-    "days_outstanding": 218,
+    "total_due": 42377.17,
+    "days_outstanding": 219,
     "aging_bucket": "90+"
   },
   {
@@ -2471,38 +2373,10 @@
     "job_description": "SLRH Pharmacy Upgrades",
     "invoice_date": "2025-07-01",
     "invoice_amount": 19917.36,
-    "collectible": 0.0,
+    "collectible": 18921.49,
     "retainage": 995.87,
-    "total_due": 995.87,
-    "days_outstanding": 190,
-    "aging_bucket": "90+"
-  },
-  {
-    "invoice_no": 2039,
-    "customer_name": "Salinas Valley Memorial Hosp",
-    "project_manager": "Pedro Becerra",
-    "job_no": 2066,
-    "job_description": "SPD Wall Repair",
-    "invoice_date": "2019-10-31",
-    "invoice_amount": 107394.0,
-    "collectible": 0.0,
-    "retainage": 1.5,
-    "total_due": 1.5,
-    "days_outstanding": 2260,
-    "aging_bucket": "90+"
-  },
-  {
-    "invoice_no": 5589,
-    "customer_name": "Salinas Valley Memorial Hosp",
-    "project_manager": "Pedro Becerra",
-    "job_no": 4300,
-    "job_description": "SVMH Permanent Bulk Oxygen Sup",
-    "invoice_date": "2025-01-15",
-    "invoice_amount": 213422.41,
-    "collectible": 0.0,
-    "retainage": 10090.32,
-    "total_due": 10090.32,
-    "days_outstanding": 357,
+    "total_due": 19917.36,
+    "days_outstanding": 191,
     "aging_bucket": "90+"
   },
   {
@@ -2516,7 +2390,7 @@
     "collectible": 37098.95,
     "retainage": 0.0,
     "total_due": 37098.95,
-    "days_outstanding": 92,
+    "days_outstanding": 93,
     "aging_bucket": "90+"
   },
   {
@@ -2530,7 +2404,7 @@
     "collectible": 115161.32,
     "retainage": 6061.12,
     "total_due": 121222.44,
-    "days_outstanding": 96,
+    "days_outstanding": 97,
     "aging_bucket": "90+"
   },
   {
@@ -2541,10 +2415,10 @@
     "job_description": "SVMH Angio Equipment",
     "invoice_date": "2025-10-28",
     "invoice_amount": 20674.77,
-    "collectible": 0.0,
+    "collectible": 19641.03,
     "retainage": 1033.74,
-    "total_due": 1033.74,
-    "days_outstanding": 71,
+    "total_due": 20674.77,
+    "days_outstanding": 72,
     "aging_bucket": "61-90"
   },
   {
@@ -2558,7 +2432,7 @@
     "collectible": 56100.8,
     "retainage": 2952.67,
     "total_due": 59053.47,
-    "days_outstanding": 8,
+    "days_outstanding": 9,
     "aging_bucket": "0-30"
   },
   {
@@ -2572,36 +2446,8 @@
     "collectible": 21255.3,
     "retainage": 0.0,
     "total_due": 21255.3,
-    "days_outstanding": 57,
+    "days_outstanding": 58,
     "aging_bucket": "31-60"
-  },
-  {
-    "invoice_no": 1666,
-    "customer_name": "Santa Clara University",
-    "project_manager": "Rodney Terra",
-    "job_no": 1714,
-    "job_description": "SCU Alameda Hall Civil Bld Out",
-    "invoice_date": "2019-05-02",
-    "invoice_amount": 404795.46,
-    "collectible": 0.0,
-    "retainage": 0.01,
-    "total_due": 0.01,
-    "days_outstanding": 2442,
-    "aging_bucket": "90+"
-  },
-  {
-    "invoice_no": 1479,
-    "customer_name": "Santa Clara University",
-    "project_manager": "Rodney Terra",
-    "job_no": 1758,
-    "job_description": "SCU STEM Garage",
-    "invoice_date": "2018-11-12",
-    "invoice_amount": 823806.57,
-    "collectible": 0.0,
-    "retainage": 0.02,
-    "total_due": 0.02,
-    "days_outstanding": 2613,
-    "aging_bucket": "90+"
   },
   {
     "invoice_no": 6053,
@@ -2611,10 +2457,10 @@
     "job_description": "SCU Adobe (Kitchen) Remodel",
     "invoice_date": "2025-07-02",
     "invoice_amount": 460458.0,
-    "collectible": 0.0,
+    "collectible": 414412.2,
     "retainage": 46045.8,
-    "total_due": 46045.8,
-    "days_outstanding": 189,
+    "total_due": 460458.0,
+    "days_outstanding": 190,
     "aging_bucket": "90+"
   },
   {
@@ -2625,10 +2471,10 @@
     "job_description": "SCU Adobe (Kitchen) Remodel",
     "invoice_date": "2025-07-30",
     "invoice_amount": 400460.09,
-    "collectible": 0.0,
+    "collectible": 360414.08,
     "retainage": 40046.01,
-    "total_due": 40046.01,
-    "days_outstanding": 161,
+    "total_due": 400460.09,
+    "days_outstanding": 162,
     "aging_bucket": "90+"
   },
   {
@@ -2639,10 +2485,10 @@
     "job_description": "SCU Adobe (Kitchen) Remodel",
     "invoice_date": "2025-08-27",
     "invoice_amount": 183508.59,
-    "collectible": 0.0,
+    "collectible": 165157.73,
     "retainage": 18350.86,
-    "total_due": 18350.86,
-    "days_outstanding": 133,
+    "total_due": 183508.59,
+    "days_outstanding": 134,
     "aging_bucket": "90+"
   },
   {
@@ -2653,10 +2499,10 @@
     "job_description": "SCU Adobe (Kitchen) Remodel",
     "invoice_date": "2025-10-07",
     "invoice_amount": 511822.57,
-    "collectible": 0.0,
+    "collectible": 460640.31,
     "retainage": 51182.26,
-    "total_due": 51182.26,
-    "days_outstanding": 92,
+    "total_due": 511822.57,
+    "days_outstanding": 93,
     "aging_bucket": "90+"
   },
   {
@@ -2667,10 +2513,10 @@
     "job_description": "SCU Adobe (Kitchen) Remodel",
     "invoice_date": "2025-10-28",
     "invoice_amount": 447456.19,
-    "collectible": 0.0,
+    "collectible": 402710.57,
     "retainage": 44745.62,
-    "total_due": 44745.62,
-    "days_outstanding": 71,
+    "total_due": 447456.19,
+    "days_outstanding": 72,
     "aging_bucket": "61-90"
   },
   {
@@ -2681,25 +2527,11 @@
     "job_description": "SCU Adobe (Kitchen) Remodel",
     "invoice_date": "2025-12-05",
     "invoice_amount": 344947.29,
-    "collectible": 0.0,
+    "collectible": 310452.56,
     "retainage": 34494.73,
-    "total_due": 34494.73,
-    "days_outstanding": 33,
+    "total_due": 344947.29,
+    "days_outstanding": 34,
     "aging_bucket": "31-60"
-  },
-  {
-    "invoice_no": 3899,
-    "customer_name": "Sutter Health",
-    "project_manager": "Josh Angelo",
-    "job_no": 2729,
-    "job_description": "PAMF 795 El Camino 3 Flr X-ray",
-    "invoice_date": "2023-01-09",
-    "invoice_amount": 23633.07,
-    "collectible": 0.0,
-    "retainage": 145.19,
-    "total_due": 145.19,
-    "days_outstanding": 1094,
-    "aging_bucket": "90+"
   },
   {
     "invoice_no": 4545,
@@ -2709,10 +2541,10 @@
     "job_description": "SH Fremont Bldg 1-Generator",
     "invoice_date": "2023-11-17",
     "invoice_amount": 55886.5,
-    "collectible": 0.0,
+    "collectible": 50297.85,
     "retainage": 5588.65,
-    "total_due": 5588.65,
-    "days_outstanding": 782,
+    "total_due": 55886.5,
+    "days_outstanding": 783,
     "aging_bucket": "90+"
   },
   {
@@ -2723,10 +2555,10 @@
     "job_description": "SH Fremont Bldg 1-Generator",
     "invoice_date": "2023-12-15",
     "invoice_amount": 163581.46,
-    "collectible": 0.0,
+    "collectible": 147223.31,
     "retainage": 16358.15,
-    "total_due": 16358.15,
-    "days_outstanding": 754,
+    "total_due": 163581.46,
+    "days_outstanding": 755,
     "aging_bucket": "90+"
   },
   {
@@ -2737,10 +2569,10 @@
     "job_description": "SH Fremont Bldg 1-Generator",
     "invoice_date": "2023-12-22",
     "invoice_amount": 4963.81,
-    "collectible": 0.0,
+    "collectible": 4467.43,
     "retainage": 496.38,
-    "total_due": 496.38,
-    "days_outstanding": 747,
+    "total_due": 4963.81,
+    "days_outstanding": 748,
     "aging_bucket": "90+"
   },
   {
@@ -2751,10 +2583,10 @@
     "job_description": "SH Fremont Bldg 1-Generator",
     "invoice_date": "2024-03-03",
     "invoice_amount": 117327.09,
-    "collectible": 0.0,
+    "collectible": 105594.38,
     "retainage": 11732.71,
-    "total_due": 11732.71,
-    "days_outstanding": 675,
+    "total_due": 117327.09,
+    "days_outstanding": 676,
     "aging_bucket": "90+"
   },
   {
@@ -2765,10 +2597,10 @@
     "job_description": "SH Fremont Bldg 1-Generator",
     "invoice_date": "2024-10-15",
     "invoice_amount": 144492.08,
-    "collectible": 0.0,
+    "collectible": 130042.87,
     "retainage": 14449.21,
-    "total_due": 14449.21,
-    "days_outstanding": 449,
+    "total_due": 144492.08,
+    "days_outstanding": 450,
     "aging_bucket": "90+"
   },
   {
@@ -2779,10 +2611,10 @@
     "job_description": "SH Fremont Bldg 1-Generator",
     "invoice_date": "2024-11-21",
     "invoice_amount": 68627.62,
-    "collectible": 0.0,
+    "collectible": 61764.86,
     "retainage": 6862.76,
-    "total_due": 6862.76,
-    "days_outstanding": 412,
+    "total_due": 68627.62,
+    "days_outstanding": 413,
     "aging_bucket": "90+"
   },
   {
@@ -2793,10 +2625,10 @@
     "job_description": "SH Fremont Bldg 1-Generator",
     "invoice_date": "2024-11-22",
     "invoice_amount": 18062.94,
-    "collectible": 0.0,
+    "collectible": 16256.65,
     "retainage": 1806.29,
-    "total_due": 1806.29,
-    "days_outstanding": 411,
+    "total_due": 18062.94,
+    "days_outstanding": 412,
     "aging_bucket": "90+"
   },
   {
@@ -2807,10 +2639,10 @@
     "job_description": "SH Fremont Bldg 1-Generator",
     "invoice_date": "2024-12-19",
     "invoice_amount": 9889.04,
-    "collectible": 0.0,
+    "collectible": 8900.14,
     "retainage": 988.9,
-    "total_due": 988.9,
-    "days_outstanding": 384,
+    "total_due": 9889.04,
+    "days_outstanding": 385,
     "aging_bucket": "90+"
   },
   {
@@ -2821,10 +2653,10 @@
     "job_description": "SH Fremont Bldg 1-Generator",
     "invoice_date": "2025-04-10",
     "invoice_amount": 14093.88,
-    "collectible": 0.0,
+    "collectible": 12684.49,
     "retainage": 1409.39,
-    "total_due": 1409.39,
-    "days_outstanding": 272,
+    "total_due": 14093.88,
+    "days_outstanding": 273,
     "aging_bucket": "90+"
   },
   {
@@ -2835,10 +2667,10 @@
     "job_description": "SH Fremont Bldg 1-Generator",
     "invoice_date": "2025-07-08",
     "invoice_amount": 22195.98,
-    "collectible": 0.0,
+    "collectible": 19976.38,
     "retainage": 2219.6,
-    "total_due": 2219.6,
-    "days_outstanding": 183,
+    "total_due": 22195.98,
+    "days_outstanding": 184,
     "aging_bucket": "90+"
   },
   {
@@ -2849,10 +2681,10 @@
     "job_description": "SH Fremont Bldg 1-Generator",
     "invoice_date": "2025-07-30",
     "invoice_amount": 1550.45,
-    "collectible": 0.0,
+    "collectible": 1395.4,
     "retainage": 155.05,
-    "total_due": 155.05,
-    "days_outstanding": 161,
+    "total_due": 1550.45,
+    "days_outstanding": 162,
     "aging_bucket": "90+"
   },
   {
@@ -2863,10 +2695,10 @@
     "job_description": "SH Fremont Bldg 1-Generator",
     "invoice_date": "2025-10-14",
     "invoice_amount": 2468.02,
-    "collectible": 0.0,
+    "collectible": 2221.22,
     "retainage": 246.8,
-    "total_due": 246.8,
-    "days_outstanding": 85,
+    "total_due": 2468.02,
+    "days_outstanding": 86,
     "aging_bucket": "61-90"
   },
   {
@@ -2880,7 +2712,7 @@
     "collectible": 13015.79,
     "retainage": 1446.2,
     "total_due": 14461.99,
-    "days_outstanding": 22,
+    "days_outstanding": 23,
     "aging_bucket": "0-30"
   },
   {
@@ -2891,10 +2723,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2023-11-17",
     "invoice_amount": 96092.15,
-    "collectible": 0.0,
+    "collectible": 86482.93,
     "retainage": 9609.22,
-    "total_due": 9609.22,
-    "days_outstanding": 782,
+    "total_due": 96092.15,
+    "days_outstanding": 783,
     "aging_bucket": "90+"
   },
   {
@@ -2905,10 +2737,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2023-12-15",
     "invoice_amount": 132609.61,
-    "collectible": 0.0,
+    "collectible": 119348.65,
     "retainage": 13260.96,
-    "total_due": 13260.96,
-    "days_outstanding": 754,
+    "total_due": 132609.61,
+    "days_outstanding": 755,
     "aging_bucket": "90+"
   },
   {
@@ -2919,10 +2751,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2023-12-22",
     "invoice_amount": 5384.01,
-    "collectible": 0.0,
+    "collectible": 4845.61,
     "retainage": 538.4,
-    "total_due": 538.4,
-    "days_outstanding": 747,
+    "total_due": 5384.01,
+    "days_outstanding": 748,
     "aging_bucket": "90+"
   },
   {
@@ -2933,10 +2765,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2024-03-03",
     "invoice_amount": 139784.39,
-    "collectible": 0.0,
+    "collectible": 125805.95,
     "retainage": 13978.44,
-    "total_due": 13978.44,
-    "days_outstanding": 675,
+    "total_due": 139784.39,
+    "days_outstanding": 676,
     "aging_bucket": "90+"
   },
   {
@@ -2947,10 +2779,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2025-05-14",
     "invoice_amount": 58795.04,
-    "collectible": 0.0,
+    "collectible": 52915.54,
     "retainage": 5879.5,
-    "total_due": 5879.5,
-    "days_outstanding": 238,
+    "total_due": 58795.04,
+    "days_outstanding": 239,
     "aging_bucket": "90+"
   },
   {
@@ -2961,10 +2793,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2025-05-23",
     "invoice_amount": 6620.9,
-    "collectible": 0.0,
+    "collectible": 5958.81,
     "retainage": 662.09,
-    "total_due": 662.09,
-    "days_outstanding": 229,
+    "total_due": 6620.9,
+    "days_outstanding": 230,
     "aging_bucket": "90+"
   },
   {
@@ -2975,10 +2807,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2025-07-08",
     "invoice_amount": 20464.57,
-    "collectible": 0.0,
+    "collectible": 18418.11,
     "retainage": 2046.46,
-    "total_due": 2046.46,
-    "days_outstanding": 183,
+    "total_due": 20464.57,
+    "days_outstanding": 184,
     "aging_bucket": "90+"
   },
   {
@@ -2989,10 +2821,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2025-07-30",
     "invoice_amount": 10759.45,
-    "collectible": 0.0,
+    "collectible": 9683.5,
     "retainage": 1075.95,
-    "total_due": 1075.95,
-    "days_outstanding": 161,
+    "total_due": 10759.45,
+    "days_outstanding": 162,
     "aging_bucket": "90+"
   },
   {
@@ -3003,10 +2835,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2025-09-08",
     "invoice_amount": 73070.6,
-    "collectible": 0.0,
+    "collectible": 65763.54,
     "retainage": 7307.06,
-    "total_due": 7307.06,
-    "days_outstanding": 121,
+    "total_due": 73070.6,
+    "days_outstanding": 122,
     "aging_bucket": "90+"
   },
   {
@@ -3017,10 +2849,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2025-09-15",
     "invoice_amount": 28479.15,
-    "collectible": 0.0,
+    "collectible": 25631.23,
     "retainage": 2847.92,
-    "total_due": 2847.92,
-    "days_outstanding": 114,
+    "total_due": 28479.15,
+    "days_outstanding": 115,
     "aging_bucket": "90+"
   },
   {
@@ -3031,10 +2863,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2025-10-28",
     "invoice_amount": 37358.32,
-    "collectible": 0.0,
+    "collectible": 33622.49,
     "retainage": 3735.83,
-    "total_due": 3735.83,
-    "days_outstanding": 71,
+    "total_due": 37358.32,
+    "days_outstanding": 72,
     "aging_bucket": "61-90"
   },
   {
@@ -3045,10 +2877,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2025-12-04",
     "invoice_amount": 124257.46,
-    "collectible": 0.0,
+    "collectible": 111831.71,
     "retainage": 12425.75,
-    "total_due": 12425.75,
-    "days_outstanding": 34,
+    "total_due": 124257.46,
+    "days_outstanding": 35,
     "aging_bucket": "31-60"
   },
   {
@@ -3059,10 +2891,10 @@
     "job_description": "SH 4050 Dublin-Generator",
     "invoice_date": "2025-12-11",
     "invoice_amount": 210636.35,
-    "collectible": 0.0,
+    "collectible": 189572.71,
     "retainage": 21063.64,
-    "total_due": 21063.64,
-    "days_outstanding": 27,
+    "total_due": 210636.35,
+    "days_outstanding": 28,
     "aging_bucket": "0-30"
   },
   {
@@ -3076,7 +2908,7 @@
     "collectible": 130154.57,
     "retainage": 14461.62,
     "total_due": 144616.19,
-    "days_outstanding": 19,
+    "days_outstanding": 20,
     "aging_bucket": "0-30"
   },
   {
@@ -3087,10 +2919,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2023-07-14",
     "invoice_amount": 22524.72,
-    "collectible": 0.0,
+    "collectible": 20272.25,
     "retainage": 2252.47,
-    "total_due": 2252.47,
-    "days_outstanding": 908,
+    "total_due": 22524.72,
+    "days_outstanding": 909,
     "aging_bucket": "90+"
   },
   {
@@ -3101,10 +2933,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2023-08-14",
     "invoice_amount": 2244.63,
-    "collectible": 0.0,
+    "collectible": 2020.17,
     "retainage": 224.46,
-    "total_due": 224.46,
-    "days_outstanding": 877,
+    "total_due": 2244.63,
+    "days_outstanding": 878,
     "aging_bucket": "90+"
   },
   {
@@ -3115,10 +2947,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2023-09-28",
     "invoice_amount": 12414.68,
-    "collectible": 0.0,
+    "collectible": 11173.21,
     "retainage": 1241.47,
-    "total_due": 1241.47,
-    "days_outstanding": 832,
+    "total_due": 12414.68,
+    "days_outstanding": 833,
     "aging_bucket": "90+"
   },
   {
@@ -3129,10 +2961,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2023-11-17",
     "invoice_amount": 10609.17,
-    "collectible": 0.0,
+    "collectible": 9548.25,
     "retainage": 1060.92,
-    "total_due": 1060.92,
-    "days_outstanding": 782,
+    "total_due": 10609.17,
+    "days_outstanding": 783,
     "aging_bucket": "90+"
   },
   {
@@ -3143,10 +2975,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2023-12-28",
     "invoice_amount": 1984.96,
-    "collectible": 0.0,
+    "collectible": 1786.46,
     "retainage": 198.5,
-    "total_due": 198.5,
-    "days_outstanding": 741,
+    "total_due": 1984.96,
+    "days_outstanding": 742,
     "aging_bucket": "90+"
   },
   {
@@ -3157,10 +2989,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2024-07-12",
     "invoice_amount": 22221.84,
-    "collectible": 0.0,
+    "collectible": 19999.66,
     "retainage": 2222.18,
-    "total_due": 2222.18,
-    "days_outstanding": 544,
+    "total_due": 22221.84,
+    "days_outstanding": 545,
     "aging_bucket": "90+"
   },
   {
@@ -3171,10 +3003,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2024-09-23",
     "invoice_amount": 100408.5,
-    "collectible": 0.0,
+    "collectible": 90367.65,
     "retainage": 10040.85,
-    "total_due": 10040.85,
-    "days_outstanding": 471,
+    "total_due": 100408.5,
+    "days_outstanding": 472,
     "aging_bucket": "90+"
   },
   {
@@ -3185,10 +3017,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2024-11-14",
     "invoice_amount": 33469.5,
-    "collectible": 0.0,
+    "collectible": 30122.55,
     "retainage": 3346.95,
-    "total_due": 3346.95,
-    "days_outstanding": 419,
+    "total_due": 33469.5,
+    "days_outstanding": 420,
     "aging_bucket": "90+"
   },
   {
@@ -3199,10 +3031,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2024-12-27",
     "invoice_amount": 268816.24,
-    "collectible": 0.0,
+    "collectible": 241934.62,
     "retainage": 26881.62,
-    "total_due": 26881.62,
-    "days_outstanding": 376,
+    "total_due": 268816.24,
+    "days_outstanding": 377,
     "aging_bucket": "90+"
   },
   {
@@ -3213,10 +3045,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2025-03-14",
     "invoice_amount": 177193.91,
-    "collectible": 0.0,
+    "collectible": 159474.52,
     "retainage": 17719.39,
-    "total_due": 17719.39,
-    "days_outstanding": 299,
+    "total_due": 177193.91,
+    "days_outstanding": 300,
     "aging_bucket": "90+"
   },
   {
@@ -3227,10 +3059,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2025-04-10",
     "invoice_amount": 72229.96,
-    "collectible": 0.0,
+    "collectible": 65006.96,
     "retainage": 7223.0,
-    "total_due": 7223.0,
-    "days_outstanding": 272,
+    "total_due": 72229.96,
+    "days_outstanding": 273,
     "aging_bucket": "90+"
   },
   {
@@ -3241,10 +3073,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2025-05-14",
     "invoice_amount": 92999.16,
-    "collectible": 0.0,
+    "collectible": 83699.24,
     "retainage": 9299.92,
-    "total_due": 9299.92,
-    "days_outstanding": 238,
+    "total_due": 92999.16,
+    "days_outstanding": 239,
     "aging_bucket": "90+"
   },
   {
@@ -3255,10 +3087,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2025-06-18",
     "invoice_amount": 37304.96,
-    "collectible": 0.0,
+    "collectible": 33574.46,
     "retainage": 3730.5,
-    "total_due": 3730.5,
-    "days_outstanding": 203,
+    "total_due": 37304.96,
+    "days_outstanding": 204,
     "aging_bucket": "90+"
   },
   {
@@ -3269,10 +3101,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2025-07-07",
     "invoice_amount": 151431.88,
-    "collectible": 0.0,
+    "collectible": 136288.69,
     "retainage": 15143.19,
-    "total_due": 15143.19,
-    "days_outstanding": 184,
+    "total_due": 151431.88,
+    "days_outstanding": 185,
     "aging_bucket": "90+"
   },
   {
@@ -3283,10 +3115,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2025-07-30",
     "invoice_amount": 114603.82,
-    "collectible": 0.0,
+    "collectible": 103143.44,
     "retainage": 11460.38,
-    "total_due": 11460.38,
-    "days_outstanding": 161,
+    "total_due": 114603.82,
+    "days_outstanding": 162,
     "aging_bucket": "90+"
   },
   {
@@ -3297,10 +3129,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2025-09-08",
     "invoice_amount": 235423.46,
-    "collectible": 0.0,
+    "collectible": 211881.11,
     "retainage": 23542.35,
-    "total_due": 23542.35,
-    "days_outstanding": 121,
+    "total_due": 235423.46,
+    "days_outstanding": 122,
     "aging_bucket": "90+"
   },
   {
@@ -3311,10 +3143,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2025-09-16",
     "invoice_amount": 243009.18,
-    "collectible": 0.0,
+    "collectible": 218708.26,
     "retainage": 24300.92,
-    "total_due": 24300.92,
-    "days_outstanding": 113,
+    "total_due": 243009.18,
+    "days_outstanding": 114,
     "aging_bucket": "90+"
   },
   {
@@ -3325,10 +3157,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2025-11-20",
     "invoice_amount": 433144.2,
-    "collectible": 0.0,
+    "collectible": 389829.78,
     "retainage": 43314.42,
-    "total_due": 43314.42,
-    "days_outstanding": 48,
+    "total_due": 433144.2,
+    "days_outstanding": 49,
     "aging_bucket": "31-60"
   },
   {
@@ -3339,11 +3171,11 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2025-12-08",
     "invoice_amount": 265953.47,
-    "collectible": 0.0,
+    "collectible": 239358.12,
     "retainage": 26595.35,
-    "total_due": 26595.35,
-    "days_outstanding": 30,
-    "aging_bucket": "0-30"
+    "total_due": 265953.47,
+    "days_outstanding": 31,
+    "aging_bucket": "31-60"
   },
   {
     "invoice_no": 6439,
@@ -3353,10 +3185,10 @@
     "job_description": "SH Fremont MRI & CT Replacem",
     "invoice_date": "2025-12-12",
     "invoice_amount": 223621.62,
-    "collectible": 0.0,
+    "collectible": 201259.46,
     "retainage": 22362.16,
-    "total_due": 22362.16,
-    "days_outstanding": 26,
+    "total_due": 223621.62,
+    "days_outstanding": 27,
     "aging_bucket": "0-30"
   },
   {
@@ -3370,7 +3202,7 @@
     "collectible": 19858.9,
     "retainage": 2206.55,
     "total_due": 22065.45,
-    "days_outstanding": 22,
+    "days_outstanding": 23,
     "aging_bucket": "0-30"
   },
   {
@@ -3384,22 +3216,8 @@
     "collectible": 24368.97,
     "retainage": 2707.66,
     "total_due": 27076.63,
-    "days_outstanding": 23,
+    "days_outstanding": 24,
     "aging_bucket": "0-30"
-  },
-  {
-    "invoice_no": 4638,
-    "customer_name": "Sutter Health",
-    "project_manager": "Jennifer Angelo",
-    "job_no": 4027,
-    "job_description": "PAMF 1233 Midas Way New IT",
-    "invoice_date": "2023-12-21",
-    "invoice_amount": 136122.46,
-    "collectible": 0.0,
-    "retainage": 1000.0,
-    "total_due": 1000.0,
-    "days_outstanding": 748,
-    "aging_bucket": "90+"
   },
   {
     "invoice_no": 4585,
@@ -3409,10 +3227,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2023-12-06",
     "invoice_amount": 15312.98,
-    "collectible": 0.0,
+    "collectible": 13781.68,
     "retainage": 1531.3,
-    "total_due": 1531.3,
-    "days_outstanding": 763,
+    "total_due": 15312.98,
+    "days_outstanding": 764,
     "aging_bucket": "90+"
   },
   {
@@ -3423,10 +3241,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2023-12-22",
     "invoice_amount": 23164.63,
-    "collectible": 0.0,
+    "collectible": 20848.17,
     "retainage": 2316.46,
-    "total_due": 2316.46,
-    "days_outstanding": 747,
+    "total_due": 23164.63,
+    "days_outstanding": 748,
     "aging_bucket": "90+"
   },
   {
@@ -3437,10 +3255,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2024-04-19",
     "invoice_amount": 206609.79,
-    "collectible": 0.0,
+    "collectible": 185948.81,
     "retainage": 20660.98,
-    "total_due": 20660.98,
-    "days_outstanding": 628,
+    "total_due": 206609.79,
+    "days_outstanding": 629,
     "aging_bucket": "90+"
   },
   {
@@ -3451,10 +3269,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2024-09-18",
     "invoice_amount": 101412.0,
-    "collectible": 0.0,
+    "collectible": 91270.8,
     "retainage": 10141.2,
-    "total_due": 10141.2,
-    "days_outstanding": 476,
+    "total_due": 101412.0,
+    "days_outstanding": 477,
     "aging_bucket": "90+"
   },
   {
@@ -3465,10 +3283,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2024-11-20",
     "invoice_amount": 57018.77,
-    "collectible": 0.0,
+    "collectible": 51316.89,
     "retainage": 5701.88,
-    "total_due": 5701.88,
-    "days_outstanding": 413,
+    "total_due": 57018.77,
+    "days_outstanding": 414,
     "aging_bucket": "90+"
   },
   {
@@ -3479,10 +3297,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2024-12-27",
     "invoice_amount": 8600.56,
-    "collectible": 0.0,
+    "collectible": 7740.5,
     "retainage": 860.06,
-    "total_due": 860.06,
-    "days_outstanding": 376,
+    "total_due": 8600.56,
+    "days_outstanding": 377,
     "aging_bucket": "90+"
   },
   {
@@ -3493,10 +3311,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2025-05-09",
     "invoice_amount": 65463.23,
-    "collectible": 0.0,
+    "collectible": 58916.91,
     "retainage": 6546.32,
-    "total_due": 6546.32,
-    "days_outstanding": 243,
+    "total_due": 65463.23,
+    "days_outstanding": 244,
     "aging_bucket": "90+"
   },
   {
@@ -3507,10 +3325,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2025-05-14",
     "invoice_amount": 157447.43,
-    "collectible": 0.0,
+    "collectible": 141702.69,
     "retainage": 15744.74,
-    "total_due": 15744.74,
-    "days_outstanding": 238,
+    "total_due": 157447.43,
+    "days_outstanding": 239,
     "aging_bucket": "90+"
   },
   {
@@ -3521,10 +3339,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2025-05-30",
     "invoice_amount": 198061.17,
-    "collectible": 0.0,
+    "collectible": 178255.05,
     "retainage": 19806.12,
-    "total_due": 19806.12,
-    "days_outstanding": 222,
+    "total_due": 198061.17,
+    "days_outstanding": 223,
     "aging_bucket": "90+"
   },
   {
@@ -3535,10 +3353,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2025-07-08",
     "invoice_amount": 463968.3,
-    "collectible": 0.0,
+    "collectible": 417571.47,
     "retainage": 46396.83,
-    "total_due": 46396.83,
-    "days_outstanding": 183,
+    "total_due": 463968.3,
+    "days_outstanding": 184,
     "aging_bucket": "90+"
   },
   {
@@ -3549,10 +3367,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2025-07-30",
     "invoice_amount": 442235.91,
-    "collectible": 0.0,
+    "collectible": 398012.32,
     "retainage": 44223.59,
-    "total_due": 44223.59,
-    "days_outstanding": 161,
+    "total_due": 442235.91,
+    "days_outstanding": 162,
     "aging_bucket": "90+"
   },
   {
@@ -3563,10 +3381,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2025-09-08",
     "invoice_amount": 673882.35,
-    "collectible": 0.0,
+    "collectible": 606494.11,
     "retainage": 67388.24,
-    "total_due": 67388.24,
-    "days_outstanding": 121,
+    "total_due": 673882.35,
+    "days_outstanding": 122,
     "aging_bucket": "90+"
   },
   {
@@ -3577,10 +3395,10 @@
     "job_description": "SH 4000 Dublin 3rd Fl Infusion",
     "invoice_date": "2025-11-07",
     "invoice_amount": 573292.7,
-    "collectible": 0.0,
+    "collectible": 515963.43,
     "retainage": 57329.27,
-    "total_due": 57329.27,
-    "days_outstanding": 61,
+    "total_due": 573292.7,
+    "days_outstanding": 62,
     "aging_bucket": "61-90"
   },
   {
@@ -3594,7 +3412,7 @@
     "collectible": 84617.93,
     "retainage": 9401.99,
     "total_due": 94019.92,
-    "days_outstanding": 16,
+    "days_outstanding": 17,
     "aging_bucket": "0-30"
   },
   {
@@ -3608,7 +3426,7 @@
     "collectible": 158084.68,
     "retainage": 0.0,
     "total_due": 158084.68,
-    "days_outstanding": 16,
+    "days_outstanding": 17,
     "aging_bucket": "0-30"
   },
   {
@@ -3622,7 +3440,7 @@
     "collectible": 108342.3,
     "retainage": 0.0,
     "total_due": 108342.3,
-    "days_outstanding": 16,
+    "days_outstanding": 17,
     "aging_bucket": "0-30"
   },
   {
@@ -3636,7 +3454,7 @@
     "collectible": 122396.94,
     "retainage": 0.0,
     "total_due": 122396.94,
-    "days_outstanding": 42,
+    "days_outstanding": 43,
     "aging_bucket": "31-60"
   },
   {
@@ -3650,7 +3468,7 @@
     "collectible": 17888.51,
     "retainage": 0.0,
     "total_due": 17888.51,
-    "days_outstanding": 42,
+    "days_outstanding": 43,
     "aging_bucket": "31-60"
   },
   {
@@ -3664,7 +3482,7 @@
     "collectible": 16154.36,
     "retainage": 1794.93,
     "total_due": 17949.29,
-    "days_outstanding": 22,
+    "days_outstanding": 23,
     "aging_bucket": "0-30"
   },
   {
@@ -3675,10 +3493,10 @@
     "job_description": "SH 15400LG Lab Dept Door Mod",
     "invoice_date": "2025-03-24",
     "invoice_amount": 808.65,
-    "collectible": 0.0,
+    "collectible": 727.78,
     "retainage": 80.87,
-    "total_due": 80.87,
-    "days_outstanding": 289,
+    "total_due": 808.65,
+    "days_outstanding": 290,
     "aging_bucket": "90+"
   },
   {
@@ -3689,10 +3507,10 @@
     "job_description": "SH 15400LG Lab Dept Door Mod",
     "invoice_date": "2025-05-15",
     "invoice_amount": 10833.7,
-    "collectible": 0.0,
+    "collectible": 9750.33,
     "retainage": 1083.37,
-    "total_due": 1083.37,
-    "days_outstanding": 237,
+    "total_due": 10833.7,
+    "days_outstanding": 238,
     "aging_bucket": "90+"
   },
   {
@@ -3703,10 +3521,10 @@
     "job_description": "SH 15400LG Lab Dept Door Mod",
     "invoice_date": "2025-07-15",
     "invoice_amount": 2948.92,
-    "collectible": 0.0,
+    "collectible": 2654.03,
     "retainage": 294.89,
-    "total_due": 294.89,
-    "days_outstanding": 176,
+    "total_due": 2948.92,
+    "days_outstanding": 177,
     "aging_bucket": "90+"
   },
   {
@@ -3717,10 +3535,10 @@
     "job_description": "SH 15400LG Lab Dept Door Mod",
     "invoice_date": "2025-07-30",
     "invoice_amount": 17311.82,
-    "collectible": 0.0,
+    "collectible": 15580.64,
     "retainage": 1731.18,
-    "total_due": 1731.18,
-    "days_outstanding": 161,
+    "total_due": 17311.82,
+    "days_outstanding": 162,
     "aging_bucket": "90+"
   },
   {
@@ -3731,10 +3549,10 @@
     "job_description": "SH 15400LG Lab Dept Door Mod",
     "invoice_date": "2025-09-03",
     "invoice_amount": 29181.07,
-    "collectible": 0.0,
+    "collectible": 26262.96,
     "retainage": 2918.11,
-    "total_due": 2918.11,
-    "days_outstanding": 126,
+    "total_due": 29181.07,
+    "days_outstanding": 127,
     "aging_bucket": "90+"
   },
   {
@@ -3745,10 +3563,10 @@
     "job_description": "SH 15400LG Lab Dept Door Mod",
     "invoice_date": "2025-09-16",
     "invoice_amount": 21971.8,
-    "collectible": 0.0,
+    "collectible": 19774.62,
     "retainage": 2197.18,
-    "total_due": 2197.18,
-    "days_outstanding": 113,
+    "total_due": 21971.8,
+    "days_outstanding": 114,
     "aging_bucket": "90+"
   },
   {
@@ -3759,10 +3577,10 @@
     "job_description": "SMSC OR Flr & Cabinet Replacem",
     "invoice_date": "2025-06-13",
     "invoice_amount": 160719.53,
-    "collectible": 0.0,
+    "collectible": 144647.58,
     "retainage": 16071.95,
-    "total_due": 16071.95,
-    "days_outstanding": 208,
+    "total_due": 160719.53,
+    "days_outstanding": 209,
     "aging_bucket": "90+"
   },
   {
@@ -3773,10 +3591,10 @@
     "job_description": "SMSC OR Flr & Cabinet Replacem",
     "invoice_date": "2025-07-24",
     "invoice_amount": 41136.87,
-    "collectible": 0.0,
+    "collectible": 37023.18,
     "retainage": 4113.69,
-    "total_due": 4113.69,
-    "days_outstanding": 167,
+    "total_due": 41136.87,
+    "days_outstanding": 168,
     "aging_bucket": "90+"
   },
   {
@@ -3787,10 +3605,10 @@
     "job_description": "SMSC OR Flr & Cabinet Replacem",
     "invoice_date": "2025-08-11",
     "invoice_amount": 116368.74,
-    "collectible": 0.0,
+    "collectible": 104731.87,
     "retainage": 11636.87,
-    "total_due": 11636.87,
-    "days_outstanding": 149,
+    "total_due": 116368.74,
+    "days_outstanding": 150,
     "aging_bucket": "90+"
   },
   {
@@ -3801,10 +3619,10 @@
     "job_description": "SMSC OR Flr & Cabinet Replacem",
     "invoice_date": "2025-09-09",
     "invoice_amount": 37659.03,
-    "collectible": 0.0,
+    "collectible": 33893.13,
     "retainage": 3765.9,
-    "total_due": 3765.9,
-    "days_outstanding": 120,
+    "total_due": 37659.03,
+    "days_outstanding": 121,
     "aging_bucket": "90+"
   },
   {
@@ -3818,7 +3636,7 @@
     "collectible": 42475.91,
     "retainage": 4719.55,
     "total_due": 47195.46,
-    "days_outstanding": 43,
+    "days_outstanding": 44,
     "aging_bucket": "31-60"
   },
   {
@@ -3832,7 +3650,7 @@
     "collectible": 56525.18,
     "retainage": 6280.58,
     "total_due": 62805.76,
-    "days_outstanding": 21,
+    "days_outstanding": 22,
     "aging_bucket": "0-30"
   },
   {
@@ -3846,7 +3664,7 @@
     "collectible": 18994.78,
     "retainage": 0.0,
     "total_due": 18994.78,
-    "days_outstanding": 62,
+    "days_outstanding": 63,
     "aging_bucket": "61-90"
   },
   {
@@ -3860,7 +3678,7 @@
     "collectible": 18466.19,
     "retainage": 0.0,
     "total_due": 18466.19,
-    "days_outstanding": 27,
+    "days_outstanding": 28,
     "aging_bucket": "0-30"
   },
   {
@@ -3874,7 +3692,7 @@
     "collectible": 5663.83,
     "retainage": 0.0,
     "total_due": 5663.83,
-    "days_outstanding": 15,
+    "days_outstanding": 16,
     "aging_bucket": "0-30"
   },
   {
@@ -3888,7 +3706,7 @@
     "collectible": 5554.68,
     "retainage": 0.0,
     "total_due": 5554.68,
-    "days_outstanding": 12,
+    "days_outstanding": 13,
     "aging_bucket": "0-30"
   },
   {
@@ -3902,7 +3720,7 @@
     "collectible": 43919.72,
     "retainage": 0.0,
     "total_due": 43919.72,
-    "days_outstanding": 15,
+    "days_outstanding": 16,
     "aging_bucket": "0-30"
   },
   {
@@ -3916,7 +3734,7 @@
     "collectible": 21215.12,
     "retainage": 0.0,
     "total_due": 21215.12,
-    "days_outstanding": 21,
+    "days_outstanding": 22,
     "aging_bucket": "0-30"
   },
   {
@@ -3930,7 +3748,7 @@
     "collectible": 46392.75,
     "retainage": 0.0,
     "total_due": 46392.75,
-    "days_outstanding": 15,
+    "days_outstanding": 16,
     "aging_bucket": "0-30"
   },
   {
@@ -3944,7 +3762,7 @@
     "collectible": 15001.2,
     "retainage": 1666.8,
     "total_due": 16668.0,
-    "days_outstanding": 15,
+    "days_outstanding": 16,
     "aging_bucket": "0-30"
   },
   {
@@ -3955,10 +3773,10 @@
     "job_description": "SH 701 MV Pharmacotherapy TI",
     "invoice_date": "2025-12-16",
     "invoice_amount": 7038.75,
-    "collectible": 0.0,
+    "collectible": 6334.87,
     "retainage": 703.88,
-    "total_due": 703.88,
-    "days_outstanding": 22,
+    "total_due": 7038.75,
+    "days_outstanding": 23,
     "aging_bucket": "0-30"
   },
   {
@@ -3972,7 +3790,7 @@
     "collectible": 2600.92,
     "retainage": 0.0,
     "total_due": 2600.92,
-    "days_outstanding": 16,
+    "days_outstanding": 17,
     "aging_bucket": "0-30"
   },
   {
@@ -3986,7 +3804,7 @@
     "collectible": 1338.68,
     "retainage": 0.0,
     "total_due": 1338.68,
-    "days_outstanding": 23,
+    "days_outstanding": 24,
     "aging_bucket": "0-30"
   },
   {
@@ -4000,7 +3818,7 @@
     "collectible": 16220.87,
     "retainage": 0.0,
     "total_due": 16220.87,
-    "days_outstanding": 23,
+    "days_outstanding": 24,
     "aging_bucket": "0-30"
   },
   {
@@ -4014,7 +3832,7 @@
     "collectible": 52542.99,
     "retainage": 0.0,
     "total_due": 52542.99,
-    "days_outstanding": 56,
+    "days_outstanding": 57,
     "aging_bucket": "31-60"
   },
   {
@@ -4028,7 +3846,7 @@
     "collectible": 2041.24,
     "retainage": 0.0,
     "total_due": 2041.24,
-    "days_outstanding": 23,
+    "days_outstanding": 24,
     "aging_bucket": "0-30"
   },
   {
@@ -4039,10 +3857,10 @@
     "job_description": "SH Fremont CT Replacement",
     "invoice_date": "2025-07-07",
     "invoice_amount": 75637.94,
-    "collectible": 0.0,
+    "collectible": 68074.15,
     "retainage": 7563.79,
-    "total_due": 7563.79,
-    "days_outstanding": 184,
+    "total_due": 75637.94,
+    "days_outstanding": 185,
     "aging_bucket": "90+"
   },
   {
@@ -4053,10 +3871,10 @@
     "job_description": "SH Fremont CT Replacement",
     "invoice_date": "2025-07-30",
     "invoice_amount": 53944.12,
-    "collectible": 0.0,
+    "collectible": 48549.71,
     "retainage": 5394.41,
-    "total_due": 5394.41,
-    "days_outstanding": 161,
+    "total_due": 53944.12,
+    "days_outstanding": 162,
     "aging_bucket": "90+"
   },
   {
@@ -4067,10 +3885,10 @@
     "job_description": "SH Fremont CT Replacement",
     "invoice_date": "2025-09-08",
     "invoice_amount": 119157.05,
-    "collectible": 0.0,
+    "collectible": 107241.34,
     "retainage": 11915.71,
-    "total_due": 11915.71,
-    "days_outstanding": 121,
+    "total_due": 119157.05,
+    "days_outstanding": 122,
     "aging_bucket": "90+"
   },
   {
@@ -4081,10 +3899,10 @@
     "job_description": "SH Fremont CT Replacement",
     "invoice_date": "2025-09-16",
     "invoice_amount": 123289.33,
-    "collectible": 0.0,
+    "collectible": 110960.4,
     "retainage": 12328.93,
-    "total_due": 12328.93,
-    "days_outstanding": 113,
+    "total_due": 123289.33,
+    "days_outstanding": 114,
     "aging_bucket": "90+"
   },
   {
@@ -4095,10 +3913,10 @@
     "job_description": "SH Fremont CT Replacement",
     "invoice_date": "2025-11-20",
     "invoice_amount": 190615.08,
-    "collectible": 0.0,
+    "collectible": 171553.57,
     "retainage": 19061.51,
-    "total_due": 19061.51,
-    "days_outstanding": 48,
+    "total_due": 190615.08,
+    "days_outstanding": 49,
     "aging_bucket": "31-60"
   },
   {
@@ -4109,10 +3927,10 @@
     "job_description": "SH Fremont CT Replacement",
     "invoice_date": "2025-12-09",
     "invoice_amount": 89362.44,
-    "collectible": 0.0,
+    "collectible": 80426.2,
     "retainage": 8936.24,
-    "total_due": 8936.24,
-    "days_outstanding": 29,
+    "total_due": 89362.44,
+    "days_outstanding": 30,
     "aging_bucket": "0-30"
   },
   {
@@ -4126,7 +3944,7 @@
     "collectible": 78496.76,
     "retainage": 8721.86,
     "total_due": 87218.62,
-    "days_outstanding": 26,
+    "days_outstanding": 27,
     "aging_bucket": "0-30"
   },
   {
@@ -4140,7 +3958,7 @@
     "collectible": 10499.5,
     "retainage": 1166.61,
     "total_due": 11666.11,
-    "days_outstanding": 21,
+    "days_outstanding": 22,
     "aging_bucket": "0-30"
   },
   {
@@ -4154,7 +3972,7 @@
     "collectible": 7539.03,
     "retainage": 0.0,
     "total_due": 7539.03,
-    "days_outstanding": 15,
+    "days_outstanding": 16,
     "aging_bucket": "0-30"
   },
   {
@@ -4168,7 +3986,7 @@
     "collectible": 3345.34,
     "retainage": 0.0,
     "total_due": 3345.34,
-    "days_outstanding": 16,
+    "days_outstanding": 17,
     "aging_bucket": "0-30"
   },
   {
@@ -4182,7 +4000,7 @@
     "collectible": 5527.0,
     "retainage": 0.0,
     "total_due": 5527.0,
-    "days_outstanding": 23,
+    "days_outstanding": 24,
     "aging_bucket": "0-30"
   },
   {
@@ -4196,7 +4014,7 @@
     "collectible": 3130.28,
     "retainage": 0.0,
     "total_due": 3130.28,
-    "days_outstanding": 15,
+    "days_outstanding": 16,
     "aging_bucket": "0-30"
   },
   {
@@ -4210,7 +4028,7 @@
     "collectible": 50000.0,
     "retainage": 0.0,
     "total_due": 50000.0,
-    "days_outstanding": 19,
+    "days_outstanding": 20,
     "aging_bucket": "0-30"
   },
   {
@@ -4224,7 +4042,7 @@
     "collectible": 19976.75,
     "retainage": 0.0,
     "total_due": 19976.75,
-    "days_outstanding": 12,
+    "days_outstanding": 13,
     "aging_bucket": "0-30"
   },
   {
@@ -4238,7 +4056,7 @@
     "collectible": 9621.88,
     "retainage": 0.0,
     "total_due": 9621.88,
-    "days_outstanding": 12,
+    "days_outstanding": 13,
     "aging_bucket": "0-30"
   },
   {
@@ -4252,7 +4070,7 @@
     "collectible": 35180.0,
     "retainage": 0.0,
     "total_due": 35180.0,
-    "days_outstanding": 15,
+    "days_outstanding": 16,
     "aging_bucket": "0-30"
   }
 ]
