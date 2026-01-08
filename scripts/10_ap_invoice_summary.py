@@ -40,7 +40,7 @@ def main():
             invoice_amount=("invoice_amount", "max"),
             amount_paid=("cash_amount", "sum"),
 
-            # ORIGINAL retainage from header (will be adjusted below)
+            # ORIGINAL retainage from AP header
             retainage_amount=("retainage_amount", "max"),
 
             # Context
@@ -56,32 +56,33 @@ def main():
     as_of_date = pd.Timestamp(datetime.now().date())
 
     # ------------------------------------------------------
-    # Foundation-faithful AP math
+    # Core AP balances
     # ------------------------------------------------------
     grouped["total_due"] = grouped["invoice_amount"] - grouped["amount_paid"]
 
     # AP aging NEVER subtracts retainage
-    grouped["open_for_aging"] = grouped["total_due"].apply(
-        lambda x: max(x, 0)
-    )
+    grouped["open_for_aging"] = grouped["total_due"].clip(lower=0)
 
     # ------------------------------------------------------
-    # REMAINING RETAINAGE (Foundation behavior)
+    # REMAINING RETAINAGE (Foundation-faithful)
     #
     # Payments apply:
     #   1) Non-retainage portion
     #   2) Then reduce retainage
     # ------------------------------------------------------
+    grouped["original_retainage_amount"] = grouped["retainage_amount"]
+
     grouped["non_retainage_portion"] = (
-        grouped["invoice_amount"] - grouped["retainage_amount"]
+        grouped["invoice_amount"] - grouped["original_retainage_amount"]
     )
 
     grouped["overpay_into_retainage"] = (
         grouped["amount_paid"] - grouped["non_retainage_portion"]
     ).clip(lower=0)
 
-    grouped["remaining_retainage"] = (
-        grouped["retainage_amount"] - grouped["overpay_into_retainage"]
+    # FINAL retainage amount = remaining retainage
+    grouped["retainage_amount"] = (
+        grouped["original_retainage_amount"] - grouped["overpay_into_retainage"]
     ).clip(lower=0)
 
     # ------------------------------------------------------
@@ -114,7 +115,7 @@ def main():
     grouped = grouped[grouped["total_due"] != 0]
 
     # ------------------------------------------------------
-    # Final column order (explicit & stable)
+    # Final column order (schema-stable)
     # ------------------------------------------------------
     final = grouped[
         [
@@ -131,13 +132,16 @@ def main():
             "amount_paid",
             "total_due",
 
-            # IMPORTANT:
-            # remaining_retainage replaces original retainage for display
-            "remaining_retainage",
+            # Remaining retainage (correct, Foundation-faithful)
+            "retainage_amount",
+
             "open_for_aging",
 
             "days_outstanding",
             "aging_bucket",
+
+            # Optional audit/debug (safe to keep)
+            "original_retainage_amount",
         ]
     ]
 
