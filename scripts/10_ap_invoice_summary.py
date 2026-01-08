@@ -30,7 +30,7 @@ def main():
         .agg(
             # Reference dates
             invoice_date=("invoice_date", "min"),
-            transaction_date=("transaction_date", "min"),  # <-- AGING ANCHOR
+            transaction_date=("transaction_date", "first"),  # <-- AGING ANCHOR
 
             # Amounts
             invoice_amount=("invoice_amount", "max"),
