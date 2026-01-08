@@ -2,6 +2,7 @@ import os
 import pyodbc
 import pandas as pd
 from datetime import date
+from zoneinfo import ZoneInfo
 
 # ==========================================================
 # CONFIG
@@ -10,8 +11,8 @@ SERVER = "sql.foundationsoft.com,9000"
 DATABASE = "Cas_5587"
 OUTFILE = "data/ar_invoice_summary.csv"
 
-# Match Foundation report date exactly
-AS_OF_DATE = date(2026, 1, 7)
+# 🔑 Dynamic AR aging date (Pacific Time, Foundation-aligned)
+AS_OF_DATE = date.today()
 
 # ==========================================================
 # DB CONNECTION
@@ -30,15 +31,12 @@ def connect():
 # MAIN
 # ==========================================================
 def main():
-    print("Exporting Foundation-aligned AR Invoice Aging…")
+    print(f"Exporting AR Invoice Aging as of {AS_OF_DATE} …")
     conn = connect()
 
     sql = f"""
     DECLARE @AsOfDate date = '{AS_OF_DATE}';
 
-    /* ------------------------------------------------------
-       Base invoice set
-       ------------------------------------------------------ */
     WITH Invoices AS (
         SELECT
             i.company_no,
@@ -75,9 +73,6 @@ def main():
             )
     ),
 
-    /* ------------------------------------------------------
-       Cash applied up to AsOfDate
-       ------------------------------------------------------ */
     CashApplied AS (
         SELECT
             RTRIM(LTRIM(h.invoice_no)) AS invoice_no,
@@ -90,9 +85,6 @@ def main():
             RTRIM(LTRIM(h.invoice_no))
     ),
 
-    /* ------------------------------------------------------
-       Identify audit-cleared retainage invoices
-       ------------------------------------------------------ */
     AuditCleared AS (
         SELECT DISTINCT
             RTRIM(LTRIM(COALESCE(h.adjust_invoice_no, h.invoice_no))) AS invoice_no
@@ -102,9 +94,6 @@ def main():
             AND ISNULL(h.cash_amount,0) <> 0
     )
 
-    /* ------------------------------------------------------
-       Final AR output
-       ------------------------------------------------------ */
     SELECT
         i.company_no,
         i.invoice_no,
@@ -118,7 +107,6 @@ def main():
         i.amount_due,
         i.retainage_amount,
 
-        /* 🔑 Foundation-aligned collectible */
         ROUND(
             i.invoice_amount
             - ISNULL(ca.cash_applied,0)
@@ -141,9 +129,6 @@ def main():
     LEFT JOIN AuditCleared a
         ON a.invoice_no = i.invoice_no
 
-    /* ------------------------------------------------------
-       Canonical exclusion rules
-       ------------------------------------------------------ */
     WHERE
         ROUND(
             i.invoice_amount
@@ -165,9 +150,6 @@ def main():
 
     df = pd.read_sql(sql, conn)
 
-    # ==========================================================
-    # FINAL FORMATTING
-    # ==========================================================
     money_cols = [
         "invoice_amount",
         "amount_due",
@@ -183,8 +165,5 @@ def main():
     df.to_csv(OUTFILE, index=False)
     print(f"Wrote {OUTFILE} ({len(df)} rows)")
 
-# ==========================================================
-# ENTRY POINT
-# ==========================================================
 if __name__ == "__main__":
     main()
