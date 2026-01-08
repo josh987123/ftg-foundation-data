@@ -96,7 +96,6 @@ def calculate_ar_invoice_metrics(invoice: dict) -> dict:
     IMPORTANT RULE:
     - Metrics NEVER drop invoices.
     - If it exists in ar_invoice_summary.csv, it exists here.
-    - Retainage-only invoices are preserved.
     """
 
     invoice_date = excel_to_date(invoice.get("invoice_date"))
@@ -125,7 +124,6 @@ def calculate_ar_invoice_metrics(invoice: dict) -> dict:
         "job_description": invoice.get("job_description", ""),
         "invoice_date": invoice.get("invoice_date"),
 
-        # Monetary fields come DIRECTLY from pipeline
         "invoice_amount": float(invoice.get("invoice_amount", 0) or 0),
         "cash_applied": float(invoice.get("cash_applied", 0) or 0),
         "total_due": float(invoice.get("total_due", 0) or 0),
@@ -178,16 +176,18 @@ def run_ar_etl() -> List[dict]:
     ]
 
 def run_ap_etl() -> List[dict]:
+    """
+    AP metrics are a projection layer only.
+    All AP aging logic lives upstream in ap_invoice_summary.csv.
+    """
+
     with open("public/data/ap_invoices.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
     results = []
     for inv in data.get("invoices", []):
-        remaining = float(inv.get("remaining_balance", 0) or 0)
         vendor = inv.get("vendor_name", "").strip()
 
-        if remaining <= 0:
-            continue
         if vendor in EXCLUDED_AP_VENDORS:
             continue
 
@@ -222,7 +222,7 @@ def write_metrics_outputs():
             indent=2,
         )
 
-    print("[MetricsETL] Metrics rebuilt (PDF-faithful, no AR filtering)")
+    print("[MetricsETL] Metrics rebuilt (PDF-faithful, AP logic upstream)")
 
 # ==========================================================
 # ENTRY POINT
