@@ -76,7 +76,7 @@ def main():
     ),
 
     /* ------------------------------------------------------
-       Identify audit-cleared retainage invoices
+       Identify audit-cleared invoices (retainage releases)
        ------------------------------------------------------ */
     AuditCleared AS (
         SELECT DISTINCT
@@ -88,7 +88,7 @@ def main():
     )
 
     /* ------------------------------------------------------
-       Final AR invoice output (ROW-LEVEL EXCLUSION)
+       Final AR output (ROW-LEVEL EXCLUSION)
        ------------------------------------------------------ */
     SELECT
         i.company_no,
@@ -103,12 +103,8 @@ def main():
         i.amount_due,
         i.retainage_amount,
 
-        /* Collectible AR only */
-        CASE
-            WHEN i.amount_due > 0 AND i.amount_due < i.invoice_amount
-                THEN i.amount_due
-            ELSE 0
-        END AS calculated_amount_due,
+        /* Collectible AR (do NOT zero valid invoices) */
+        i.amount_due AS calculated_amount_due,
 
         DATEDIFF(day, i.invoice_date, @AsOfDate) AS days_outstanding,
 
@@ -124,11 +120,13 @@ def main():
         ON a.invoice_no = i.invoice_no
 
     /* ------------------------------------------------------
-       🔑 OPTION B RULE (FINAL)
-       Remove audit-cleared retainage invoices entirely
+       🔑 CANONICAL AR RULE (FINAL)
+       - If collectible <= 0 → invoice does not exist
+       - Audit-cleared retainage-only invoices are excluded
        ------------------------------------------------------ */
     WHERE
-        NOT (
+        i.amount_due > 0
+        AND NOT (
             a.invoice_no IS NOT NULL
             AND i.retainage_amount > 0
             AND i.amount_due = i.invoice_amount
