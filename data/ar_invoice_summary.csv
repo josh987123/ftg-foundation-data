@@ -1133,7 +1133,7 @@ company_no,invoice_no,customer_no,customer_name,job_no,job_description,project_m
 1,6197,111,Santa Clara University,4348,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2025-08-27,183508.59,183508.59,18350.86,165157.73,0.0,133,91+
 1,6294,111,Santa Clara University,4348,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2025-10-07,511822.57,511822.57,51182.26,460640.31,0.0,92,91+
 1,6320,111,Santa Clara University,4348,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2025-10-28,447456.19,447456.19,44745.62,402710.57,0.0,71,61–90
-1,6418,111,Santa Clara University,4348,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2025-12-05,344947.29,344947.29,34494.73,0.0,310452.56,33,31–60
+1,6418,111,Santa Clara University,4348,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2025-12-05,344947.29,344947.29,34494.73,310452.56,0.0,33,31–60
 1,2506,191,"SBay Construction, Inc.",2603,OCH SPD/2412 Remodel,Kathy Roth,2020-10-02,33930.63,33930.63,0.0,33930.63,0.0,1923,91+
 1,2646,191,"SBay Construction, Inc.",2603,OCH SPD/2412 Remodel,Kathy Roth,2021-01-11,331012.93,331012.93,0.0,331012.93,0.0,1822,91+
 1,2673,191,"SBay Construction, Inc.",2603,OCH SPD/2412 Remodel,Kathy Roth,2021-01-26,236096.52,236096.52,0.0,236096.52,0.0,1807,91+

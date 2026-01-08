@@ -1,13 +1,13 @@
 {
   "status": "success",
-  "last_refresh_utc": "2026-01-08T01:59:30.013798Z",
+  "last_refresh_utc": "2026-01-08T02:10:45.366900Z",
   "csv_row_counts": {
     "data/accounts.csv": 200,
-    "data/gl_history_raw.csv": 355122,
+    "data/gl_history_raw.csv": 355124,
     "data/gl_history.csv": 178,
     "data/job_budgets.csv": 4262,
     "data/job_actuals.csv": 37499,
-    "data/ar_receipt_job_allocation.csv": 5769,
+    "data/ar_receipt_job_allocation.csv": 5770,
     "data/labor_job_allocation.csv": 203060
   },
   "json_record_counts": {

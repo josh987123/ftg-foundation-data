@@ -1,4 +1,5 @@
 company_no,receipt_document_no,receipt_no,receipt_date,receipt_amount,receipt_type,receipt_source,receipt_subtype,customer_no,invoice_no,line_no,applied_amount,job_no,job_description
+1,857620,3019,2026-01-07,310452.56,I,C,,111,6418,1,310452.56,4348,SCU Adobe (Kitchen) Remodel
 1,153289,3017,2026-01-06,824751.62,I,C,,115,6429,1,46764.31,4670,SH 701 MV Pharmacotherapy TI
 1,153289,3017,2026-01-06,824751.62,I,C,,115,6430,1,79494.2,4052,SH 2581 Sam ENT Relocation
 1,153289,3017,2026-01-06,824751.62,I,C,,115,6431,1,82693.1,3815,SH 301 Sunnyvale MRI Replace
