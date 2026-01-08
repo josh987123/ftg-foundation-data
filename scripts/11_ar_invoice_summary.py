@@ -30,7 +30,7 @@ def connect():
 # MAIN
 # ==========================================================
 def main():
-    print("Exporting Foundation-aligned AR Invoice Aging…")
+    print("Exporting Foundation-aligned AR Invoice Aging (Audit-faithful)…")
     conn = connect()
 
     sql = f"""
@@ -76,7 +76,7 @@ def main():
     ),
 
     /* ------------------------------------------------------
-       Audit-cleared retainage invoices (Option 2 rule)
+       Identify audit-cleared retainage invoices
        ------------------------------------------------------ */
     AuditCleared AS (
         SELECT DISTINCT
@@ -88,7 +88,7 @@ def main():
     )
 
     /* ------------------------------------------------------
-       Final AR Aging output
+       Final AR invoice output (ROW-LEVEL EXCLUSION)
        ------------------------------------------------------ */
     SELECT
         i.company_no,
@@ -103,17 +103,11 @@ def main():
         i.amount_due,
         i.retainage_amount,
 
-        /* 
-           Audit-faithful amount due:
-           - If audit-cleared retainage invoice, treat as zero
-           - Else use header amount_due
-        */
+        /* Collectible AR only */
         CASE
-            WHEN a.invoice_no IS NOT NULL
-                 AND i.retainage_amount > 0
-                 AND i.amount_due = i.invoice_amount
-                THEN 0
-            ELSE i.amount_due
+            WHEN i.amount_due > 0 AND i.amount_due < i.invoice_amount
+                THEN i.amount_due
+            ELSE 0
         END AS calculated_amount_due,
 
         DATEDIFF(day, i.invoice_date, @AsOfDate) AS days_outstanding,
@@ -122,15 +116,18 @@ def main():
             WHEN DATEDIFF(day, i.invoice_date, @AsOfDate) <= 30 THEN '0-30'
             WHEN DATEDIFF(day, i.invoice_date, @AsOfDate) <= 60 THEN '31-60'
             WHEN DATEDIFF(day, i.invoice_date, @AsOfDate) <= 90 THEN '61-90'
-            ELSE '91+'
+            ELSE '90+'
         END AS aging_bucket
 
     FROM Invoices i
     LEFT JOIN AuditCleared a
         ON a.invoice_no = i.invoice_no
 
+    /* ------------------------------------------------------
+       🔑 OPTION B RULE (FINAL)
+       Remove audit-cleared retainage invoices entirely
+       ------------------------------------------------------ */
     WHERE
-        /* keep real AR only */
         NOT (
             a.invoice_no IS NOT NULL
             AND i.retainage_amount > 0
