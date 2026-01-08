@@ -24,7 +24,7 @@ EXCLUDED_AP_VENDORS = [
     "Gas/other vehicle expense",
 ]
 
-# Fixed aging date per Foundation AR Aging report
+# Fixed aging date – must match Foundation AR Aging
 AR_AGING_DATE = datetime(2026, 1, 7)
 
 # ==========================================================
@@ -86,26 +86,29 @@ def calculate_job_metrics(job: dict, actual_cost: float, billed: float) -> dict:
     }
 
 # ==========================================================
-# AR METRICS (FOUNDATION-ALIGNED, NO RE-LOGIC)
+# AR METRICS (FOUNDATION-TIED, ENFORCED)
 # ==========================================================
 
 def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
     """
-    IMPORTANT:
-    - Invoice eligibility is decided upstream (11_ar_invoice_summary.py)
-    - Metrics MUST NOT exclude, zero, or reinterpret AR
-    - Metrics only summarize what exists
+    ENFORCED FOUNDATION RULE:
+    If collectible <= 0 → invoice does not exist in AR Aging.
+    No collections math. No retainage re-logic.
     """
 
     calc_due = float(invoice.get("calculated_amount_due", 0) or 0)
+
+    # 🔑 HARD STOP — zero collectible never appears in AR Aging
+    if calc_due <= 0:
+        return None
+
     retainage = float(invoice.get("retainage_amount", 0) or 0)
 
     invoice_date = excel_to_date(invoice.get("invoice_date"))
-    days_outstanding = (
-        max(0, (AR_AGING_DATE - invoice_date).days)
-        if invoice_date
-        else 0
-    )
+    if not invoice_date:
+        return None
+
+    days_outstanding = max(0, (AR_AGING_DATE - invoice_date).days)
 
     if days_outstanding <= 30:
         aging_bucket = "0-30"
@@ -124,8 +127,8 @@ def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
         "job_description": invoice.get("job_description", ""),
         "invoice_date": invoice.get("invoice_date"),
         "invoice_amount": float(invoice.get("invoice_amount", 0) or 0),
-        "collectible": round(calc_due, 2),
-        "retainage": round(retainage, 2),
+        "collectible": round(calc_due, 2),        # ← Net Receivable
+        "retainage": round(retainage, 2),         # ← Display only
         "total_due": round(calc_due + retainage, 2),
         "days_outstanding": days_outstanding,
         "aging_bucket": aging_bucket,
@@ -169,9 +172,9 @@ def run_ar_etl() -> List[dict]:
 
     results = []
     for inv in data.get("invoices", []):
-        m = calculate_ar_invoice_metrics(inv)
-        if m:
-            results.append(m)
+        row = calculate_ar_invoice_metrics(inv)
+        if row:
+            results.append(row)
 
     return results
 
