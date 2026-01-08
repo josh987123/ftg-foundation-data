@@ -91,7 +91,7 @@ def main():
     ),
 
     /* ------------------------------------------------------
-       Identify audit-cleared retainage invoices
+       Audit-cleared retainage invoices
        ------------------------------------------------------ */
     AuditCleared AS (
         SELECT DISTINCT
@@ -103,7 +103,7 @@ def main():
     )
 
     /* ------------------------------------------------------
-       Final AR output
+       Final AR output (Foundation-aligned)
        ------------------------------------------------------ */
     SELECT
         i.company_no,
@@ -118,7 +118,7 @@ def main():
         i.amount_due,
         i.retainage_amount,
 
-        /* 🔑 Foundation-aligned collectible */
+        /* Net collectible per Foundation audit logic */
         ROUND(
             i.invoice_amount
             - ISNULL(ca.cash_applied,0)
@@ -142,19 +142,33 @@ def main():
         ON a.invoice_no = i.invoice_no
 
     /* ------------------------------------------------------
-       Canonical exclusion rules
+       Canonical exclusion rules (FINAL)
        ------------------------------------------------------ */
     WHERE
+        /* Must have positive collectible */
         ROUND(
             i.invoice_amount
             - ISNULL(ca.cash_applied,0)
             - i.retainage_amount,
             2
         ) > 0
+
+        /* Exclude audit-cleared retainage-only invoices */
         AND NOT (
             a.invoice_no IS NOT NULL
             AND i.retainage_amount > 0
             AND i.amount_due = i.invoice_amount
+        )
+
+        /* Exclude legacy audit-cleared invoices with non-cash adjustments */
+        AND NOT EXISTS (
+            SELECT 1
+            FROM ar_history h2
+            WHERE
+                h2.record_status = 'A'
+                AND RTRIM(LTRIM(h2.invoice_no)) = i.invoice_no
+                AND ISNULL(h2.cash_amount,0) = 0
+                AND ISNULL(h2.adjust_invoice_amount,0) <> 0
         )
 
     ORDER BY
