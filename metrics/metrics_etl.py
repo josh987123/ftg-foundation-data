@@ -1,8 +1,7 @@
 import json
 import os
 from datetime import datetime, timezone
-from zoneinfo import ZoneInfo
-from typing import List, Optional
+from typing import List
 
 # ==========================================================
 # CONFIG
@@ -25,14 +24,14 @@ EXCLUDED_AP_VENDORS = [
     "Gas/other vehicle expense",
 ]
 
-# 🔑 Dynamic AR aging date (Pacific Time, Foundation-aligned)
-AR_AGING_DATE = datetime.now(ZoneInfo("America/Los_Angeles")).date()
-
 # ==========================================================
 # UTILITIES
 # ==========================================================
 
 def excel_to_date(serial):
+    """
+    Convert Excel serial or YYYY-MM-DD into datetime.
+    """
     from datetime import timedelta
 
     if not serial:
@@ -42,12 +41,12 @@ def excel_to_date(serial):
         try:
             return datetime.strptime(serial.strip(), "%Y-%m-%d")
         except ValueError:
-            pass
+            return None
 
     excel_epoch = datetime(1899, 12, 30)
     try:
         return excel_epoch + timedelta(days=int(float(serial)))
-    except (ValueError, TypeError):
+    except Exception:
         return None
 
 # ==========================================================
@@ -87,38 +86,36 @@ def calculate_job_metrics(job: dict, actual_cost: float, billed: float) -> dict:
     }
 
 # ==========================================================
-# AR METRICS (FOUNDATION-TIED, ENFORCED)
+# AR METRICS (PDF-FAITHFUL)
 # ==========================================================
 
-def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
+def calculate_ar_invoice_metrics(invoice: dict) -> dict:
     """
-    ENFORCED FOUNDATION RULE:
-    If collectible <= 0 → invoice does not exist in AR Aging.
-    No collections math. No retainage re-logic.
+    PDF-faithful AR metrics.
+
+    IMPORTANT RULE:
+    - Metrics NEVER drop invoices.
+    - If it exists in ar_invoice_summary.csv, it exists here.
+    - Retainage-only invoices are preserved.
     """
-
-    calc_due = float(invoice.get("calculated_amount_due", 0) or 0)
-
-    # 🔑 HARD STOP — zero collectible never appears in AR Aging
-    if calc_due <= 0:
-        return None
-
-    retainage = float(invoice.get("retainage_amount", 0) or 0)
 
     invoice_date = excel_to_date(invoice.get("invoice_date"))
     if not invoice_date:
-        return None
-
-    days_outstanding = max(0, (AR_AGING_DATE - invoice_date.date()).days)
-
-    if days_outstanding <= 30:
-        aging_bucket = "0-30"
-    elif days_outstanding <= 60:
-        aging_bucket = "31-60"
-    elif days_outstanding <= 90:
-        aging_bucket = "61-90"
+        days_outstanding = None
+        aging_bucket = None
     else:
-        aging_bucket = "90+"
+        days_outstanding = max(
+            0, (datetime.now().date() - invoice_date.date()).days
+        )
+
+        if days_outstanding <= 30:
+            aging_bucket = "0-30"
+        elif days_outstanding <= 60:
+            aging_bucket = "31-60"
+        elif days_outstanding <= 90:
+            aging_bucket = "61-90"
+        else:
+            aging_bucket = "90+"
 
     return {
         "invoice_no": invoice.get("invoice_no"),
@@ -127,10 +124,14 @@ def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
         "job_no": invoice.get("job_no"),
         "job_description": invoice.get("job_description", ""),
         "invoice_date": invoice.get("invoice_date"),
+
+        # Monetary fields come DIRECTLY from pipeline
         "invoice_amount": float(invoice.get("invoice_amount", 0) or 0),
-        "collectible": round(calc_due, 2),        # ← Net Receivable
-        "retainage": round(retainage, 2),         # ← Display only
-        "total_due": round(calc_due + retainage, 2),
+        "cash_applied": float(invoice.get("cash_applied", 0) or 0),
+        "total_due": float(invoice.get("total_due", 0) or 0),
+        "retainage": float(invoice.get("retainage_amount", 0) or 0),
+        "collectible": float(invoice.get("calculated_amount_due", 0) or 0),
+
         "days_outstanding": days_outstanding,
         "aging_bucket": aging_bucket,
     }
@@ -171,13 +172,10 @@ def run_ar_etl() -> List[dict]:
     with open("public/data/ar_invoices.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    results = []
-    for inv in data.get("invoices", []):
-        row = calculate_ar_invoice_metrics(inv)
-        if row:
-            results.append(row)
-
-    return results
+    return [
+        calculate_ar_invoice_metrics(inv)
+        for inv in data.get("invoices", [])
+    ]
 
 def run_ap_etl() -> List[dict]:
     with open("public/data/ap_invoices.json", "r", encoding="utf-8") as f:
@@ -224,7 +222,7 @@ def write_metrics_outputs():
             indent=2,
         )
 
-    print(f"[MetricsETL] Wrote metrics using AR aging date {AR_AGING_DATE}")
+    print("[MetricsETL] Metrics rebuilt (PDF-faithful, no AR filtering)")
 
 # ==========================================================
 # ENTRY POINT
