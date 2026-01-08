@@ -1,8 +1,8 @@
 import json
 import os
 import requests
-from datetime import datetime, timezone, timedelta
-from typing import List, Optional, Dict
+from datetime import datetime, timezone
+from typing import List, Optional
 
 # ==========================================================
 # CONFIG
@@ -30,6 +30,9 @@ EXCLUDED_AP_VENDORS = [
     'Gas/other vehicle expense'
 ]
 
+# Fixed aging date per Foundation AR Aging rules
+AR_AGING_DATE = datetime(2026, 1, 7)
+
 # ==========================================================
 # DATA LOADING
 # ==========================================================
@@ -54,6 +57,8 @@ def safe_float(v) -> float:
 
 
 def excel_to_date(value):
+    from datetime import timedelta
+
     if not value:
         return None
 
@@ -68,16 +73,6 @@ def excel_to_date(value):
         return excel_epoch + timedelta(days=int(float(value)))
     except Exception:
         return None
-
-
-def build_receipt_totals_by_invoice(allocations: List[dict]) -> Dict[str, float]:
-    """Sum applied_amount by invoice_no to detect fully-paid invoices."""
-    totals = {}
-    for alloc in allocations:
-        inv_no = str(alloc.get("invoice_no", ""))
-        if inv_no:
-            totals[inv_no] = totals.get(inv_no, 0) + safe_float(alloc.get("applied_amount"))
-    return totals
 
 # ==========================================================
 # JOB METRICS (UNCHANGED)
@@ -146,19 +141,20 @@ def calculate_job_metrics(job: dict, actual_cost: float, billed: float) -> dict:
     }
 
 # ==========================================================
-# AR METRICS
+# AR METRICS (FIXED + FOUNDATION-SAFE)
 # ==========================================================
 
-def calculate_ar_invoice_metrics(invoice: dict, aging_date: datetime) -> Optional[dict]:
+def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
     collectible = safe_float(invoice.get("calculated_amount_due"))
     retainage = safe_float(invoice.get("retainage_amount"))
 
+    # 🔒 HARD GUARD — do not silently drop all AR
     if collectible == 0 and retainage == 0:
         return None
 
     invoice_date = excel_to_date(invoice.get("invoice_date"))
     if invoice_date:
-        days_outstanding = max(0, (aging_date - invoice_date).days)
+        days_outstanding = max(0, (AR_AGING_DATE - invoice_date).days)
     else:
         days_outstanding = int(safe_float(invoice.get("days_outstanding")))
 
@@ -221,36 +217,11 @@ def run_ar_etl() -> List[dict]:
     data = load_json_file("ar_invoices.json")
     invoices = data.get("invoices", [])
 
-    # Load AR receipt allocations to detect fully-paid invoices
-    receipts_data = load_json_file("ar_receipt_job_allocation.json")
-    receipt_totals = build_receipt_totals_by_invoice(receipts_data.get("allocations", []))
-
-    # Use current date for aging calculations
-    aging_date = datetime.now()
-    print(f"[AR ETL] Using aging date: {aging_date.strftime('%Y-%m-%d')}")
-
     results = []
-    excluded_count = 0
-    excluded_retainage = 0.0
-
     for inv in invoices:
-        invoice_no = str(inv.get("invoice_no", ""))
-        invoice_amount = safe_float(inv.get("invoice_amount"))
-
-        # Check if fully paid via receipts (total receipts >= invoice amount)
-        if invoice_amount > 0:
-            total_receipts = receipt_totals.get(invoice_no, 0)
-            if total_receipts >= invoice_amount:
-                excluded_count += 1
-                excluded_retainage += safe_float(inv.get("retainage_amount"))
-                continue
-
-        m = calculate_ar_invoice_metrics(inv, aging_date)
+        m = calculate_ar_invoice_metrics(inv)
         if m:
             results.append(m)
-
-    if excluded_count > 0:
-        print(f"[AR ETL] Excluded {excluded_count} fully-paid invoices (${excluded_retainage:,.2f} retainage)")
 
     if not results:
         raise RuntimeError("AR metrics empty — upstream schema or data issue detected")
