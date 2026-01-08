@@ -13,7 +13,11 @@ def main():
     # ------------------------------------------------------
     # Remove voided payment rows
     # ------------------------------------------------------
-    df["void_flag"] = pd.to_numeric(df["void_flag"], errors="coerce").fillna(0).astype(int)
+    df["void_flag"] = (
+        pd.to_numeric(df["void_flag"], errors="coerce")
+        .fillna(0)
+        .astype(int)
+    )
     df = df[df["void_flag"] != 1].copy()
 
     # ------------------------------------------------------
@@ -30,13 +34,13 @@ def main():
         .agg(
             # Reference dates
             invoice_date=("invoice_date", "min"),
-            transaction_date=("transaction_date", "first"),  # <-- AGING ANCHOR
+            transaction_date=("transaction_date", "first"),  # AGING ANCHOR
 
             # Amounts
             invoice_amount=("invoice_amount", "max"),
             amount_paid=("cash_amount", "sum"),
 
-            # Display-only retainage
+            # ORIGINAL retainage from header (will be adjusted below)
             retainage_amount=("retainage_amount", "max"),
 
             # Context
@@ -56,12 +60,29 @@ def main():
     # ------------------------------------------------------
     grouped["total_due"] = grouped["invoice_amount"] - grouped["amount_paid"]
 
-    # IMPORTANT:
-    # AP aging does NOT net retainage out of buckets.
-    # Retainage is display-only for AP.
+    # AP aging NEVER subtracts retainage
     grouped["open_for_aging"] = grouped["total_due"].apply(
         lambda x: max(x, 0)
     )
+
+    # ------------------------------------------------------
+    # REMAINING RETAINAGE (Foundation behavior)
+    #
+    # Payments apply:
+    #   1) Non-retainage portion
+    #   2) Then reduce retainage
+    # ------------------------------------------------------
+    grouped["non_retainage_portion"] = (
+        grouped["invoice_amount"] - grouped["retainage_amount"]
+    )
+
+    grouped["overpay_into_retainage"] = (
+        grouped["amount_paid"] - grouped["non_retainage_portion"]
+    ).clip(lower=0)
+
+    grouped["remaining_retainage"] = (
+        grouped["retainage_amount"] - grouped["overpay_into_retainage"]
+    ).clip(lower=0)
 
     # ------------------------------------------------------
     # Days outstanding (transaction-date based)
@@ -109,7 +130,10 @@ def main():
             "invoice_amount",
             "amount_paid",
             "total_due",
-            "retainage_amount",
+
+            # IMPORTANT:
+            # remaining_retainage replaces original retainage for display
+            "remaining_retainage",
             "open_for_aging",
 
             "days_outstanding",
