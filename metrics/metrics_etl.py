@@ -15,22 +15,22 @@ GITHUB_DATA_BASE = os.getenv(
     "https://raw.githubusercontent.com/josh987123/ftg-foundation-data/main/public/data"
 )
 
-EXCLUDED_PM = 'josh angelo'
+EXCLUDED_PM = "josh angelo"
 
 EXCLUDED_AP_VENDORS = [
-    'FTG Builders LLC',
-    'FTG Builders, LLC',
-    'FTG Builders',
-    'FTG BUILDERS LLC',
-    'CoPower One',
-    'Travel costs',
-    'Meals and Entertainment',
-    'DoorDash Food Delivery',
-    'Costco Wholesale',
-    'Gas/other vehicle expense'
+    "FTG Builders LLC",
+    "FTG Builders, LLC",
+    "FTG Builders",
+    "FTG BUILDERS LLC",
+    "CoPower One",
+    "Travel costs",
+    "Meals and Entertainment",
+    "DoorDash Food Delivery",
+    "Costco Wholesale",
+    "Gas/other vehicle expense",
 ]
 
-# Fixed aging date per Foundation AR Aging rules
+# Match Foundation AR Aging date
 AR_AGING_DATE = datetime(2026, 1, 7)
 
 # ==========================================================
@@ -49,7 +49,7 @@ def load_json_file(filename: str) -> dict:
 
 def safe_float(v) -> float:
     try:
-        if v is None:
+        if v is None or v == "":
             return 0.0
         return float(v)
     except Exception:
@@ -141,15 +141,20 @@ def calculate_job_metrics(job: dict, actual_cost: float, billed: float) -> dict:
     }
 
 # ==========================================================
-# AR METRICS (FIXED + FOUNDATION-SAFE)
+# AR METRICS (FOUNDATION-CORRECT)
 # ==========================================================
 
 def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
-    collectible = safe_float(invoice.get("calculated_amount_due"))
-    retainage = safe_float(invoice.get("retainage_amount"))
+    # Remaining balance is the source of truth
+    amount_due = safe_float(invoice.get("amount_due"))
 
-    # 🔒 HARD GUARD — do not silently drop all AR
-    if collectible == 0 and retainage == 0:
+    retainage_raw = safe_float(invoice.get("retainage_amount"))
+    retainage_remaining = min(retainage_raw, amount_due)
+
+    collectible_remaining = max(0.0, amount_due - retainage_remaining)
+
+    # Ignore fully cleared invoices
+    if collectible_remaining == 0 and retainage_remaining == 0:
         return None
 
     invoice_date = excel_to_date(invoice.get("invoice_date"))
@@ -165,7 +170,7 @@ def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
     elif days_outstanding <= 90:
         aging_bucket = "61-90"
     else:
-        aging_bucket = "90+"
+        aging_bucket = "91+"
 
     return {
         "invoice_no": invoice.get("invoice_no", ""),
@@ -175,9 +180,10 @@ def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
         "job_description": invoice.get("job_description", ""),
         "invoice_date": invoice.get("invoice_date", ""),
         "invoice_amount": safe_float(invoice.get("invoice_amount")),
-        "collectible": round(collectible, 2),
-        "retainage": round(retainage, 2),
-        "total_due": round(collectible + retainage, 2),
+        # ✅ Foundation-aligned values
+        "collectible": round(collectible_remaining, 2),
+        "retainage": round(retainage_remaining, 2),
+        "total_due": round(amount_due, 2),
         "days_outstanding": days_outstanding,
         "aging_bucket": aging_bucket,
     }
@@ -224,7 +230,7 @@ def run_ar_etl() -> List[dict]:
             results.append(m)
 
     if not results:
-        raise RuntimeError("AR metrics empty — upstream schema or data issue detected")
+        raise RuntimeError("AR metrics empty — check upstream AR export")
 
     return results
 
