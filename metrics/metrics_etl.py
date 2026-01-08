@@ -30,7 +30,7 @@ EXCLUDED_AP_VENDORS = [
     "Gas/other vehicle expense",
 ]
 
-# Match Foundation AR Aging date
+# Foundation AR Aging date
 AR_AGING_DATE = datetime(2026, 1, 7)
 
 # ==========================================================
@@ -141,20 +141,18 @@ def calculate_job_metrics(job: dict, actual_cost: float, billed: float) -> dict:
     }
 
 # ==========================================================
-# AR METRICS (FOUNDATION-CORRECT)
+# AR METRICS (FOUNDATION-ALIGNED)
 # ==========================================================
 
 def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
-    # Remaining balance is the source of truth
     amount_due = safe_float(invoice.get("amount_due"))
-
     retainage_raw = safe_float(invoice.get("retainage_amount"))
     retainage_remaining = min(retainage_raw, amount_due)
-
     collectible_remaining = max(0.0, amount_due - retainage_remaining)
 
-    # Ignore fully cleared invoices
-    if collectible_remaining == 0 and retainage_remaining == 0:
+    # 🚨 FOUNDATION RULE:
+    # Retainage-only invoices do NOT appear in aging buckets
+    if collectible_remaining <= 0:
         return None
 
     invoice_date = excel_to_date(invoice.get("invoice_date"))
@@ -180,7 +178,6 @@ def calculate_ar_invoice_metrics(invoice: dict) -> Optional[dict]:
         "job_description": invoice.get("job_description", ""),
         "invoice_date": invoice.get("invoice_date", ""),
         "invoice_amount": safe_float(invoice.get("invoice_amount")),
-        # ✅ Foundation-aligned values
         "collectible": round(collectible_remaining, 2),
         "retainage": round(retainage_remaining, 2),
         "total_due": round(amount_due, 2),
@@ -224,13 +221,27 @@ def run_ar_etl() -> List[dict]:
     invoices = data.get("invoices", [])
 
     results = []
+    retainage_total = 0.0
+
     for inv in invoices:
+        amount_due = safe_float(inv.get("amount_due"))
+        retainage_amt = safe_float(inv.get("retainage_amount"))
+        retainage_total += min(retainage_amt, amount_due)
+
         m = calculate_ar_invoice_metrics(inv)
         if m:
             results.append(m)
 
     if not results:
         raise RuntimeError("AR metrics empty — check upstream AR export")
+
+    # Write retainage summary (optional but useful)
+    with open(f"{OUTPUT_DIR}/metrics_ar_retainage_total.json", "w") as f:
+        json.dump(
+            {"retainage_total": round(retainage_total, 2)},
+            f,
+            indent=2,
+        )
 
     return results
 
