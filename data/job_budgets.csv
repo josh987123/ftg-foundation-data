@@ -4048,7 +4048,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 5045,ECH LG Ortho Bathroom Floor Re,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,7452.0,0.0,7452.0,4148.0,0.0,4148.0
 5046,AP 450 Hayes SF Concrete Found,118,"Aquatek Plumbing, Inc.",A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 5047,MMH Lab Expansion Full Remodel,215,Mee Memorial Hospital,A,RODNEY,Rodney Terra,5045006.0,0.0,5045006.0,3996797.0,0.0,3996797.0
-5048,ECH LG Admin Break Room Remode,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
+5048,ECH LG Admin Break Room Remode,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,48931.0,0.0,48931.0,0.0,0.0,0.0
 5049,ECH LG L&D Scrub Sinks Mix Val,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 5050,DH Dr Lounge Completion,104,Dignity Health,A,RODNEY,Rodney Terra,72712.0,113407.0,186119.0,0.0,98998.0,98998.0
 5051,LPCH Fire Door replacement F P,167,Lucile Packard Childrens' Hosp,C,KATHY,Kathy Roth,0.0,0.0,0.0,0.0,0.0,0.0
@@ -4259,5 +4259,9 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 5257,LPCH Leak Above 380,167,Lucile Packard Childrens' Hosp,A,KATHY,Kathy Roth,0.0,0.0,0.0,0.0,0.0,0.0
 5258,ECH LG Engineering Misc,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 5259,2026 Warranty Costs,125,"FTG Builders, Inc.",A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
+5260,ECH LG Misc Work,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
+5261,DH Mamava Anchorage,104,Dignity Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
+5262,ECHMOB 2728 SVMH SobratoSte545,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
+5263,ECHMV 2500 Bldg #10 Wtr Damage,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 99111,Test Job for Rodney,MISC,Miscellaneous Customer,A,RODNEY,Rodney Terra,1000000.0,500000.0,1500000.0,750000.0,300000.0,1050000.0
 BUDGET,Budget,125,"FTG Builders, Inc.",O,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0

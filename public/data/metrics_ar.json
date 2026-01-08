@@ -840,6 +840,21 @@
     "aging_bucket": "0-30"
   },
   {
+    "invoice_no": 6505,
+    "customer_name": "El Camino Hospital",
+    "project_manager": "Doris Quai Hoi",
+    "job_no": 5048,
+    "job_description": "ECH LG Admin Break Room Remode",
+    "invoice_date": "2026-01-08",
+    "invoice_amount": 48931.0,
+    "cash_applied": 0.0,
+    "total_due": 48931.0,
+    "retainage": 0.0,
+    "collectible": 48931.0,
+    "days_outstanding": 0,
+    "aging_bucket": "0-30"
+  },
+  {
     "invoice_no": 6496,
     "customer_name": "El Camino Hospital",
     "project_manager": "Doris Quai Hoi",
