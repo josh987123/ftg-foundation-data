@@ -13,6 +13,10 @@ OUTFILE = "data/ar_invoice_summary.csv"
 # Match Foundation report date exactly
 AS_OF_DATE = date(2026, 1, 7)
 
+# Optional: hide tiny residuals that make dashboards look wrong
+# Set to 0 to keep everything.
+MIN_TOTAL_DUE = 1.00  # dollars
+
 # ==========================================================
 # DB CONNECTION (MATCHES WORKING SCRIPTS)
 # ==========================================================
@@ -49,8 +53,13 @@ def main():
             pm.description AS project_manager_name,
 
             i.invoice_date,
-            i.invoice_amount,
-            i.amount_due,
+            ISNULL(i.invoice_amount,0) AS invoice_amount,
+
+            -- IMPORTANT:
+            -- In Foundation, ar_invoice.amount_due is already the remaining balance (net of payments).
+            -- Do NOT subtract cash applied again or you will double-count payments and zero out collectible.
+            ISNULL(i.amount_due,0) AS amount_due,
+
             ISNULL(i.retainage_amount,0) AS retainage_amount
 
         FROM ar_invoice i
@@ -80,45 +89,6 @@ def main():
                   AND RTRIM(LTRIM(x.original_invoice_no)) = RTRIM(LTRIM(i.invoice_no))
                   AND RTRIM(LTRIM(x.invoice_no)) <> RTRIM(LTRIM(i.invoice_no))
             )
-    ),
-
-    CashApplied AS (
-        SELECT
-            ci.company_no,
-            RTRIM(LTRIM(ci.invoice_no)) AS invoice_no,
-            SUM(ISNULL(ci.ar_amount,0)) AS cash_applied
-        FROM ar_cash_invoice ci
-        WHERE
-            ci.record_status = 'A'
-        GROUP BY
-            ci.company_no,
-            RTRIM(LTRIM(ci.invoice_no))
-    ),
-
-    NetAR AS (
-        SELECT
-            i.company_no,
-            i.invoice_no,
-            i.customer_no,
-            i.customer_name,
-            i.job_no,
-            i.job_description,
-            i.project_manager_name,
-            i.invoice_date,
-            i.invoice_amount,
-            i.amount_due,
-            i.retainage_amount,
-            ISNULL(c.cash_applied,0) AS cash_applied,
-
-            CASE
-                WHEN (i.amount_due - ISNULL(c.cash_applied,0)) <= i.retainage_amount
-                    THEN 0
-                ELSE (i.amount_due - ISNULL(c.cash_applied,0) - i.retainage_amount)
-            END AS calculated_amount_due
-        FROM Invoices i
-        LEFT JOIN CashApplied c
-          ON c.company_no = i.company_no
-         AND c.invoice_no = i.invoice_no
     )
 
     SELECT
@@ -133,8 +103,13 @@ def main():
         invoice_amount,
         amount_due,
         retainage_amount,
-        cash_applied,
-        calculated_amount_due,
+
+        -- Keep the column for downstream compatibility, but compute correctly:
+        -- collectible remaining = amount_due - retainage_amount (floor at 0)
+        CASE
+            WHEN (ISNULL(amount_due,0) - ISNULL(retainage_amount,0)) <= 0 THEN 0
+            ELSE (ISNULL(amount_due,0) - ISNULL(retainage_amount,0))
+        END AS calculated_amount_due,
 
         DATEDIFF(day, invoice_date, @AsOfDate) AS days_outstanding,
 
@@ -145,20 +120,17 @@ def main():
             ELSE '91+'
         END AS aging_bucket
 
-    FROM NetAR
+    FROM Invoices
+    WHERE ISNULL(amount_due,0) >= {MIN_TOTAL_DUE}
     ORDER BY customer_name, job_no, invoice_no;
     """
 
     df = pd.read_sql(sql, conn)
 
-    # ==========================================================
-    # FINAL FORMATTING
-    # ==========================================================
     money_cols = [
         "invoice_amount",
         "amount_due",
         "retainage_amount",
-        "cash_applied",
         "calculated_amount_due",
     ]
 
@@ -170,8 +142,5 @@ def main():
     df.to_csv(OUTFILE, index=False)
     print(f"Wrote {OUTFILE} ({len(df)} rows)")
 
-# ==========================================================
-# ENTRY POINT
-# ==========================================================
 if __name__ == "__main__":
     main()
