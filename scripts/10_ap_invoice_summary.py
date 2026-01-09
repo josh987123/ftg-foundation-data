@@ -112,7 +112,7 @@ def main():
     # ------------------------------------------------------
     # Keep only invoices with a balance
     # ------------------------------------------------------
-    grouped = grouped[grouped["total_due"] != 0]
+    grouped = grouped[(grouped["total_due"] != 0) | (grouped["retainage_amount"] > 0)]
 
     # ------------------------------------------------------
     # Final column order (schema-stable)
