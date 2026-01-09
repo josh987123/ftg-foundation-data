@@ -90,6 +90,7 @@ def calculate_job_metrics(job: dict, actual_cost: float, billed: float) -> dict:
     earned_revenue = (actual_cost / budget_cost) * contract if budget_cost else 0
 
     backlog = 0 if is_closed else (contract - earned_revenue)
+    over_under_billing = billed - earned_revenue
     profit = billed - actual_cost
     margin = (profit / billed * 100) if billed else 0
 
@@ -105,6 +106,7 @@ def calculate_job_metrics(job: dict, actual_cost: float, billed: float) -> dict:
         "billed": billed,
         "percent_complete": round(percent_complete, 2),
         "earned_revenue": round(earned_revenue, 2),
+        "over_under_billing": round(over_under_billing, 2),
         "backlog": round(backlog, 2),
         "profit": round(profit, 2),
         "margin": round(margin, 2),
