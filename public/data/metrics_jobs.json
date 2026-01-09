@@ -72590,6 +72590,23 @@
     "margin": 0
   },
   {
+    "job_no": "5270",
+    "job_description": "ECHMOB 2500 Bldg10 EmrgecyWork",
+    "project_manager": "Doris Quai Hoi",
+    "customer_name": "El Camino Hospital",
+    "job_status": "A",
+    "contract": 0.0,
+    "budget_cost": 0.0,
+    "actual_cost": 0,
+    "billed": 0,
+    "percent_complete": 0,
+    "earned_revenue": 0,
+    "over_under_billing": 0,
+    "backlog": 0.0,
+    "profit": 0,
+    "margin": 0
+  },
+  {
     "job_no": "99111",
     "job_description": "Test Job for Rodney",
     "project_manager": "Rodney Terra",
