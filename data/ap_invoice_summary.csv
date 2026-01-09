@@ -94,10 +94,12 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 01062024,Payroll4Construction,,,,2024-01-12,2024-01-12,37158.24,74316.48000000001,-37158.24000000001,0.0,0.0,728,90+,0.0
 01062024,Zurich North America,,,,2024-01-12,2024-01-12,3519.25,7038.5,-3519.25,0.0,0.0,728,90+,0.0
 01062026,"Office Depot, Inc.",,,,2026-01-06,2026-01-06,26.7,0.0,26.7,0.0,26.7,3,0-30,0.0
+01062026,Panera Bread,,,,2026-01-06,2026-01-06,134.14,0.0,134.14,0.0,134.14,3,0-30,0.0
 010720174,Greg Baba,1.0,CA Overhead / Office Admin,G&A,2017-01-07,2017-01-07,86.66,173.32,-86.66,0.0,0.0,3289,90+,0.0
 01072022,Payroll4Construction,,,,2022-01-04,2022-01-04,19313.96,38627.92,-19313.96,0.0,0.0,1466,90+,0.0
 01072022,Zurich North America,,,,2022-01-04,2022-01-04,1522.91,3045.82,-1522.91,0.0,0.0,1466,90+,0.0
 01072026,Brian Kincaid,,,,2026-01-07,2026-01-07,277.0,0.0,277.0,0.0,277.0,2,0-30,0.0
+01072026,Target,,,,2026-01-07,2026-01-07,29.46,0.0,29.46,0.0,29.46,2,0-30,0.0
 01082021,Payroll4Construction,,,,2021-01-08,2021-01-08,131968.86,263937.72000000003,-131968.86000000004,0.0,0.0,1827,90+,0.0
 01082024,Rami Maroukel,,,,2024-01-08,2024-01-08,326.75,980.25,-653.5,0.0,0.0,732,90+,0.0
 0108454-IN,"B.T. Mancini Co., Inc.",1042.0,BHU Two Room Demo,Rodney Terra,2015-06-03,2015-06-03,2263.0,2263.0,0.0,5.684341886080802e-14,0.0,3873,90+,226.3
@@ -671,6 +673,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 07312025,Peter Morin,,,,2025-07-31,2025-07-31,499.8,2499.0,-1999.2,0.0,0.0,162,90+,0.0
 07312025,Peter Phan,,,,2025-07-31,2025-07-31,1795.36,7181.44,-5386.08,0.0,0.0,162,90+,0.0
 07312025,Stuti Parikh,,,,2025-07-31,2025-07-31,1683.5,3367.0,-1683.5,0.0,0.0,162,90+,0.0
+0740906-IN,Toro Petroleum Corp.,,,,2026-01-02,2026-01-02,1610.72,0.0,1610.72,0.0,1610.72,7,0-30,0.0
 08012015,CoPower One,1.0,CA Overhead / Office Admin,G&A,2015-08-01,2015-08-01,1044.0,4176.0,-3132.0,0.0,0.0,3814,90+,0.0
 08012015,Unum Life Insurance Company,1.0,CA Overhead / Office Admin,G&A,2015-08-01,2015-08-01,364.82,1094.46,-729.6400000000001,0.0,0.0,3814,90+,0.0
 08012016,Unum Life Insurance Company,1.0,CA Overhead / Office Admin,G&A,2016-07-07,2016-07-07,575.04,2300.16,-1725.12,0.0,0.0,3473,90+,0.0
@@ -1594,6 +1597,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 171366-4,"Benchmark Steel, Inc.",1471.0,AHU-8 Humidity Repairs,Rodney Terra,2018-05-21,2018-05-21,2271.2,2271.2,0.0,1.1368683772161603e-13,0.0,2790,90+,227.12
 171366-6,"Benchmark Steel, Inc.",1471.0,AHU-8 Humidity Repairs,Rodney Terra,2018-12-13,2018-12-13,1121.6,1121.6,0.0,2.842170943040401e-14,0.0,2584,90+,112.16
 17158,"Austerman, Inc.",4107.0,SJMC IT Infrastructure Refresh,Daniel Acosta,2025-11-13,2025-11-13,4836.25,4352.62,483.6300000000001,483.63,483.6300000000001,57,31-60,483.63
+171662,ACCO Engineered Systems,4857.0,SH 2581 Sam Ste 202 Nuc Med,Jennifer Angelo,2026-01-06,2026-01-06,6000.0,0.0,6000.0,0.0,6000.0,3,0-30,0.0
 17254,"Cline Glass Contractors, Inc.",1037.0,Floor 2 South East,Michael Fernandes,2017-01-23,2017-01-23,14379.0,14379.0,0.0,4.547473508864641e-13,0.0,3273,90+,1437.9
 1726,"SBI Interiors, Inc.",1758.0,SCU STEM Garage,Rodney Terra,2018-07-17,2018-07-17,45016.04,45016.04,0.0,1.8189894035458565e-12,0.0,2733,90+,4501.6
 17265,"Austerman, Inc.",4107.0,SJMC IT Infrastructure Refresh,Daniel Acosta,2025-12-15,2025-12-15,3343.75,0.0,3343.75,334.38,3343.75,25,0-30,334.38
@@ -2044,6 +2048,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 222104,"Central Valley Casework, Inc.",2356.0,Brentwood Sinks STE #175,Josh Angelo,2023-02-17,2023-02-17,1332.67,1332.67,0.0,2.842170943040401e-14,0.0,1057,90+,133.27
 222112,"Central Valley Casework, Inc.",3583.0,ECHLG Respiratory Therapy Remo,Doris Quai Hoi,2022-10-20,2022-10-20,3836.0,3836.0,0.0,1.1368683772161603e-13,0.0,1177,90+,383.6
 2221965,CoPower One,,,,2023-01-09,2023-01-09,2382.5,9530.0,-7147.5,0.0,0.0,1096,90+,0.0
+222503,Union 76,,,,2026-01-06,2026-01-06,78.03,0.0,78.03,0.0,78.03,3,0-30,0.0
 222634263-00,"United Rentals, Inc.",3813.0,SCU Parking Structure Infrastr,Doris Quai Hoi,2023-08-19,2023-08-19,689.65,1379.3,-689.65,0.0,0.0,874,90+,0.0
 2227701,Travelers,,,,2020-07-10,2020-07-10,6901.83,13803.66,-6901.83,0.0,0.0,2009,90+,0.0
 2228197,CoPower One,,,,2023-02-08,2023-02-08,2427.5,9710.0,-7282.5,0.0,0.0,1066,90+,0.0
@@ -2811,10 +2816,13 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 442748,"Bay Print Solutions, Inc.",,,,2023-08-30,2023-08-30,966.24,1932.48,-966.24,0.0,0.0,863,90+,0.0
 4432,"SBI Interiors, Inc.",3505.0,MMH ED & Radiology Remodel,Rodney Terra,2025-11-13,2025-11-13,1173.0,0.0,1173.0,117.3,1173.0,57,31-60,117.3
 4438,Kenny Rogers Plumbing Inc.,3553.0,RMC Breakroom Refresh,Pedro Becerra,2024-01-17,2024-01-17,3686.0,3686.0,0.0,1.1368683772161603e-13,0.0,723,90+,368.6
+4460350,Monterey Regional Waste Mgt,4311.0,SMSC OR Flr & Cabinet Replacem,Rodney Terra,2025-12-10,2025-12-10,190.35,0.0,190.35,0.0,190.35,30,0-30,0.0
 4464,"SBI Interiors, Inc.",4052.0,SH 2581 Sam ENT Relocation,Jennifer Angelo,2025-12-10,2025-12-10,17732.49,0.0,17732.49,0.0,17732.49,30,0-30,0.0
 4465,Kenny Rogers Plumbing Inc.,3554.0,PAMF 701 Cardio Consult Room,Daniel Acosta,2024-02-07,2024-02-07,1.0,1.0,0.0,2.7755575615628914e-17,0.0,702,90+,0.1
 4466,"SBI Interiors, Inc.",4029.0,SH 4000 Dublin 3rd Fl Infusion,Jennifer Angelo,2025-12-10,2025-12-10,1173.0,0.0,1173.0,117.3,1173.0,30,0-30,117.3
 4468,"SBI Interiors, Inc.",3468.0,SH 4050 Dublin-Generator,Jennifer Angelo,2025-12-10,2025-12-10,26766.99,0.0,26766.99,2676.7,26766.99,30,0-30,2676.7
+4475322,Monterey Regional Waste Mgt,4614.0,SH 160 Green Vall Rd Ste 202,Pedro Becerra,2026-01-05,2026-01-05,166.05,0.0,166.05,0.0,166.05,4,0-30,0.0
+4475908,Monterey Regional Waste Mgt,4614.0,SH 160 Green Vall Rd Ste 202,Pedro Becerra,2026-01-06,2026-01-06,136.08,0.0,136.08,0.0,136.08,3,0-30,0.0
 44778P,Flooring Solutions Inc,4027.0,PAMF 1233 Midas Way New IT,Jennifer Angelo,2024-02-09,2024-02-09,8174.0,8174.0,0.0,3.410605131648481e-13,0.0,700,90+,817.4
 4480,Kenny Rogers Plumbing Inc.,3553.0,RMC Breakroom Refresh,Pedro Becerra,2024-02-22,2024-02-22,16314.0,16314.0,0.0,4.547473508864641e-13,0.0,687,90+,1631.4
 4484-10,Cannon & Wendt Electric Inc,4484.0,Dignity CRMC IT Refresh,Pedro Becerra,2025-08-19,2025-08-19,18623.0,18623.0,0.0,6.821210263296962e-13,0.0,143,90+,1862.3
@@ -2856,6 +2864,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 46115,"Bay Print Solutions, Inc.",,,,2023-10-31,2023-10-31,958.99,1917.98,-958.99,0.0,0.0,801,90+,0.0
 4625440960,Hilti Inc.,3725.0,SH Fremont MRI & CT Replacem,Jennifer Angelo,2025-12-30,2025-12-30,64.29,0.0,64.29,0.0,64.29,10,0-30,0.0
 4625465686,Hilti Inc.,3725.0,SH Fremont MRI & CT Replacem,Jennifer Angelo,2026-01-02,2026-01-02,152.88,0.0,152.88,0.0,152.88,7,0-30,0.0
+4625478530,Hilti Inc.,4107.0,SJMC IT Infrastructure Refresh,Daniel Acosta,2026-01-07,2026-01-07,601.32,0.0,601.32,0.0,601.32,2,0-30,0.0
 463,RC Group Medical Interiors,3676.0,PAMF 795 Cabinet Reface,Justin KleinSmid,2023-08-10,2023-08-10,193473.0,193473.0,0.0,1.0913936421275139e-11,0.0,883,90+,19347.3
 4638,Kenny Rogers Plumbing Inc.,2668.0,PAMF - 301 Old SF Rd. - Genera,Doris Quai Hoi,2024-08-29,2024-08-29,8387.0,8387.0,0.0,2.2737367544323206e-13,0.0,498,90+,838.7
 46465P,Flooring Solutions Inc,4107.0,SJMC IT Infrastructure Refresh,Daniel Acosta,2025-02-25,2025-02-25,16747.0,15072.3,1674.7000000000007,1674.7,1674.7000000000007,318,90+,1674.7
@@ -3265,12 +3274,14 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 685708,Meals and Entertainment,,,,2025-12-11,2025-12-11,33.15,0.0,33.15,0.0,33.15,29,0-30,0.0
 68584,"Bay Print Solutions, Inc.",4975.0,SVMH Angio Equipment,Kathy Roth,2025-12-18,2025-12-18,89.56,0.0,89.56,0.0,89.56,22,0-30,0.0
 686431,Mutual of Omaha,,,,2022-09-27,2022-09-27,1200.04,3600.12,-2400.08,0.0,0.0,1200,90+,0.0
+687896,One Workplace L Ferrari LLC,4029.0,SH 4000 Dublin 3rd Fl Infusion,Jennifer Angelo,2026-01-07,2026-01-07,546.0,0.0,546.0,0.0,546.0,2,0-30,0.0
 6888,"KT Mechanical, Inc.",1496.0,DH Lab Draw,Rodney Terra,2018-09-19,2018-09-19,5612.7,5612.700000000001,-9.094947017729282e-13,0.0,0.0,2669,90+,561.27
 689094,CoPower One,1.0,CA Overhead / Office Admin,G&A,2017-09-08,2017-09-08,1581.0,6324.0,-4743.0,0.0,0.0,3045,90+,0.0
 68925,"Bay Print Solutions, Inc.",5072.0,GSH Cath Lab & IR Replacement,Doris Quai Hoi,2025-12-30,2025-12-30,693.7,0.0,693.7,0.0,693.7,10,0-30,0.0
 689715,Salsbury Industries,4107.0,SJMC IT Infrastructure Refresh,Daniel Acosta,2025-12-23,2025-12-23,59.13,0.0,59.13,0.0,59.13,17,0-30,0.0
 68995,"Bay Print Solutions, Inc.",,,,2025-12-30,2025-12-30,890.95,0.0,890.95,0.0,890.95,10,0-30,0.0
 69,Construction Strategies LLC,,,,2025-01-31,2025-01-31,7984.5,0.0,7984.5,0.0,7984.5,343,90+,0.0
+690095,U-Save Rockery,5211.0,ECH MOB Concrete Base Reconstr,Doris Quai Hoi,2025-12-19,2025-12-19,284.38,0.0,284.38,0.0,284.38,21,0-30,0.0
 6905,"Elevation Door & Glazing, Inc.",3505.0,MMH ED & Radiology Remodel,Rodney Terra,2025-06-05,2025-06-05,9628.97,8666.07,962.8999999999996,962.9,962.8999999999996,218,90+,962.9
 6909APR,"Stockham Construction, Inc.",4029.0,SH 4000 Dublin 3rd Fl Infusion,Jennifer Angelo,2025-04-07,2025-04-07,23606.0,21245.4,2360.5999999999985,2360.6,2360.5999999999985,277,90+,2360.6
 6909AUG,"Stockham Construction, Inc.",4029.0,SH 4000 Dublin 3rd Fl Infusion,Jennifer Angelo,2025-08-15,2025-08-15,5908.0,5317.2,590.8000000000002,590.8,590.8000000000002,147,90+,590.8
@@ -3495,6 +3506,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 972036932-00,Foundation Building Materials,4956.0,DH LDR Lights Room,Rodney Terra,2025-12-04,2025-12-04,90.91,0.0,90.91,0.0,90.91,36,31-60,0.0
 972036933-00,Foundation Building Materials,4311.0,SMSC OR Flr & Cabinet Replacem,Rodney Terra,2025-12-04,2025-12-04,292.51,0.0,292.51,0.0,292.51,36,31-60,0.0
 972037575-00,HDS White Cap Const Supply,4956.0,DH LDR Lights Room,Rodney Terra,2025-12-19,2025-12-19,737.08,0.0,737.08,0.0,737.08,21,0-30,0.0
+972038139-00,Foundation Building Materials,5232.0,DH Oaks Access Panels Data Cab,Pedro Becerra,2026-01-07,2026-01-07,1284.28,0.0,1284.28,0.0,1284.28,2,0-30,0.0
 9731548,Gas/other vehicle expense,,,,2025-12-09,2025-12-09,91.42,0.0,91.42,0.0,91.42,31,31-60,0.0
 97425905490,Grainger,4107.0,SJMC IT Infrastructure Refresh,Daniel Acosta,2025-12-16,2025-12-16,75.68,0.0,75.68,0.0,75.68,24,0-30,0.0
 97596,"Cupertino Electric, Inc.",2900.0,PAMF 795 LINAC Replace - Const,Jennifer Angelo,2023-10-17,2023-10-17,55647.0,55647.0,0.0,2.7284841053187847e-12,0.0,815,90+,5564.7
@@ -3991,9 +4003,11 @@ TT29178,Bay Club Santa Clara,,,,2022-05-31,2022-05-31,307.5,615.0,-307.5,0.0,0.0
 TT37175,Bay Club Santa Clara,,,,2022-10-06,2022-10-06,307.5,615.0,-307.5,0.0,0.0,1191,90+,0.0
 TT77087-BCSC,Bay Club Santa Clara,,,,2021-12-01,2021-11-29,225.5,451.0,-225.5,0.0,0.0,1502,90+,0.0
 US351735,MISCELLANEOUS VENDOR,5072.0,GSH Cath Lab & IR Replacement,Doris Quai Hoi,2025-12-18,2025-12-18,2251.18,0.0,2251.18,0.0,2251.18,22,0-30,0.0
+US355709,MISCELLANEOUS VENDOR,5072.0,GSH Cath Lab & IR Replacement,Doris Quai Hoi,2026-01-08,2026-01-08,42.56,0.0,42.56,0.0,42.56,1,0-30,0.0
 USI25-065813,"Indeed, Inc.",,,,2025-11-17,2025-11-17,240.0,140.0,100.0,0.0,100.0,53,31-60,0.0
 USI26-001323,"Indeed, Inc.",,,,2025-12-31,2025-12-31,579.99,0.0,579.99,0.0,579.99,9,0-30,0.0
 W2555-1,"R. Brothers Waterproofing, Inc",4946.0,DH D Oaks Laundry Room Refresh,Rodney Terra,2025-07-31,2025-07-31,9278.0,9278.0,0.0,6.821210263296962e-13,0.0,162,90+,927.8
+WEB,Grainger,4348.0,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2026-01-07,2026-01-07,301.68,0.0,301.68,0.0,301.68,2,0-30,0.0
 WG14054412,Home Depot Credit Services,1464.0,IT Remediation,Daniel Acosta,2020-08-11,2020-08-11,58.54,117.07999999999998,-58.539999999999985,0.0,0.0,1977,90+,0.0
 ZOYKIVYT-000,Replit,,,,2025-12-15,2025-12-15,240.0,0.0,240.0,0.0,240.0,25,0-30,0.0
 np58164838,ARCO Business Solutions,,,,2020-05-02,2020-05-02,2062.17,18559.53,-16497.36,0.0,0.0,2078,90+,0.0

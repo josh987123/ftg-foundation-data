@@ -1,19 +1,19 @@
 {
   "status": "success",
-  "last_refresh_utc": "2026-01-09T14:17:47.911034Z",
+  "last_refresh_utc": "2026-01-09T16:18:00.536915Z",
   "csv_row_counts": {
     "data/accounts.csv": 200,
-    "data/gl_history_raw.csv": 355285,
+    "data/gl_history_raw.csv": 355313,
     "data/gl_history.csv": 178,
     "data/job_budgets.csv": 4267,
-    "data/job_actuals.csv": 37509,
+    "data/job_actuals.csv": 37512,
     "data/ar_receipt_job_allocation.csv": 5777,
     "data/labor_job_allocation.csv": 203060
   },
   "json_record_counts": {
     "public/data/financials_gl.json": 357,
-    "public/data/financials_jobs.json": 44429,
-    "public/data/ap_invoices.json": 4002,
+    "public/data/financials_jobs.json": 44432,
+    "public/data/ap_invoices.json": 4016,
     "public/data/ar_invoices.json": 301
   },
   "files_present": {
