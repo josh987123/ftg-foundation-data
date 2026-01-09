@@ -49,12 +49,37 @@ def excel_to_date(serial):
     except Exception:
         return None
 
+
+def normalize_job_no(job_no):
+    """
+    Normalize job_no to a clean string without decimal suffix.
+    Handles floats like 1606.0 -> "1606" and strings like "1606.0" -> "1606".
+    """
+    if job_no is None or job_no == "":
+        return ""
+    
+    # Convert to string first
+    job_str = str(job_no).strip()
+    
+    # If it's a float-like string ending in .0, remove the decimal
+    if "." in job_str:
+        try:
+            float_val = float(job_str)
+            # Check if it's a whole number
+            if float_val == int(float_val):
+                return str(int(float_val))
+        except (ValueError, TypeError):
+            pass
+    
+    return job_str
+
+
 # ==========================================================
 # JOB METRICS (UNCHANGED)
 # ==========================================================
 
 def calculate_job_metrics(job: dict, actual_cost: float, billed: float) -> dict:
-    job_no = str(job.get("job_no", ""))
+    job_no = normalize_job_no(job.get("job_no", ""))
     budget_cost = float(job.get("revised_cost") or 0)
     contract = float(job.get("revised_contract") or 0)
     job_status = job.get("job_status", "")
@@ -120,7 +145,7 @@ def calculate_ar_invoice_metrics(invoice: dict) -> dict:
         "invoice_no": invoice.get("invoice_no"),
         "customer_name": invoice.get("customer_name", "").strip(),
         "project_manager": invoice.get("project_manager_name", "").strip(),
-        "job_no": invoice.get("job_no"),
+        "job_no": normalize_job_no(invoice.get("job_no")),
         "job_description": invoice.get("job_description", ""),
         "invoice_date": invoice.get("invoice_date"),
 
@@ -146,22 +171,24 @@ def run_jobs_etl() -> List[dict]:
     actuals = data.get("job_actuals", [])
     billed = data.get("job_billed_revenue", [])
 
+    # Use normalize_job_no for consistent key matching
     actual_by_job = {}
     for a in actuals:
-        actual_by_job[str(a["Job_No"])] = (
-            actual_by_job.get(str(a["Job_No"]), 0)
+        key = normalize_job_no(a["Job_No"])
+        actual_by_job[key] = (
+            actual_by_job.get(key, 0)
             + float(a["Actual_Cost"])
         )
 
     billed_by_job = {
-        str(b["Job_No"]): float(b["Billed_Revenue"]) for b in billed
+        normalize_job_no(b["Job_No"]): float(b["Billed_Revenue"]) for b in billed
     }
 
     return [
         calculate_job_metrics(
             job,
-            actual_by_job.get(str(job.get("job_no")), 0),
-            billed_by_job.get(str(job.get("job_no")), 0),
+            actual_by_job.get(normalize_job_no(job.get("job_no")), 0),
+            billed_by_job.get(normalize_job_no(job.get("job_no")), 0),
         )
         for job in budgets
     ]
@@ -191,6 +218,8 @@ def run_ap_etl() -> List[dict]:
         if vendor in EXCLUDED_AP_VENDORS:
             continue
 
+        # Normalize job_no before appending
+        inv["job_no"] = normalize_job_no(inv.get("job_no"))
         results.append(inv)
 
     return results
