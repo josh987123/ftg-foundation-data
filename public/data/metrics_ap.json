@@ -52054,6 +52054,23 @@
     "original_retainage_amount": 0.0
   },
   {
+    "invoice_no": "624328",
+    "vendor_name": "ATT Recycle, Inc.",
+    "job_no": "5234",
+    "job_description": "ECH LG OPS Sewer Line Repair",
+    "project_manager_name": "Doris Quai Hoi",
+    "invoice_date": "2025-12-24",
+    "transaction_date": "2025-12-24",
+    "invoice_amount": 197.22,
+    "amount_paid": 0.0,
+    "total_due": 197.22,
+    "retainage_amount": 0.0,
+    "open_for_aging": 197.22,
+    "days_outstanding": 16,
+    "aging_bucket": "0-30",
+    "original_retainage_amount": 0.0
+  },
+  {
     "invoice_no": "6261",
     "vendor_name": "KT Mechanical, Inc.",
     "job_no": "1176",
