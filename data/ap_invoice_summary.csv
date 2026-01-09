@@ -781,6 +781,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 09142024,Zurich North America,,,,2024-09-20,2024-09-20,4089.92,8179.84,-4089.92,0.0,0.0,476,90+,0.0
 09152021,Brenna Uyeda,3168.0,AZ GEN Hospitals IT Refresh,Pedro Becerra,2021-09-24,2021-09-24,6.78,13.559999999999999,-6.7799999999999985,0.0,0.0,1568,90+,0.0
 0916-0043660,Republic Services,2187.0,PAMF Fremont Cardiology Expans,Josh Angelo,2020-10-09,2020-10-09,994.01,1947.55,-953.54,0.0,0.0,1918,90+,0.0
+0916-0066718,Republic Services,3725.0,SH Fremont MRI & CT Replacem,Jennifer Angelo,2025-12-31,2025-12-31,2207.78,0.0,2207.78,0.0,2207.78,9,0-30,0.0
 09162015,ClassicPlan Premium Financing,1.0,CA Overhead / Office Admin,G&A,2015-09-01,2015-09-01,3769.63,7539.26,-3769.63,0.0,0.0,3783,90+,0.0
 09162021,Greg Baba,,,,2021-09-16,2021-09-16,28.83,57.660000000000004,-28.830000000000005,0.0,0.0,1576,90+,0.0
 09162022,Payroll4Construction,,,,2022-09-15,2022-09-15,22071.78,44143.560000000005,-22071.780000000006,0.0,0.0,1212,90+,0.0
@@ -1025,6 +1026,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 107414,"Concrete Ready Mix, Inc.",4873.0,ECH MOB 700 W Parr Aspire Ste,Doris Quai Hoi,2025-06-03,2025-06-03,2568.13,5136.26,-2568.13,0.0,0.0,220,90+,0.0
 107597,"Bay Print Solutions, Inc.",1.0,CA Overhead / Office Admin,G&A,2017-10-30,2017-10-30,1298.06,2596.12,-1298.06,0.0,0.0,2993,90+,0.0
 10767,"KT Mechanical, Inc.",3397.0,IHC Family Resource Center TI,Daniel Acosta,2023-09-01,2023-09-01,4241.6,4241.6,0.0,1.7053025658242404e-13,0.0,861,90+,424.16
+10786,"C&S Flooring Systems, Inc.",5235.0,ECH LG Misc Work,Doris Quai Hoi,2025-12-30,2025-12-30,1294.0,0.0,1294.0,0.0,1294.0,10,0-30,0.0
 107921,ACCO Engineered Systems,3468.0,SH 4050 Dublin-Generator,Jennifer Angelo,2024-01-23,2024-01-23,10000.0,9000.0,1000.0,1000.0,1000.0,717,90+,1000.0
 108029,"Cupertino Electric, Inc.",3344.0,SLRH Joint Commission T.I.,Kathy Roth,2025-01-13,2025-01-13,35058.0,35058.0,0.0,9.094947017729282e-13,0.0,361,90+,3505.8
 108030,"Cupertino Electric, Inc.",3362.0,SLRH Pharmacy Upgrades,Kathy Roth,2025-01-13,2025-01-13,20953.7,18858.33,2095.369999999999,2095.37,2095.369999999999,361,90+,2095.37
@@ -1042,6 +1044,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 10885,"KT Mechanical, Inc.",3399.0,IHC 2nd Flr Administrative Off,Daniel Acosta,2023-10-26,2023-10-26,11281.05,11281.050000000001,-1.8189894035458565e-12,0.0,0.0,806,90+,1128.11
 108861,"Concrete Ready Mix, Inc.",4348.0,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2025-09-18,2025-09-18,4532.51,9065.02,-4532.51,0.0,0.0,113,90+,0.0
 108997,"Bay Print Solutions, Inc.",1.0,CA Overhead / Office Admin,G&A,2018-01-31,2018-01-31,1048.53,2097.06,-1048.53,0.0,0.0,2900,90+,0.0
+1091,O'Donnell Plastering Inc.,4348.0,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2025-12-13,2025-12-13,1259.0,0.0,1259.0,0.0,1259.0,27,0-30,0.0
 109289,"Bay Print Solutions, Inc.",1.0,CA Overhead / Office Admin,G&A,2018-02-28,2018-02-28,808.34,1616.6799999999998,-808.3399999999998,0.0,0.0,2872,90+,0.0
 109476,"Concrete Ready Mix, Inc.",4348.0,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2025-10-30,2025-10-30,1512.75,3025.5,-1512.75,0.0,0.0,71,61-90,0.0
 109501,Olympus Construction Mgt,,,,2020-02-29,2020-02-29,2600.0,5200.0,-2600.0,0.0,0.0,2141,90+,0.0
@@ -1100,6 +1103,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 11206,"KT Mechanical, Inc.",3892.0,DH Pharmacy Filtration,Rodney Terra,2024-03-07,2024-03-07,71412.0,71412.0,0.0,2.7284841053187847e-12,0.0,673,90+,7141.2
 11212020,Payroll4Construction,,,,2020-11-21,2020-11-21,41646.63,83293.26000000001,-41646.63000000001,0.0,0.0,1875,90+,0.0
 11212025,Payroll4Construction,,,,2025-11-19,2025-11-19,52074.46,104148.92,-52074.46,0.0,0.0,51,31-60,0.0
+1122,JB Painting,4348.0,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2025-11-04,2025-11-04,15700.0,0.0,15700.0,0.0,15700.0,66,61-90,0.0
 11222025,Payroll4Construction,,,,2025-11-28,2025-11-28,50320.75,100641.5,-50320.75,0.0,0.0,42,31-60,0.0
 112258,"Bay Print Solutions, Inc.",1.0,CA Overhead / Office Admin,G&A,2018-09-30,2018-09-30,757.22,1514.44,-757.22,0.0,0.0,2658,90+,0.0
 11232019,Payroll4Construction,,,,2019-11-29,2019-11-29,34567.82,69135.64000000001,-34567.820000000014,0.0,0.0,2233,90+,0.0
@@ -1149,6 +1153,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 1138788A-IN,"B.T. Mancini Co., Inc.",1088.0,1408 New Main ADA Upgrades,Rodney Terra,2016-10-08,2016-10-08,2046.0,2046.0,0.0,8.526512829121202e-14,0.0,3380,90+,204.6
 113981,Summers & Sons Electric Inc.,1081.0,DSCH AHU Replacement Project,Rodney Terra,2016-08-17,2016-08-17,5444.0,5444.0,0.0,3.410605131648481e-13,0.0,3432,90+,544.4
 113988,Summers & Sons Electric Inc.,1092.0,Conversion Admin Bldg,Rodney Terra,2016-08-17,2016-08-17,13618.0,13618.0,0.0,6.821210263296962e-13,0.0,3432,90+,1361.8
+114-14173580,United Site Services of CA,3316.0,JJRR 54 W Rincon Avenue,Rodney Terra,2025-12-29,2025-12-29,126.25,0.0,126.25,0.0,126.25,11,0-30,0.0
 1141445020,MISCELLANEOUS VENDOR,,,,2023-10-23,2023-10-23,0.0,-74.22,74.22,0.0,74.22,809,90+,0.0
 114196.1,Summers & Sons Electric Inc.,1189.0,701 2SW 036 Lab Breakroom,Michael Fernandes,2016-11-23,2016-11-23,5481.6,5481.6,0.0,1.1368683772161603e-13,0.0,3334,90+,548.16
 114270,Summers & Sons Electric Inc.,,,,2017-01-01,2017-01-01,8769.4,17538.8,-8769.4,0.0,0.0,3295,90+,876.94
@@ -1319,6 +1324,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 12170-rev,"KT Mechanical, Inc.",3780.0,MMH Lab Analyzer Replacement,Rodney Terra,2025-04-25,2025-04-25,16481.0,14832.9,1648.1000000000004,1648.1,1648.1000000000004,259,90+,1648.1
 12172021,Payroll4Construction,,,,2021-12-14,2021-12-14,23056.26,46112.52,-23056.26,0.0,0.0,1487,90+,0.0
 12172021,Zurich North America,,,,2021-12-17,2021-12-17,2290.09,4580.18,-2290.09,0.0,0.0,1484,90+,0.0
+12177,Reliable Concepts Corporation,3725.0,SH Fremont MRI & CT Replacem,Jennifer Angelo,2025-10-31,2025-10-31,890.0,0.0,890.0,0.0,890.0,70,61-90,0.0
 12182025,Costco Wholesale,,,,2025-12-18,2025-12-18,146.4,0.0,146.4,0.0,146.4,22,0-30,0.0
 12192018,GM Financial,1.0,CA Overhead / Office Admin,G&A,2018-12-19,2018-12-19,12259.34,24518.68,-12259.34,0.0,0.0,2578,90+,0.0
 12192025,DoorDash Food Delivery,,,,2025-12-19,2025-12-19,430.0,0.0,430.0,0.0,430.0,21,0-30,0.0
@@ -1393,6 +1399,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 12350-3,Coastwide Environmental Tech,3725.0,SH Fremont MRI & CT Replacem,Jennifer Angelo,2025-08-19,2025-08-19,6930.0,6237.0,693.0,693.0,693.0,143,90+,693.0
 12350-4,Coastwide Environmental Tech,3725.0,SH Fremont MRI & CT Replacem,Jennifer Angelo,2025-10-20,2025-10-20,6765.0,0.0,6765.0,676.5,6765.0,81,61-90,676.5
 12602,Access Communications,2026.0,PAMF 701 MVC Sterilizer Replac,Josh Angelo,2022-01-03,2022-01-03,2098.15,2098.15,0.0,5.684341886080802e-14,0.0,1467,90+,209.82
+12630,"KT Mechanical, Inc.",3468.0,SH 4050 Dublin-Generator,Jennifer Angelo,2025-12-22,2025-12-22,1763.75,0.0,1763.75,0.0,1763.75,18,0-30,0.0
 126313,ACCO Engineered Systems,3725.0,SH Fremont MRI & CT Replacem,Jennifer Angelo,2024-09-30,2024-09-30,14340.0,12906.0,1434.0,1434.0,1434.0,466,90+,1434.0
 127699-IN,"B.T. Mancini Co., Inc.",2555.0,PAMF 701 Allergy Lab Lobby VVI,Josh Angelo,2020-03-05,2020-03-05,7787.0,7787.0,0.0,2.2737367544323206e-13,0.0,2136,90+,778.7
 1277,"Rodriguez Sheet Metal, Inc.",2918.0,ECHMV Pharmacy Compounding Rm,Rodney Terra,2022-01-01,2022-01-01,5869.0,5869.0,0.0,3.410605131648481e-13,0.0,1469,90+,586.9
@@ -1567,6 +1574,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 1708,Jon M. DellaBetta,1.0,CA Overhead / Office Admin,G&A,2017-08-02,2017-08-02,1975.0,19750.0,-17775.0,0.0,0.0,3082,90+,0.0
 17080.07A,"KDS Plumbing, Inc.",1427.0,1950 University Cir. Fertility,Josh Angelo,2018-04-20,2018-04-20,2427.0,2427.0,0.0,1.7053025658242404e-13,0.0,2821,90+,242.7
 1709,Jon M. DellaBetta,1.0,CA Overhead / Office Admin,G&A,2017-08-31,2017-08-31,1925.0,15400.0,-13475.0,0.0,0.0,3053,90+,0.0
+170979,ACCO Engineered Systems,4052.0,SH 2581 Sam ENT Relocation,Jennifer Angelo,2025-12-29,2025-12-29,7776.0,0.0,7776.0,0.0,7776.0,11,0-30,0.0
 1710,Jon M. DellaBetta,1.0,CA Overhead / Office Admin,G&A,2017-09-30,2017-09-30,1625.0,13000.0,-11375.0,0.0,0.0,3023,90+,0.0
 17108.7rev1,"Walschon Fire Protection, Inc.",1518.0,DH Dietary Remodel,Rodney Terra,2020-11-30,2020-11-30,41401.0,41401.0,0.0,1.8189894035458565e-12,0.0,1866,90+,4140.1
 17108.8,"Walschon Fire Protection, Inc.",1518.0,DH Dietary Remodel,Rodney Terra,2021-02-28,2021-02-28,7429.1,7429.1,0.0,1.1368683772161603e-13,0.0,1776,90+,742.91
@@ -1656,6 +1664,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 18387965,"Employee Fiduciary, LLC",,,,2022-12-30,2022-12-30,15422.69,46268.07,-30845.379999999997,0.0,0.0,1106,90+,0.0
 1841156,Travelers,,,,2019-08-07,2019-08-07,6563.23,13126.46,-6563.23,0.0,0.0,2347,90+,0.0
 1844,"TDN Electric, Inc.",2999.0,ECH LG Nuc Med Equipment Repla,Doris Quai Hoi,2023-06-20,2023-06-20,6592.0,6592.0,0.0,2.2737367544323206e-13,0.0,934,90+,659.2
+18450P,"Scantech Utility Detect, Inc.",5234.0,ECH LG OPS Sewer Line Repair,Doris Quai Hoi,2025-12-10,2025-12-10,875.0,0.0,875.0,0.0,875.0,30,0-30,0.0
 1846,EAC Electric Inc.,3539.0,ECHMV Taube-Casework Install,Doris Quai Hoi,2022-08-01,2022-08-01,2842.0,2842.0,0.0,1.7053025658242404e-13,0.0,1257,90+,284.2
 18493,Weidner Architectural Signage,3557.0,PAMF 701 Signage Lighting,Justin KleinSmid,2024-01-26,2024-01-26,8253.1,8253.1,0.0,4.547473508864641e-13,0.0,714,90+,825.31
 1851,"Rodriguez Sheet Metal, Inc.",4359.0,ECH MV 1923 MV Pharmacy Upgrad,Doris Quai Hoi,2024-04-29,2024-04-29,2853.07,2853.07,0.0,5.684341886080802e-14,0.0,620,90+,285.31
@@ -1810,6 +1819,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 2043497,CoPower One,,,,2020-09-30,2020-09-30,2119.0,8476.0,-6357.0,0.0,0.0,1927,90+,0.0
 2044,"Elevation Door & Glazing, Inc.",1518.0,DH Dietary Remodel,Rodney Terra,2020-12-30,2020-12-30,16408.0,16408.0,0.0,6.821210263296962e-13,0.0,1836,90+,1640.8
 2044542,Travelers,,,,2020-02-07,2020-02-07,6276.04,12552.08,-6276.04,0.0,0.0,2163,90+,0.0
+2045,Walters & Wolf Interiors,3468.0,SH 4050 Dublin-Generator,Jennifer Angelo,2025-12-18,2025-12-18,3022.0,0.0,3022.0,0.0,3022.0,22,0-30,0.0
 20455,"West-Com & TV, Inc.",4956.0,DH LDR Lights Room,Rodney Terra,2025-11-03,2025-11-03,3400.0,0.0,3400.0,0.0,3400.0,67,61-90,0.0
 2050082,CoPower One,,,,2020-10-31,2020-10-31,2294.0,9176.0,-6882.0,0.0,0.0,1896,90+,0.0
 20567,"RSAnalysis, Inc.",3697.0,LPCH Main Air Change REU,Kathy Roth,2024-11-08,2024-11-08,15148.0,15148.0,0.0,6.821210263296962e-13,0.0,427,90+,1514.8
@@ -2456,6 +2466,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 2758,Carleton Group Healthcare,1553.0,Dublin Center 3rd Flr Eye Exp.,Michael Fernandes,2018-02-27,2018-02-27,7687.4,7687.4,0.0,2.2737367544323206e-13,0.0,2873,90+,768.74
 27662,"California Textiles, Inc.",2187.0,PAMF Fremont Cardiology Expans,Josh Angelo,2021-06-09,2021-06-09,8587.0,8587.0,0.0,2.2737367544323206e-13,0.0,1675,90+,858.7
 27733,Break Away Concrete Cutting,3725.0,SH Fremont MRI & CT Replacem,Jennifer Angelo,2025-07-31,2025-07-31,16425.0,14782.5,1642.5,1642.5,1642.5,162,90+,1642.5
+277560,"Rosendin Electric, Inc.",3468.0,SH 4050 Dublin-Generator,Jennifer Angelo,2025-12-26,2025-12-26,259187.0,0.0,259187.0,25918.7,259187.0,14,0-30,25918.7
 2779,Safeway,,,,2025-12-14,2025-12-14,108.11,0.0,108.11,0.0,108.11,26,0-30,0.0
 2783,Carleton Group Healthcare,1249.0,Lee/Jamplis ABPR,Michael Fernandes,2018-06-20,2018-06-20,7902.0,7902.0,0.0,2.2737367544323206e-13,0.0,2760,90+,790.2
 2789,"Comtel Systems Technology, Inc",3505.0,MMH ED & Radiology Remodel,Rodney Terra,2024-10-31,2024-10-31,47114.49,42403.04,4711.449999999997,4711.45,4711.449999999997,435,90+,4711.45
@@ -2773,6 +2784,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 41916684,Johnson Controls Security Sol.,4029.0,SH 4000 Dublin 3rd Fl Infusion,Jennifer Angelo,2025-12-12,2025-12-12,35565.17,0.0,35565.17,0.0,35565.17,28,0-30,0.0
 41985,Postal Annex+,,,,2022-08-04,2022-08-04,76.3,152.6,-76.3,0.0,0.0,1254,90+,0.0
 42,Construction Strategies LLC,,,,2022-11-30,2022-11-30,5920.0,0.0,5920.0,0.0,5920.0,1136,90+,0.0
+42003269,Johnson Controls Security Sol.,4029.0,SH 4000 Dublin 3rd Fl Infusion,Jennifer Angelo,2025-12-19,2025-12-19,3440.0,0.0,3440.0,0.0,3440.0,21,0-30,0.0
 4209,"Heredia Cabling Solutions, Inc",5050.0,DH Dr Lounge Completion,Rodney Terra,2025-08-19,2025-08-19,7000.0,7000.0,0.0,5.684341886080802e-14,0.0,143,90+,342.54
 4221,"Del Monte Electric Co., Inc.",5080.0,SH 795 LINAC A Rplcmt Scopin,Jennifer Angelo,2025-12-17,2025-12-17,24902.0,0.0,24902.0,0.0,24902.0,23,0-30,0.0
 4223,"SBI Interiors, Inc.",3793.0,PAMF 2400 Samaritan Derm Light,Jennifer Angelo,2025-05-12,2025-05-12,3652.4,3652.3999999999996,4.547473508864641e-13,2.2737367544323206e-13,4.547473508864641e-13,242,90+,365.24
@@ -2834,6 +2846,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 45611,ColeBreit Engineering,5047.0,MMH Lab Expansion Full Remodel,Rodney Terra,2025-12-31,2025-12-31,29287.5,0.0,29287.5,0.0,29287.5,9,0-30,0.0
 45613,ColeBreit Engineering,4930.0,MMH NPC 5 Compliance,Rodney Terra,2025-12-31,2025-12-31,13460.0,0.0,13460.0,0.0,13460.0,9,0-30,0.0
 45614,ColeBreit Engineering,5028.0,MMH Electrical Service Upgrade,Rodney Terra,2025-12-31,2025-12-31,2797.5,0.0,2797.5,0.0,2797.5,9,0-30,0.0
+45658,ColeBreit Engineering,4808.0,DH Gen 3 Replacement,Pedro Becerra,2025-12-31,2025-12-31,650.0,0.0,650.0,0.0,650.0,9,0-30,0.0
 4569,Kenny Rogers Plumbing Inc.,2668.0,PAMF - 301 Old SF Rd. - Genera,Doris Quai Hoi,2024-06-07,2024-06-07,13968.0,13968.0,0.0,6.821210263296962e-13,0.0,581,90+,1396.8
 45732P,Flooring Solutions Inc,3992.0,PAMF Castro Valley Imaging Reg,Jennifer Angelo,2024-09-19,2024-09-19,2912.0,2912.0,0.0,1.7053025658242404e-13,0.0,477,90+,291.2
 4582.4,ATM Electric,4582.0,SRDH Siena IT Refresh,Pedro Becerra,2025-09-15,2025-09-15,62785.55,62785.55,0.0,1.3642420526593924e-12,0.0,116,90+,3139.28
@@ -2964,6 +2977,8 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 51,Construction Strategies LLC,,,,2023-07-31,2023-07-31,7863.09,0.0,7863.09,0.0,7863.09,893,90+,0.0
 5110,Kenny Rogers Plumbing Inc.,4052.0,SH 2581 Sam ENT Relocation,Jennifer Angelo,2025-12-08,2025-12-08,1321.6,0.0,1321.6,132.16,1321.6,32,31-60,132.16
 5113076,Home Depot Credit Services,1464.0,IT Remediation,Daniel Acosta,2019-03-19,2019-03-19,0.0,-39.61,39.61,0.0,39.61,2488,90+,0.0
+5120,Kenny Rogers Plumbing Inc.,5264.0,SH Fremont Sprinkler&Copper Li,Jennifer Angelo,2025-12-24,2025-12-24,3302.83,0.0,3302.83,330.28,3302.83,16,0-30,330.28
+5121,Kenny Rogers Plumbing Inc.,3725.0,SH Fremont MRI & CT Replacem,Jennifer Angelo,2025-12-24,2025-12-24,1928.72,0.0,1928.72,192.87,1928.72,16,0-30,192.87
 5123,"Comtel Systems Technology, Inc",4164.0,SH 795 Locker Rms Convert Exam,Jennifer Angelo,2025-05-31,2025-05-31,14865.8,13379.22,1486.58,1486.58,1486.58,223,90+,1486.58
 514449574,U.S. Bank,1.0,CA Overhead / Office Admin,G&A,2015-12-04,2015-12-04,25099.55,50199.1,-25099.55,0.0,0.0,3689,90+,0.0
 5160,"Elevation Door & Glazing, Inc.",3830.0,LPCH West Door Replacement,Kathy Roth,2023-10-06,2023-10-06,10080.49,10080.49,0.0,6.821210263296962e-13,0.0,826,90+,1008.05
@@ -2973,6 +2988,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 52,Construction Strategies LLC,,,,2023-08-31,2023-08-31,7216.25,0.0,7216.25,0.0,7216.25,862,90+,0.0
 52149,"Bay Print Solutions, Inc.",,,,2024-06-19,2024-06-19,733.1,1466.2,-733.1,0.0,0.0,569,90+,0.0
 522059,CoPower One,1.0,CA Overhead / Office Admin,G&A,2015-09-10,2015-09-10,926.0,3704.0,-2778.0,0.0,0.0,3774,90+,0.0
+52288,"Bess Testlab, Inc.",5237.0,ECH MV 1430 Women's Ph3 Reloca,Doris Quai Hoi,2025-12-19,2025-12-19,840.0,0.0,840.0,0.0,840.0,21,0-30,0.0
 524-127.1,K Corp,4485.0,Dignity Mercy Gilbert IT Refrs,Pedro Becerra,2024-12-31,2024-12-31,75198.0,67678.2,7519.800000000003,7519.8,7519.800000000003,374,90+,7519.8
 524-133.1,K Corp,4484.0,Dignity CRMC IT Refresh,Pedro Becerra,2024-12-31,2024-12-31,349463.0,314516.7,34946.29999999999,34946.3,34946.29999999999,374,90+,34946.3
 5246951125,Honeywell International Inc,1471.0,AHU-8 Humidity Repairs,Rodney Terra,2019-01-16,2019-01-16,9477.25,9477.25,0.0,4.547473508864641e-13,0.0,2550,90+,947.73
@@ -3307,8 +3323,10 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 750,RC Group Medical Interiors,4311.0,SMSC OR Flr & Cabinet Replacem,Rodney Terra,2025-12-16,2025-12-16,4677.25,0.0,4677.25,467.73,4677.25,24,0-30,467.73
 750420-1,One Workplace L Ferrari LLC,4529.0,Art Sculpture at 770Welch Bldg,Kathy Roth,2025-05-21,2025-05-21,65087.51,65087.509999999995,7.275957614183426e-12,0.0,7.275957614183426e-12,233,90+,0.0
 7519,"C&S Flooring Systems, Inc.",,,,2022-01-26,2022-01-26,8162.0,16324.0,-8162.0,0.0,0.0,1444,90+,0.0
+7538,"Comtel Systems Technology, Inc",4029.0,SH 4000 Dublin 3rd Fl Infusion,Jennifer Angelo,2025-12-23,2025-12-23,12169.0,0.0,12169.0,1216.9,12169.0,17,0-30,1216.9
 759518,Mutual of Omaha,,,,2022-11-22,2022-11-22,1238.79,3716.3700000000003,-2477.5800000000004,0.0,0.0,1144,90+,0.0
 759562,CoPower One,1.0,CA Overhead / Office Admin,G&A,2018-07-09,2018-07-09,1978.0,7912.0,-5934.0,0.0,0.0,2741,90+,0.0
+7597,"Comtel Systems Technology, Inc",4029.0,SH 4000 Dublin 3rd Fl Infusion,Jennifer Angelo,2025-12-30,2025-12-30,980.0,0.0,980.0,0.0,980.0,10,0-30,0.0
 76,Construction Strategies LLC,,,,2025-07-31,2025-07-31,11623.5,0.0,11623.5,0.0,11623.5,162,90+,0.0
 7612425,Home Depot Credit Services,5211.0,ECH MOB Concrete Base Reconstr,Doris Quai Hoi,2025-12-20,2025-12-20,108.47,0.0,108.47,0.0,108.47,20,0-30,0.0
 766656,CoPower One,1.0,CA Overhead / Office Admin,G&A,2018-08-08,2018-08-08,1978.0,7912.0,-5934.0,0.0,0.0,2711,90+,0.0
@@ -3457,6 +3475,7 @@ invoice_no,vendor_name,job_no,job_description,project_manager_name,invoice_date,
 94324,Thermal Mechanical,5109.0,ECH LG Drinking Water Fountain,Doris Quai Hoi,2025-11-28,2025-11-28,6547.48,0.0,6547.48,0.0,6547.48,42,31-60,0.0
 94355,"Cupertino Electric, Inc.",3306.0,SHC ERCP Rms 4 & 5 Upgrade,Kathy Roth,2023-06-15,2023-06-15,32093.2,32093.2,0.0,4.547473508864641e-13,0.0,939,90+,3209.32
 9447,"Bay Print Solutions, Inc.",,,,2019-09-30,2019-09-30,486.95,973.9,-486.95,0.0,0.0,2293,90+,0.0
+94518,Thermal Mechanical,5248.0,ECH LG Assist Plumbing Misc,Doris Quai Hoi,2025-12-31,2025-12-31,967.37,0.0,967.37,0.0,967.37,9,0-30,0.0
 945465795,"Office Depot, Inc.",1.0,CA Overhead / Office Admin,G&A,2017-07-21,2017-07-21,341.66,683.32,-341.66,0.0,0.0,3094,90+,0.0
 9476,"KT Mechanical, Inc.",1517.0,DH Radiology Remodel - CT1&2,Rodney Terra,2022-03-30,2022-03-30,14758.1,14758.1,0.0,4.547473508864641e-13,0.0,1381,90+,1475.81
 94907615,Travel costs,3725.0,SH Fremont MRI & CT Replacem,Jennifer Angelo,2025-12-20,2025-12-20,339.01,0.0,339.01,0.0,339.01,20,0-30,0.0
@@ -3608,6 +3627,7 @@ DEC2022,Peter Morin,,,,2022-12-31,2022-12-31,530.0,2650.0,-2120.0,0.0,0.0,1105,9
 DEC2022,Ricky Hernandez,,,,2022-12-31,2022-12-31,582.5,1165.0,-582.5,0.0,0.0,1105,90+,0.0
 DEC2023,Kaiser Foundation Health Plan,,,,2023-11-25,2023-11-25,33774.5,135098.0,-101323.5,0.0,0.0,776,90+,0.0
 DEC2025,Nora Delgado,,,,2025-12-31,2025-12-31,1340.0,0.0,1340.0,0.0,1340.0,9,0-30,0.0
+DINF004,Equipment Wise Consulting LLC,4029.0,SH 4000 Dublin 3rd Fl Infusion,Jennifer Angelo,2025-12-22,2025-12-22,7425.0,0.0,7425.0,0.0,7425.0,18,0-30,0.0
 Dec2016,Greg Baba,1.0,CA Overhead / Office Admin,G&A,2016-12-27,2016-12-27,64.28,128.56,-64.28,0.0,0.0,3300,90+,0.0
 Dec2016,Kaiser Foundation Health Plan,1.0,CA Overhead / Office Admin,G&A,2016-11-25,2016-11-25,15579.54,62318.16,-46738.62,0.0,0.0,3332,90+,0.0
 Dec2016,Pedro Becerra,1.0,CA Overhead / Office Admin,G&A,2016-12-31,2016-12-31,246.24,1723.68,-1477.44,0.0,0.0,3296,90+,0.0
@@ -3648,6 +3668,9 @@ Feb2018,Kaiser Foundation Health Plan,1.0,CA Overhead / Office Admin,G&A,2018-01
 G22331,R.E. Cuddie Co.,2999.0,ECH LG Nuc Med Equipment Repla,Doris Quai Hoi,2023-01-30,2023-01-30,6844.75,6844.75,0.0,4.547473508864641e-13,0.0,1075,90+,684.48
 G22343-1,R.E. Cuddie Co.,2997.0,ECH LG Cath Lab Equip. Replcmn,Doris Quai Hoi,2023-10-30,2023-10-30,5848.2,5848.2,0.0,3.410605131648481e-13,0.0,802,90+,584.82
 HOPD-INV-01,Southland Industries,,,,2024-05-30,2024-05-30,21880.0,131280.0,-109400.0,0.0,0.0,589,90+,0.0
+I53335,ACE Portable Services,3725.0,SH Fremont MRI & CT Replacem,Jennifer Angelo,2025-12-23,2025-12-23,1035.0,0.0,1035.0,0.0,1035.0,17,0-30,0.0
+I53420,ACE Portable Services,3316.0,JJRR 54 W Rincon Avenue,Rodney Terra,2025-12-25,2025-12-25,300.95,0.0,300.95,0.0,300.95,15,0-30,0.0
+I53579,ACE Portable Services,3468.0,SH 4050 Dublin-Generator,Jennifer Angelo,2025-12-30,2025-12-30,475.54,0.0,475.54,0.0,475.54,10,0-30,0.0
 IC06OTBA-000,"Anthropic, PBC",,,,2025-11-11,2025-11-11,100.0,91.07,8.930000000000007,0.0,8.930000000000007,59,31-60,0.0
 INV-00088388,Vendormate Inc,,,,2022-04-28,2022-04-28,7425.0,81675.0,-74250.0,0.0,0.0,1352,90+,0.0
 INV-48218,Rex Moore Group,4107.0,SJMC IT Infrastructure Refresh,Daniel Acosta,2025-05-30,2025-05-30,9950.0,8955.0,995.0,995.0,995.0,224,90+,995.0
@@ -3682,6 +3705,7 @@ J012955,"Alliance Roofing Company, Inc.",4858.0,LPCH 777 Welch Ste 10 Breakrm,Ka
 J013245,"Alliance Roofing Company, Inc.",4937.0,LPCH Corridor 3870 Roof Leak,Kathy Roth,2025-04-18,2025-04-18,10000.0,30000.0,-20000.0,0.0,0.0,266,90+,1000.0
 J014087,"Alliance Roofing Company, Inc.",4348.0,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2025-09-04,2025-09-04,45841.0,41256.9,4584.0999999999985,4584.1,4584.0999999999985,127,90+,4584.1
 J014445,"Alliance Roofing Company, Inc.",4348.0,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2025-10-21,2025-10-21,14828.0,13345.2,1482.7999999999993,1482.8,1482.7999999999993,80,61-90,1482.8
+J014854,"Alliance Roofing Company, Inc.",4348.0,SCU Adobe (Kitchen) Remodel,Doris Quai Hoi,2025-12-23,2025-12-23,20215.0,0.0,20215.0,2021.5,20215.0,17,0-30,2021.5
 JAN2020,Kaiser Foundation Health Plan,,,,2019-12-25,2019-12-25,26342.15,105368.6,-79026.45000000001,0.0,0.0,2207,90+,0.0
 JAN2022,Kaiser Foundation Health Plan,,,,2021-12-21,2021-12-21,26783.08,107132.32,-80349.24,0.0,0.0,1480,90+,0.0
 JAN2024,Kaiser Foundation Health Plan,,,,2023-12-21,2023-12-21,39925.91,159703.64,-119777.73000000001,0.0,0.0,750,90+,0.0
