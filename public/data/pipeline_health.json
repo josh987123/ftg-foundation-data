@@ -1,9 +1,9 @@
 {
   "status": "success",
-  "last_refresh_utc": "2026-01-09T22:14:33.570266Z",
+  "last_refresh_utc": "2026-01-10T01:45:10.300669Z",
   "csv_row_counts": {
     "data/accounts.csv": 200,
-    "data/gl_history_raw.csv": 355459,
+    "data/gl_history_raw.csv": 355487,
     "data/gl_history.csv": 178,
     "data/job_budgets.csv": 4273,
     "data/job_actuals.csv": 37513,
@@ -12,9 +12,9 @@
   },
   "json_record_counts": {
     "public/data/financials_gl.json": 357,
-    "public/data/financials_jobs.json": 44439,
+    "public/data/financials_jobs.json": 44441,
     "public/data/ap_invoices.json": 3975,
-    "public/data/ar_invoices.json": 301
+    "public/data/ar_invoices.json": 303
   },
   "files_present": {
     "csv": [

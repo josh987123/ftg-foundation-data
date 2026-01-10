@@ -2345,7 +2345,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 3342,SLRH CT Scan Replacement,152,Saint Louise Regional Hospital,A,DANIEL,Daniel Acosta,702384.0,1678572.0,2380956.0,578744.0,1602283.0,2181027.0
 3343,Stanford X-Ray Replacement Can,212,Stanford Health Care,C,KATHY,Kathy Roth,0.0,0.0,0.0,0.0,0.0,0.0
 3344,SLRH Joint Commission T.I.,152,Saint Louise Regional Hospital,A,KATHY,Kathy Roth,388287.0,124599.0,512886.0,331622.0,110091.0,441713.0
-3345,SLRH Joint Comm. 7 Auto Doors,152,Saint Louise Regional Hospital,A,KATHY,Kathy Roth,240454.0,69977.0,310431.0,198065.0,60303.0,258368.0
+3345,SLRH Joint Comm. 7 Auto Doors,152,Saint Louise Regional Hospital,A,KATHY,Kathy Roth,240454.0,69977.0,310431.0,198065.0,77127.0,275192.0
 3346,SLRH Sterilizer Replacement,152,Saint Louise Regional Hospital,A,DANIEL,Daniel Acosta,201521.0,58269.0,259790.0,166667.0,105110.0,271777.0
 3347,RMC Emergency Dept Rm 1069 Cei,176,Regional Medical Center,C,JOSH,Josh Angelo,8986.0,0.0,8986.0,5012.86,0.0,5012.86
 3348,PAMF 701 - 1SW130 CT Replaceme,115,Sutter Health,C,JOSH,Josh Angelo,500468.0,75966.96,576434.96,424834.0,71616.0,496450.0
@@ -2362,7 +2362,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 3359,SMSC 2900 Chanticleer Med Gas,115,Sutter Health,C,RODNEY,Rodney Terra,109425.0,31940.0,141365.0,96577.0,48784.0,145361.0
 3360,SLRH VCT Tile Patch,152,Saint Louise Regional Hospital,C,DANIEL,Daniel Acosta,2406.0,0.0,2406.0,1921.0,0.0,1921.0
 3361,ECHMV Removal of Lab Eqt Seism,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
-3362,SLRH Pharmacy Upgrades,152,Saint Louise Regional Hospital,A,KATHY,Kathy Roth,2478940.0,532104.0,3011044.0,2043091.0,463267.0,2506358.0
+3362,SLRH Pharmacy Upgrades,152,Saint Louise Regional Hospital,A,KATHY,Kathy Roth,2478940.0,532104.0,3011044.0,2043091.0,727597.22,2770688.22
 3363,ECHMV WO# 643719 3B Central Mo,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 3364,ECHMV 2A308/309 OR Floor Repla,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 3365,DH Re-Roof Packages,104,Dignity Health,C,RODNEY,Rodney Terra,154310.0,0.0,154310.0,126093.0,0.0,126093.0
@@ -2725,7 +2725,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 3722,ECHLG Fly A/C Install,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 3723,SMSC 233 Wall Plumbing,115,Sutter Health,C,RODNEY,Rodney Terra,1246.0,0.0,1246.0,412.0,0.0,412.0
 3724,MMH Medical Air Compressor Rep,215,Mee Memorial Hospital,C,PEDRO,Pedro Becerra,261272.0,0.0,261272.0,220542.0,0.0,220542.0
-3725,SH Fremont MRI & CT Replacem,115,Sutter Health,A,JENNIFER,Jennifer Angelo,61764.0,2972373.0,3034137.0,51716.0,2420202.0,2471918.0
+3725,SH Fremont MRI & CT Replacem,115,Sutter Health,A,JENNIFER,Jennifer Angelo,61764.0,2972373.0,3034137.0,51716.0,2589229.07,2640945.07
 3726,PAMF Fremont Bld #1 CT & Temp,115,Sutter Health,C,JENNIFER,Jennifer Angelo,59344.0,13656.0,73000.0,48840.0,13656.0,62496.0
 3727,PAMF 701 E El Camino Handrail,115,Sutter Health,C,JOSH,Josh Angelo,0.0,0.0,0.0,0.0,0.0,0.0
 3728,SLRH Restore Patient Rms 225,152,Saint Louise Regional Hospital,C,DANIEL,Daniel Acosta,0.0,0.0,0.0,0.0,0.0,0.0
@@ -2849,7 +2849,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 3846,WO#676035 Oak CC Infusion Eyew,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 3847,WO#681207 Install Coat Rack,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 3848,LPCH 730 Welch Wet Seal,167,Lucile Packard Childrens' Hosp,C,KATHY,Kathy Roth,90000.0,0.0,90000.0,72036.0,0.0,72036.0
-3849,SMSC Water Softener Replacemen,115,Sutter Health,A,RODNEY,Rodney Terra,153454.0,6400.71,159854.71,129079.0,4817.71,133896.71
+3849,SMSC Water Softener Replacemen,115,Sutter Health,A,RODNEY,Rodney Terra,153454.0,6400.71,159854.71,129079.0,10031.66,139110.66
 3850,ECH MV WO#679232 ED Reg.  Mod.,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 3851,DH ICU Wall Patch,104,Dignity Health,C,LISA,Lisa Dang,1500.0,0.0,1500.0,0.0,0.0,0.0
 3852,DH Flooring Support 1st Fl. Co,104,Dignity Health,C,LISA,Lisa Dang,46199.0,0.0,46199.0,27897.0,0.0,27897.0
@@ -3029,7 +3029,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 4026,"2581 Samaritan Dr 3rd Flr 1"" L",225,Cilker Henderson Properties,C,RODNEY,Rodney Terra,3499.0,0.0,3499.0,2221.0,0.0,2221.0
 4027,PAMF 1233 Midas Way New IT,115,Sutter Health,C,JENNIFER,Jennifer Angelo,810898.0,0.0,810898.0,660030.0,0.0,660030.0
 4028,PAMF Blossom Hill ASC Valid,115,Sutter Health,C,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
-4029,SH 4000 Dublin 3rd Fl Infusion,115,Sutter Health,A,JENNIFER,Jennifer Angelo,2860365.0,845334.0,3705699.0,2366085.0,740676.0,3106761.0
+4029,SH 4000 Dublin 3rd Fl Infusion,115,Sutter Health,A,JENNIFER,Jennifer Angelo,2860365.0,845334.0,3705699.0,2366085.0,955324.52,3321409.52
 4030,ECH MOB 777 Knowles Ste 9,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,197339.0,21371.0,218710.0,162765.0,27233.0,189998.0
 4031,WEC 15th Ave Plaza Bldg Repair,228,Walt Eller Company,C,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 4032,RMC TCU Courtyard Furniture,176,Regional Medical Center,C,DANIEL,Daniel Acosta,51256.0,0.0,51256.0,41486.0,0.0,41486.0
@@ -3073,7 +3073,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 4070,ECHLG Utility Rm Conver Proj8,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 4071,ECH LG Staff Lounge Refresh,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 4072,ECHLG Lckr to Zen/Office Rm,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
-4073,ECH MV Xstrahl 200 Install,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,125000.0,0.0,125000.0,0.0,0.0,0.0
+4073,ECH MV Xstrahl 200 Install,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,125000.0,0.0,125000.0,0.0,41795.0,41795.0
 4074,IHC FMC Backup Battery,119,Indian Health Center,C,DANIEL,Daniel Acosta,18369.0,0.0,18369.0,12693.0,0.0,12693.0
 4075,PAMF#2026 Warranty Door Replac,115,Sutter Health,C,JOSH,Josh Angelo,0.0,0.0,0.0,0.0,0.0,0.0
 4076,DH NICU OneWorkPlace Assist,104,Dignity Health,C,LISA,Lisa Dang,1033.0,0.0,1033.0,571.0,0.0,571.0
@@ -3211,7 +3211,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 4208,SJMC Wireless AP Installation,104,Dignity Health,C,JUSTIN,Justin KleinSmid,0.0,0.0,0.0,0.0,0.0,0.0
 4209,2400 SamaritanDr Drywall Patch,225,Cilker Henderson Properties,C,RODNEY,Rodney Terra,6646.0,0.0,6646.0,3356.0,0.0,3356.0
 4210,S&S Kitchen Equipmt Relocation,114,Summers & Sons Electric Inc.,C,DANIEL,Daniel Acosta,0.0,0.0,0.0,0.0,0.0,0.0
-4211,SH 15400LG Lab Dept Door Mod,115,Sutter Health,A,JENNIFER,Jennifer Angelo,144134.0,20568.0,164702.0,113615.0,0.0,113615.0
+4211,SH 15400LG Lab Dept Door Mod,115,Sutter Health,A,JENNIFER,Jennifer Angelo,144134.0,20568.0,164702.0,113615.0,31108.0,144723.0
 4212,PAMF 1501Trousdale ADO Install,115,Sutter Health,A,JENNIFER,Jennifer Angelo,0.0,0.0,0.0,0.0,0.0,0.0
 4213,PAMF Fremont-Pedatrics Rm Conv,115,Sutter Health,C,JENNIFER,Jennifer Angelo,0.0,0.0,0.0,0.0,0.0,0.0
 4214,PAMF 701MV- 1SE Nurse Call Upg,115,Sutter Health,C,JENNIFER,Jennifer Angelo,0.0,0.0,0.0,0.0,0.0,0.0
@@ -3311,7 +3311,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 4308,PAMF 3035 Main St. Receptacle,115,Sutter Health,C,RODNEY,Rodney Terra,15048.0,8303.0,23351.0,12494.0,5495.0,17989.0
 4309,PACU Nourishment Final Costs,115,Sutter Health,C,RODNEY,Rodney Terra,3233.0,0.0,3233.0,2385.0,0.0,2385.0
 4310,ECH LG Rehab Ctr Skylight Roof,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
-4311,SMSC OR Flr & Cabinet Replacem,115,Sutter Health,A,RODNEY,Rodney Terra,529503.0,0.0,529503.0,400023.0,0.0,400023.0
+4311,SMSC OR Flr & Cabinet Replacem,115,Sutter Health,A,RODNEY,Rodney Terra,529503.0,0.0,529503.0,400023.0,59921.43,459944.43
 4312,SMSC Patient Rm & Nourish Refr,115,Sutter Health,A,PEDRO,Pedro Becerra,887813.0,0.0,887813.0,701302.0,0.0,701302.0
 4313,SMSC 2nd Flr Addl Security,115,Sutter Health,A,RODNEY,Rodney Terra,284294.0,0.0,284294.0,213361.0,0.0,213361.0
 4314,SMSC Dr's Sleep Rooms,115,Sutter Health,A,RODNEY,Rodney Terra,126677.0,0.0,126677.0,101483.0,0.0,101483.0
@@ -3956,7 +3956,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 4953,ECH LG Fluoroscopy Equipment R,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 4954,LPCH Anchor Cows,167,Lucile Packard Childrens' Hosp,A,KATHY,Kathy Roth,73769.0,0.0,73769.0,47786.0,0.0,47786.0
 4955,DH Gen 2 Replacement Project,104,Dignity Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
-4956,DH LDR Lights Room,104,Dignity Health,A,RODNEY,Rodney Terra,114941.0,0.0,114941.0,84481.0,0.0,84481.0
+4956,DH LDR Lights Room,104,Dignity Health,A,RODNEY,Rodney Terra,114941.0,0.0,114941.0,84481.0,47345.45,131826.45
 4957,OWP BASS Chair Rails,239,One Workplace,C,KATHY,Kathy Roth,1628.0,0.0,1628.0,992.0,0.0,992.0
 4958,ECH LG Rehab Rm 1119 Wter Leak,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,4455.0,0.0,4455.0,2407.0,0.0,2407.0
 4959,LPCH 1722 leak,167,Lucile Packard Childrens' Hosp,C,KATHY,Kathy Roth,75000.0,-20403.6,54596.4,53059.0,-20403.6,32655.4
@@ -4048,9 +4048,9 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 5045,ECH LG Ortho Bathroom Floor Re,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,7452.0,0.0,7452.0,4148.0,0.0,4148.0
 5046,AP 450 Hayes SF Concrete Found,118,"Aquatek Plumbing, Inc.",A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 5047,MMH Lab Expansion Full Remodel,215,Mee Memorial Hospital,A,RODNEY,Rodney Terra,5045006.0,0.0,5045006.0,3996797.0,0.0,3996797.0
-5048,ECH LG Admin Break Room Remode,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,48931.0,0.0,48931.0,0.0,0.0,0.0
+5048,ECH LG Admin Break Room Remode,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,48931.0,0.0,48931.0,0.0,33477.25,33477.25
 5049,ECH LG L&D Scrub Sinks Mix Val,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
-5050,DH Dr Lounge Completion,104,Dignity Health,A,RODNEY,Rodney Terra,72712.0,113407.0,186119.0,0.0,98998.0,98998.0
+5050,DH Dr Lounge Completion,104,Dignity Health,A,RODNEY,Rodney Terra,72712.0,113407.0,186119.0,0.0,121231.0,121231.0
 5051,LPCH Fire Door replacement F P,167,Lucile Packard Childrens' Hosp,C,KATHY,Kathy Roth,0.0,0.0,0.0,0.0,0.0,0.0
 5052,LPCH Fire Door replacement Mai,167,Lucile Packard Childrens' Hosp,C,KATHY,Kathy Roth,0.0,0.0,0.0,0.0,0.0,0.0
 5053,LPCH Fire Door replacement Wes,167,Lucile Packard Childrens' Hosp,C,KATHY,Kathy Roth,0.0,0.0,0.0,0.0,0.0,0.0
@@ -4134,7 +4134,7 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 5132,ECH LG ICU Bathroom Water Dama,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,23881.0,0.0,23881.0,11131.0,0.0,11131.0
 5133,ECH MV WO#2528&2529 Seismic Br,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
 5134,SMSC Procedure Room Addition,115,Sutter Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
-5135,ECHLG OR Add Elec Recept(4542),106,El Camino Hospital,A,DORIS,Doris Quai Hoi,157000.0,0.0,157000.0,0.0,0.0,0.0
+5135,ECHLG OR Add Elec Recept(4542),106,El Camino Hospital,A,DORIS,Doris Quai Hoi,157000.0,0.0,157000.0,0.0,130865.0,130865.0
 5136,ECH MV WO# 729556 SPD Monitor,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,1156.0,0.0,1156.0,940.0,0.0,940.0
 5137,ECH MV Sobrato GF66 Barrier Wa,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,778.0,0.0,778.0,981.0,0.0,981.0
 5138,ECH MV Electrical Rm Fire Rate,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,680.0,0.0,680.0,1197.0,0.0,1197.0
@@ -4205,12 +4205,12 @@ job_no,job_description,customer_no,customer_name,job_status,project_manager_no,p
 5203,DH OR Electrical Upgrade,104,Dignity Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 5204,SH 15400 LG Eyeclick Projector,115,Sutter Health,A,JENNIFER,Jennifer Angelo,9974.0,0.0,9974.0,7183.0,0.0,7183.0
 5205,SH 701 MV Admin Space Conversi,115,Sutter Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
-5206,ECH MOB Melchor Ste109 Front,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
+5206,ECH MOB Melchor Ste109 Front,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,5533.0,0.0,5533.0,0.0,508.0,508.0
 5207,ECH MOB 2500 Hosp Dr Bldg 11,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,6435.0,0.0,6435.0,3232.0,0.0,3232.0
 5208,DH Katz Passthrough Door Openi,104,Dignity Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 5209,DH Registration Door Opening,104,Dignity Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 5210,ECH LG Ortho 1014 Access Panel,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
-5211,ECH MOB Concrete Base Reconstr,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,5000.0,0.0,5000.0,4051.0,0.0,4051.0
+5211,ECH MOB Concrete Base Reconstr,106,El Camino Hospital,A,DORIS,Doris Quai Hoi,5000.0,0.0,5000.0,4051.0,496.83,4547.83
 5212,DH Nurse Call Troubleshooting,104,Dignity Health,A,RODNEY,Rodney Terra,0.0,0.0,0.0,0.0,0.0,0.0
 5213,ECH LG Misc Work,106,El Camino Hospital,C,DORIS,Doris Quai Hoi,14108.0,0.0,14108.0,9631.0,0.0,9631.0
 5214,"ECH MV WO#748686 Main,ED Obser",106,El Camino Hospital,A,DORIS,Doris Quai Hoi,0.0,0.0,0.0,0.0,0.0,0.0
